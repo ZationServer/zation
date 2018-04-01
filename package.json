@@ -1,0 +1,18 @@
+{
+  "name": "zation",
+  "version": "0.8.0",
+  "license": "MIT",
+  "description": "Appication Framework Master",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZationServer/zation.git"
+  },
+  "author":
+  { "name" : "Luca Scarignella"
+  , "email" : "lucacode1@gmail.com"
+  , "url" : "https://luca.scaringella.de"
+  },
+  "dependencies": {
+    "zation-server": "0.0.1"
+  }
+}
