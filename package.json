@@ -12,6 +12,17 @@
   , "email" : "lucacode1@gmail.com"
   , "url" : "https://luca.scaringella.de"
   },
+  "keywords": [
+    "esay",
+    "application",
+    "websocket",
+    "http",
+    "fast",
+    "server",
+    "realtime",
+    "cluster",
+    "scalable"
+  ],
   "dependencies": {
     "zation-server": "0.0.1"
   }
