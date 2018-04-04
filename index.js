@@ -1,8 +1,8 @@
 const zationServer = require('zation-server');
 
-module.exports.start = (options1,options2) =>
+module.exports.start = (options) =>
 {
-    zationServer.start(options1,options2);
+    zationServer.start(options);
 };
 
 //Api Classes
@@ -11,3 +11,5 @@ module.exports.Controller = zationServer.Controller;
 module.exports.Result = zationServer.Result;
 module.exports.TaskError = zationServer.TaskError;
 module.exports.TaskErrorBag = zationServer.TaskErrorBag;
+
+module.exports.ErrorType = zationServer.ErrorType;

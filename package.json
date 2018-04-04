@@ -7,10 +7,10 @@
     "type": "git",
     "url": "https://github.com/ZationServer/zation.git"
   },
-  "author":
-  { "name" : "Luca Scarignella"
-  , "email" : "lucacode1@gmail.com"
-  , "url" : "https://luca.scaringella.de"
+  "author": {
+    "name": "Luca Scarignella",
+    "email": "lucacode1@gmail.com",
+    "url": "https://luca.scaringella.de"
   },
   "keywords": [
     "esay",
