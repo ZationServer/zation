@@ -7,6 +7,7 @@ module.exports.start = (options) =>
 
 //Api Classes
 module.exports.Bag = zationServer.Bag;
+module.exports.SmallBag = zationServer.SmallBag;
 module.exports.Controller = zationServer.Controller;
 module.exports.Result = zationServer.Result;
 module.exports.TaskError = zationServer.TaskError;

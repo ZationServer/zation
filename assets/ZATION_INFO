@@ -25,10 +25,7 @@ ADD amazon s3 support
 END
 
 IF(FUTURE)
-?-ADD User can add things to a Bag before work on an request / Support for other connections/Services
-?-ADD Multi Service Support -> more sql/mailer services with keys. No key use first service
 ?-ADD One of 2 optional params is needed
-?-Change http session to jwt token? YES
 ?-Add controller access for user with id
 END
 
