@@ -9,10 +9,10 @@ Updates:
 
 IF(V-0.6.0)
 ADD create command for example app
+ADD config command to check config with json schema
 END
 
 IF(FUTURE)
-ADD checkConfig command to check configs
 END
 
 !ZATION-SERVER!
@@ -20,8 +20,31 @@ Version     : 0.5.5
 Updates:
 
 IF(V-0.7.0)
-ADD file support (ADD validator Files)
+ADD file support (ADD validator Files) (HTTP ONLY)
 ADD amazon s3 support
+ADD Zation Panel tool ->
+-Shows real time request http / socket information
+-Connected count, online count
+-Server time
+-block tokens
+-all actions needs to confirm password
+-token panel variable
+-channel for panel
+-worker count
+-request per second
+-background task information
+-last fatal errors
+(some information need to be saved on the master)
+-worker restart count
+-information displayed via chart.js
+
+ADD zation storage can change to database options
+
+ADD client Js Prepare ->
+-on host/zation/client
+gets the client js with server host etc.
+
+ADD Online ping for real last activity
 END
 
 IF(FUTURE)
