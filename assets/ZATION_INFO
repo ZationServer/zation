@@ -20,6 +20,8 @@ Version     : 0.5.5
 Updates:
 
 IF(V-0.7.0)
+Add option -> zationCrashOnRealException
+
 ADD file support (ADD validator Files) (HTTP ONLY)
 ADD amazon s3 support
 ADD Zation Panel tool ->
