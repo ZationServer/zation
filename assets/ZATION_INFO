@@ -22,6 +22,7 @@ Updates:
 IF(V-0.7.0)
 Add option -> zationCrashOnRealException
 
+
 ADD better isOnline support -> authout -> blocked -> offline
 ADD better isOnline support -> refrsh admin panel by addToken/setActivity/ (to many? look every 1sec?)
 Save last errors in last 24 hours ?
@@ -44,6 +45,11 @@ ADD Zation Panel tool ->
 (some information need to be saved on the master)
 -worker restart count
 -information displayed via chart.js
+-panelActionsAllow in main config
+-if(allow)
+-do emit in all/user/special/group/defaultGroup Channnel from pannel
+-show emit to channels in live table
+-show userNames there connected
 
 tokenInfoStorage true? && informationStorage true? = panel can true
 
