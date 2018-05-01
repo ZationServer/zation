@@ -28,6 +28,9 @@ ADD better isOnline support -> refrsh admin panel by addToken/setActivity/ (to m
 Save last errors in last 24 hours ?
 System Controller for the Panel?
 
+Dependencie from client add to zation-client latest
+zation client method to read the zation.js file
+
 ADD file support (ADD validator Files) (HTTP ONLY)
 ADD amazon s3 support
 ADD Zation Panel tool ->
