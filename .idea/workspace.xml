@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/ZATION_INFO" beforeDir="false" afterPath="$PROJECT_DIR$/assets/ZATION_INFO" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -93,10 +92,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="523" />
-    <option name="y" value="161" />
-    <option name="width" value="1382" />
-    <option name="height" value="754" />
+    <option name="x" value="953" />
+    <option name="y" value="30" />
+    <option name="width" value="974" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -124,7 +123,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../zation-server" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
@@ -177,11 +176,13 @@
       <workItem from="1524824750719" duration="1905000" />
       <workItem from="1524906560460" duration="755000" />
       <workItem from="1525100408484" duration="1185000" />
+      <workItem from="1525165655306" duration="675000" />
+      <workItem from="1525180807122" duration="637000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23585000" />
+    <option name="totallyTimeSpent" value="24897000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
