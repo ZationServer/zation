@@ -23,20 +23,49 @@ IF(V-0.7.0)
 Add option -> zationCrashOnRealException
 
 
-ADD better isOnline support -> authout -> blocked -> offline
-ADD better isOnline support -> refrsh admin panel by addToken/setActivity/ (to many? look every 1sec?)
-Save last errors in last 24 hours ?
-System Controller for the Panel?
+ADD TokenLevelDown Engine Event by change a token connection status and Event by change block token (for panel refresh)
+ADD TokenTempDownMongoDb Support
+TEST TokenTempLevelDbSupport with file system
+ADD ErrorInfoDown and Up Engine to save errors with the liveTime
+ADD SystemController for the Panel
 
-Dependencie from client add to zation-client latest
-zation client method to read the zation.js file
+ADD Dependencies from zation-client to zation-server
+ADD zation-client generate client javascript
 
-ADD file support (ADD validator Files) (HTTP ONLY)
-ADD amazon s3 support
-ADD Zation Panel tool ->
--Shows real time request http / socket information
--Connected count, online count
--Server time
+ADD FILE UPLOAD SUPPORT (with validation (type,size))
+ADD API FILE OBJECT
+ADD AMAZON S3 SUPPORT (UPLOAD FILE)
+
+CHECK THE SYSTEM WHEN A SOCKET GETS DEAUTHENTICATE -> SHOULD I DISCONNECT THEM WITH A REASON ?
+DIFFERENT TYPES OF REASONS
+- TOKEN IS BLOCKED
+- UNVALIDE TOKEN
+- TOKEN IS EXPIRE
+- LOG OUT
+- NEED REAUTHENTICATE
+WHEN SHOULD I UPDATE THE CONNECTION STATE OF A TOKEN?
+EVERY SOCKET HAS A TOKEN?
+
+PROVE WORKER UNIQUE ID, WHY NOT USE THE PID?
+OR CRASH COUNT
+
+
+
+ADD ZATION PANEL
+->
+-Shows real time request http/socket information (on google maps)
+-Request is white circle on position when a new comes in
+-Request gets yellow when a task error happens
+-Request gets red when a exception happens
+-Request gets green when its successful finished
+
+-Connected count of users and the count of all users
+-(use count of all in tempDb or function for get all in database)
+
+-Shows on map the location where the active user tokens was created
+
+-Server time / server start Time
+
 -block tokens
 -all actions needs to confirm password
 -token panel variable
@@ -54,17 +83,6 @@ ADD Zation Panel tool ->
 -show emit to channels in live table
 -show userNames there connected
 
-tokenInfoStorage true? && informationStorage true? = panel can true
-
-resetInformationStorage in x hours
-
-ADD zation storage can change to database options
-
-ADD client Js Prepare ->
--on host/zation/client
-gets the client js with server host etc.
-
-ADD Online ping for real last activity
 END
 
 IF(FUTURE)
