@@ -16,18 +16,20 @@ IF(FUTURE)
 END
 
 !ZATION-SERVER!
-Version     : 0.5.5
+Version     : 0.6.0
 Updates:
 
 IF(V-0.7.0)
-Add option -> zationCrashOnRealException
 
+Add option -> zationCrashOnRealException
 
 ADD TokenLevelDown Engine Event by change a token connection status and Event by change block token (for panel refresh)
 ADD TokenTempDownMongoDb Support
 TEST TokenTempLevelDbSupport with file system
 ADD ErrorInfoDown and Up Engine to save errors with the liveTime
 ADD SystemController for the Panel
+ADD Own Services can be added
+ADD CONTROLLER INPUT VALIDATION CAN DISABLED
 
 ADD Dependencies from zation-client to zation-server
 ADD zation-client generate client javascript
@@ -49,45 +51,81 @@ EVERY SOCKET HAS A TOKEN?
 PROVE WORKER UNIQUE ID, WHY NOT USE THE PID?
 OR CRASH COUNT
 
-
-
-ADD ZATION PANEL
+ADD ZATION PANEL [
 ->
--Shows real time request http/socket information (on google maps)
+
+[STATISTICS]
+
+{REQUESTS}
+-Shows real time request http/socket information on LIVE MAP
 -Request is white circle on position when a new comes in
 -Request gets yellow when a task error happens
 -Request gets red when a exception happens
 -Request gets green when its successful finished
 
--Connected count of users and the count of all users
+-Request per second in diagram
+
+{USER}
+-Connected count of users and the count of all users (split in user groups)
 -(use count of all in tempDb or function for get all in database)
 
--Shows on map the location where the active user tokens was created
+-Shows circle on the LIVE MAP located where the active user tokens was created
+-Mouse on Circle displays user name / user group
 
+{TIME}
 -Server time / server start Time
 
--block tokens
--all actions needs to confirm password
--token panel variable
--channel for panel
--worker count
--request per second
--background task information
--last fatal errors
-(some information need to be saved on the master)
+{EXCEPTIONS}
+SHOWS LAST EXCEPTIONS RECORDED FOR LIVE TIME
+MARK THEM TO CHECKED/UNCHECKED
+
+{CLUSTER}
+-worker count / worker start time
 -worker restart count
--information displayed via chart.js
--panelActionsAllow in main config
--if(allow)
--do emit in all/user/special/group/defaultGroup Channnel from pannel
--show emit to channels in live table
--show userNames there connected
+
+{CHANNELS}
+-shows publish actions in channels
+
+{BACKGROUND TASKS}
+SHOWS EXECUTE INFORMATION -> EXECUTE TIME (INFO EXPIRE IN 24HOURS)
+SHOWS PLANED  TASKS       -> PLANED TIME / TASK NAME (can be userTask - 1)
+
+[ACTIONS (NEED ACTIVATED IN THE MAIN CONFIG(panelActionsAllow) && ACTIONS NEED A PASSWORD CONFIRM(IF ACTIVE IN MAIN.C))]
+
+{TESTING CHANNELS}
+-Emit to all/user/special/group/defaultGroup channel from panel
+
+{BLOCK TOKEN}
+-Block token/s with tokenId or userId
+
+[PANEL USES JS LIBRARIES]
+-chart.js
+-sweetAlert
+-googleMaps
+-bootstrap
+-ip to gps
+]
+
+[COMPONENTS]
+=LIVE TABLE=
+LIVE TABLE IS A TABLE THAT DISPLAYS INFORMATION IN REAL TIME
+WITH PAUSE YOU CAN STOP THE REAL TIME ACTIONS AND PLAY START IT AGAIN
+ALSO YOU CAN EXPORT THE TABLE INFORMATION IN CSV
+
+=LIVE MAP=
+Google maps map witch shows real time information on the map.
+With pause and play you can control the real time function.
 
 END
 
-IF(FUTURE)
+IF(FUTURE V-0.8.0 (FIRST RELEASE))
 ?-ADD One of 2 optional params is needed
-?-Add controller access for user with id
+?-Add controller access for user with id#
+?-SUPPORT EVENTS IN A ARRAY?
+END
+
+IF(FUTURE V-0.9.0)
+?-ADD STREAMING SUPPORT
 END
 
 !ZATION-CLIENT!
@@ -95,6 +133,7 @@ Version     : 0.5.1
 Updates:
 
 IF(V-0.6)
+ADD Panel channel support!
 Check All
 ADD HTTP Support
 [
