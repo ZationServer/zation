@@ -21,15 +21,12 @@ Updates:
 
 IF(V-0.7.0)
 
-Add option -> zationCrashOnRealException
-
 ADD TokenLevelDown Engine Event by change a token connection status and Event by change block token (for panel refresh)
-ADD TokenTempDownMongoDb Support
-TEST TokenTempLevelDbSupport with file system
 ADD ErrorInfoDown and Up Engine to save errors with the liveTime
 ADD SystemController for the Panel
 ADD Own Services can be added
 ADD CONTROLLER INPUT VALIDATION CAN DISABLED
+CHANGE SPECIAL CHANNEL NAME TO CUSTOM CHANNEL
 
 ADD Dependencies from zation-client to zation-server
 ADD zation-client generate client javascript
@@ -119,14 +116,30 @@ With pause and play you can control the real time function.
 END
 
 IF(FUTURE V-0.8.0 (FIRST RELEASE))
+TEST TokenTempLevelDbSupport with file system (levels and pathwise)
+ADD TokenTempDownMongoDb Support
 ?-ADD One of 2 optional params is needed
 ?-Add controller access for user with id#
 ?-SUPPORT EVENTS IN A ARRAY?
+?-ADD simpleBag -> support get access to set tempDb variables
 END
 
 IF(FUTURE V-0.9.0)
 ?-ADD STREAMING SUPPORT
+?-ADD PLUGIN Support -> user can load plugins in main or starter config by set a module object
+module object needs to export a zation-plugin object with that object is looking in the plugin controller / configs
+and give them back as a string. the zation server can require them with the string look at :
+https://stackoverflow.com/questions/17581830/load-node-js-module-from-string-in-memory
+
+configs don't get overwrite -> events are added in event array
+configs not set by the main config gets overwrite by the plugin
+
+Or waring by different config options from plugin and main
 END
+
+IF(FUTURE V-1.0.0)[MAIN -> PERFORMANCE IMPROVE]
+IMPROVE PERFORMANCE IN JAVASCRIPT
+CHANGE PARTS OF ZATION IN C++
 
 !ZATION-CLIENT!
 Version     : 0.5.1
