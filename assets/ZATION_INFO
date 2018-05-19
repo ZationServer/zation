@@ -26,6 +26,11 @@ ADD ErrorInfoDown and Up Engine to save errors with the liveTime
 ADD SystemController for the Panel
 ADD Own Services can be added
 ADD CONTROLLER INPUT VALIDATION CAN DISABLED
+ADD Own validation functions / types can be added
+
+ADD validation groups -> can defined in validation config and contains functions / types from zation validation
+The Groups can be used in the controller
+
 CHANGE SPECIAL CHANNEL NAME TO CUSTOM CHANNEL
 
 ADD Dependencies from zation-client to zation-server
