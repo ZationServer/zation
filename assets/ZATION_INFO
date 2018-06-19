@@ -21,37 +21,35 @@ Updates:
 
 IF(V-0.7.0)
 
-ADD TokenLevelDown Engine Event by change a token connection status and Event by change block token (for panel refresh)
-ADD ErrorInfoDown and Up Engine to save errors with the liveTime
-ADD SystemController for the Panel
-ADD Own Services can be added
-ADD CONTROLLER INPUT VALIDATION CAN DISABLED
-ADD Own validation functions / types can be added
+-ADD TokenLevelDown Engine Event by change a token connection status and Event by change block token (for panel refresh)
+-ADD ErrorInfoDown and Up Engine to save errors with the liveTime
+-ADD SystemController for the Panel
+-ADD Own Services can be added
+-ADD CONTROLLER INPUT VALIDATION CAN DISABLED
+-ADD validation groups -> can defined in validation config and contains functions / types from zation validation
+-The Groups can be used in the controller
 
-ADD validation groups -> can defined in validation config and contains functions / types from zation validation
-The Groups can be used in the controller
+-CHANGE SPECIAL CHANNEL NAME TO CUSTOM CHANNEL
 
-CHANGE SPECIAL CHANNEL NAME TO CUSTOM CHANNEL
+-ADD Dependencies from zation-client to zation-server
+-ADD zation-client generate client javascript
 
-ADD Dependencies from zation-client to zation-server
-ADD zation-client generate client javascript
+-ADD FILE UPLOAD SUPPORT (with validation (type,size))
+-ADD API FILE OBJECT
+-ADD AMAZON S3 SUPPORT (UPLOAD FILE)
 
-ADD FILE UPLOAD SUPPORT (with validation (type,size))
-ADD API FILE OBJECT
-ADD AMAZON S3 SUPPORT (UPLOAD FILE)
-
-CHECK THE SYSTEM WHEN A SOCKET GETS DEAUTHENTICATE -> SHOULD I DISCONNECT THEM WITH A REASON ?
-DIFFERENT TYPES OF REASONS
+-CHECK THE SYSTEM WHEN A SOCKET GETS DEAUTHENTICATE -> SHOULD I DISCONNECT THEM WITH A REASON ?
+-DIFFERENT TYPES OF REASONS
 - TOKEN IS BLOCKED
 - UNVALIDE TOKEN
 - TOKEN IS EXPIRE
 - LOG OUT
 - NEED REAUTHENTICATE
-WHEN SHOULD I UPDATE THE CONNECTION STATE OF A TOKEN?
-EVERY SOCKET HAS A TOKEN?
+-WHEN SHOULD I UPDATE THE CONNECTION STATE OF A TOKEN?
+-EVERY SOCKET HAS A TOKEN?
 
-PROVE WORKER UNIQUE ID, WHY NOT USE THE PID?
-OR CRASH COUNT
+-PROVE WORKER UNIQUE ID, WHY NOT USE THE PID?
+-OR CRASH COUNT
 
 ADD ZATION PANEL [
 ->
