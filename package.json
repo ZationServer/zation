@@ -21,9 +21,18 @@
     "server",
     "realtime",
     "cluster",
-    "scalable"
+    "scalable",
+    "secure",
+    "big",
+    "tools"
   ],
   "dependencies": {
-    "zation-server": "0.0.1"
+    "zation-server": "0.0.1",
+    "fs-extra": "6.0.1",
+    "minimist": "1.2.0",
+    "inquirer": "6.0.0"
+  },
+  "bin": {
+    "zation": "bin/cli.js"
   }
 }
