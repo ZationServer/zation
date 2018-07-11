@@ -3,6 +3,14 @@
   "version": "0.5.3",
   "license": "MIT",
   "description": "Appication Framework Master",
+  "main": "compiled/index.js",
+  "types": "compiled/index.d.ts",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "gulp compile",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "zation welcome"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ZationServer/zation.git"
@@ -27,10 +35,16 @@
     "tools"
   ],
   "dependencies": {
-    "zation-server": "0.0.1",
+    "empty-dir": "^1.0.0",
     "fs-extra": "6.0.1",
     "minimist": "1.2.0",
-    "inquirer": "6.0.0"
+    "zation-server": "0.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-typescript": "^5.0.0-alpha.3",
+    "typescript": "^2.9.2"
   },
   "bin": {
     "zation": "bin/cli.js"
