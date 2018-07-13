@@ -60,7 +60,7 @@ class AppInit
         else
         {
             this.templateEninge.addToMap('appName',this.appName);
-            this.templateEninge.addToMap('appNameLC',this.appName.toLowerCase());
+            this.templateEninge.addToMap('appNameLC',this.appName.toLowerCase().trim());
             this.templateEninge.addToMap('description',this.description);
             this.templateEninge.addToMap('version',this.version);
             this.templateEninge.addToMap('port',this.port);

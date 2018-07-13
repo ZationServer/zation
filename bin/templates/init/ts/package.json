@@ -10,7 +10,7 @@
     "build": "gulp compile"
   },
   "dependencies": {
-    "zation": "0.5.3"
+    "zation": "0.0.3"
   },
   "devDependencies": {
     "gulp": "3.9.1",

@@ -10,6 +10,6 @@
     "build": "gulp compile"
   },
   "dependencies": {
-    "zation": "0.5.3"
+    "zation": "0.0.3"
   }
 }

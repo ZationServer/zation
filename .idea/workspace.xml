@@ -2,39 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/bin/templates/controller/controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/init/ts/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/init/ts/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/init/ts/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/init/ts/gulpFile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/init/ts/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/init/ts/src/config/app.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/init/ts/src/config/channel.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/init/ts/src/config/error.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/init/ts/src/config/event.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/init/ts/src/config/main.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/init/ts/src/config/service.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/init/ts/src/controller/auth/logIn.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/init/ts/src/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/init/ts/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/zation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/zation.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/helper/appInit.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/appInit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/helper/initController.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/initController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/controller/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/controller/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/js/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/js/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/js/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/config/app.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/js/config/app.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/config/channel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/config/error.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/js/config/error.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/config/event.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/js/config/event.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/config/main.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/js/config/main.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/config/service.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/js/config/service.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/controller/auth/logIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/js/controller/auth/logIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/js/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/templates/init/js/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/js/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/templates/init/ts/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/ts/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -101,13 +71,33 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1871474947">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="js" value="5" />
+          <entry key="json" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JSON" value="7" />
+          <entry key="JavaScript" value="5" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/cli.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
+            <state relative-caret-position="1197">
               <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
             </state>
           </provider>
@@ -116,8 +106,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/helper/appInit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="689">
-              <caret line="197" column="1" lean-forward="true" selection-start-line="197" selection-start-column="1" selection-end-line="197" selection-end-column="1" />
+            <state relative-caret-position="238">
+              <caret line="63" column="73" lean-forward="true" selection-start-line="63" selection-start-column="73" selection-end-line="63" selection-end-column="73" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -128,8 +118,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/templates/init/ts/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+            <state relative-caret-position="252">
+              <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -137,7 +127,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
+            <state relative-caret-position="84">
               <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -167,17 +157,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/templates/init/js/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="252">
+              <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/helper/initController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="174">
-              <caret line="83" column="19" lean-forward="true" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
+              <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -185,11 +175,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="21">
+              <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -220,6 +210,7 @@
       <find>\</find>
       <find>Init control</find>
       <find>console.log</find>
+      <find>appName</find>
     </findStrings>
     <replaceStrings>
       <replace>let</replace>
@@ -277,11 +268,11 @@
         <option value="$PROJECT_DIR$/bin/templates/init/js/config/error.config.js" />
         <option value="$PROJECT_DIR$/bin/templates/init/js/config/event.config.js" />
         <option value="$PROJECT_DIR$/bin/templates/init/js/config/service.config.js" />
-        <option value="$PROJECT_DIR$/bin/templates/init/js/package.json" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/bin/templates/init/ts/package.json" />
-        <option value="$PROJECT_DIR$/bin/helper/appInit.js" />
         <option value="$PROJECT_DIR$/bin/helper/initController.js" />
+        <option value="$PROJECT_DIR$/bin/helper/appInit.js" />
+        <option value="$PROJECT_DIR$/bin/templates/init/js/package.json" />
+        <option value="$PROJECT_DIR$/bin/templates/init/ts/package.json" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -302,14 +293,12 @@
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
-      <path value="$PROJECT_DIR$/bin/templates/init/js/package.json" />
-      <path value="$PROJECT_DIR$/bin/templates/init/ts/package.json" />
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="73" />
-    <option name="y" value="281" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="72" />
+    <option name="y" value="280" />
     <option name="width" value="1380" />
     <option name="height" value="745" />
   </component>
@@ -357,7 +346,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="8.11.1" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TestingZation" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
@@ -433,11 +422,12 @@
       <workItem from="1531310346286" duration="29989000" />
       <workItem from="1531401561882" duration="28000" />
       <workItem from="1531401676909" duration="11317000" />
+      <workItem from="1531524149921" duration="1001000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84342000" />
+    <option name="totallyTimeSpent" value="85343000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -449,23 +439,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="73" y="281" width="1380" height="745" extended-state="0" />
+    <frame x="-7" y="33" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2891207" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20356907" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3297414" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32725322" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49966952" weight="0.32624114" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Statistic" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49850968" visible="true" weight="0.31914893" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5014903" side_tool="true" visible="true" weight="0.31914893" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4976867" visible="true" weight="0.014184397" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50033045" side_tool="true" weight="0.32624114" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3286638" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -489,20 +479,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compiled/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/compiled/index.js" />
     <entry file="file://$PROJECT_DIR$/bin/helper/fileHelper.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -533,20 +514,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/templates/controller/controllerJsss.text">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="18" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/templates/controller/controllerJs.text">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="18" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/templates/controller/controllerJsss.text" />
+    <entry file="file://$PROJECT_DIR$/bin/templates/controller/controllerJs.text" />
     <entry file="file://$PROJECT_DIR$/bin/templates/controller/controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -697,17 +666,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/undertaker/lib/set-task.js" />
+    <entry file="file://$PROJECT_DIR$/bin/cli.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+        <state relative-caret-position="1197">
+          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/cli.js">
+    <entry file="file://$PROJECT_DIR$/src/index.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+        <state relative-caret-position="84">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -725,38 +698,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/undertaker/lib/set-task.js">
+    <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+        <state relative-caret-position="399">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/templates/init/js/package.json">
+    <entry file="file://$PROJECT_DIR$/bin/helper/initController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/templates/init/ts/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="174">
+          <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -765,21 +717,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/helper/appInit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="689">
-          <caret line="197" column="1" lean-forward="true" selection-start-line="197" selection-start-column="1" selection-end-line="197" selection-end-column="1" />
+        <state relative-caret-position="238">
+          <caret line="63" column="73" lean-forward="true" selection-start-line="63" selection-start-column="73" selection-end-line="63" selection-end-column="73" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/helper/initController.js">
+    <entry file="file://$PROJECT_DIR$/bin/templates/init/js/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="83" column="19" lean-forward="true" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="252">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/templates/init/ts/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
         </state>
       </provider>
     </entry>
