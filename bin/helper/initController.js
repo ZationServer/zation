@@ -8,6 +8,7 @@ const ConsoleHelper      = require('./consoleHelper');
 const EasyTemplateEngine = require('./easyTemplateEngine');
 const fs                 = require('fs');
 const fsExtra            = require('fs-extra');
+                           require('typescript-require');
 
 class InitController
 {
@@ -31,8 +32,11 @@ class InitController
     // noinspection JSMethodCanBeStatic
     getAppConfigPath(str)
     {
-        if(str.lastIndexOf('.js') === -1) {
+        if(str.lastIndexOf('.js') === -1 && !this.typeScript) {
             return str + 'app.config.js';
+        }
+        else if(str.lastIndexOf('.ts') === -1 && this.typeScript) {
+            return str + 'app.config.ts';
         }
         else {
             return str;
@@ -41,10 +45,27 @@ class InitController
 
     async _getInformation()
     {
-        this.appConfigPath
-            = this.getAppConfigPath(await this.consoleHelper.question('App config path:','config/app.config.js'));
 
-        this.cDir = await this.consoleHelper.question('Controller directory:','controller/');
+        this.typeScript =
+            (await this.consoleHelper.question
+            ('Is your project an typescript project?','yes')) === 'yes';
+
+        let defaultAppConfigPath = '';
+        let defaultControllerPath = '';
+        if(this.typeScript) {
+            defaultAppConfigPath = 'src/config/app.config.ts';
+            defaultControllerPath = 'src/controller'
+        }
+        else {
+            defaultAppConfigPath = 'config/app.config.js';
+            defaultControllerPath = 'controller'
+        }
+
+
+        this.appConfigPath
+            = this.getAppConfigPath(await this.consoleHelper.question('App config path:',defaultAppConfigPath));
+
+        this.cDir = await this.consoleHelper.question('Controller directory:',defaultControllerPath);
 
         console.log('');
         this._printInformation();
@@ -61,8 +82,8 @@ class InitController
     _printInformation()
     {
         console.log('Information: ');
-        console.log(`App config path: ${this.appConfigPath}`);
-        console.log(`Controller directory: ${this.cDir}`);
+        console.log(`App config path: ${this.destDir}/${this.appConfigPath}`);
+        console.log(`Controller directory: ${this.destDir}/${this.cDir}`);
         console.log('');
     }
 
@@ -187,7 +208,10 @@ class InitController
         let templateEngine = new EasyTemplateEngine();
         templateEngine.addToMap('name',this._firstLetterUpperCase(realCName));
         templateEngine.addToMap('input',this._createInputObj(cConfig));
-        EasyTemplateEngine.templateFromFile(this.cTemplateDir + '/controller.js',fullCPath,templateEngine);
+
+        EasyTemplateEngine.templateFromFile
+        (this.cTemplateDir + `/controller.${this.typeScript ? 'ts' : 'js'}`,fullCPath,templateEngine);
+
         return true;
     }
 
@@ -231,7 +255,7 @@ class InitController
             cF = path + '/' + name;
         }
 
-        return `${this.destDir}/${this.cDir}/${cF}.js`;
+        return `${this.destDir}/${this.cDir}/${cF}.${this.typeScript ? 'ts' : 'js'}`;
     }
 
     _getCDirFullPath(path)

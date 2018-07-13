@@ -1,4 +1,6 @@
-module.exports =
+import {Config} from 'zation';
+
+export = Config.appConfig(
     {
         userGroups :
             {
@@ -50,4 +52,4 @@ module.exports =
                         },
                 },
             }
-    };
+    });

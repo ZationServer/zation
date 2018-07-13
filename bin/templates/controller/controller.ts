@@ -1,4 +1,4 @@
-const {Controller,Result,TaskError,TaskErrorBag,ErrorType} = require('zation');
+import {Controller,Result,TaskError,TaskErrorBag,ErrorType} from 'zation';
 class {{name}} extends Controller
 {
     async handle(bag,{{input}})
@@ -16,4 +16,4 @@ class {{name}} extends Controller
 
     }
 }
-module.exports = {{name}};
+export = {{name}};

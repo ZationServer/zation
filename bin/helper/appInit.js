@@ -35,6 +35,10 @@ class AppInit
     {
         let defaultAppName = this.destDir.substring((this.destDir.lastIndexOf(path.sep)+path.sep.length));
 
+        this.typeScript =
+            (await this.consoleHelper.question
+            ('Do you want to create a typescript project (better code completion)?','yes')) === 'yes';
+
         this.appName = await this.consoleHelper.question('App name:',defaultAppName);
         this.description = await this.consoleHelper.question('Description:','Zation application server');
         this.version = await this.consoleHelper.question('Version:','1.0.0');
@@ -56,6 +60,7 @@ class AppInit
         else
         {
             this.templateEninge.addToMap('appName',this.appName);
+            this.templateEninge.addToMap('appNameLC',this.appName.toLowerCase());
             this.templateEninge.addToMap('description',this.description);
             this.templateEninge.addToMap('version',this.version);
             this.templateEninge.addToMap('port',this.port);
@@ -63,14 +68,14 @@ class AppInit
             this.templateEninge.addToMap('license',this.license);
 
             if(this.author !== null) {
-                this.templateEninge.addToMap('author',`"author" : "${this.author}", `);
+                this.templateEninge.addToMap('author',`\n  "author" : "${this.author}", `);
             }
             else {
                 this.templateEninge.addToMap('author','');
             }
 
             if(this.git !== null) {
-                this.templateEninge.addToMap('git',`"repository": {\n    "type": "git",\n    "url": "${this.git}"\n  },`);
+                this.templateEninge.addToMap('git',`\n  "repository": {\n    "type": "git",\n    "url": "${this.git}"\n  },`);
             }
             else {
                 this.templateEninge.addToMap('git','');
@@ -81,9 +86,11 @@ class AppInit
     _printInformation()
     {
         console.log('Information: ');
+        console.log(`Project type: ${this.typeScript ? 'typescript' : 'javascript'}`);
         console.log(`App name: ${this.appName}`);
         console.log(`Description: ${this.description}`);
         console.log(`Version: ${this.version}`);
+        console.log(`Git repository: ${this.git}`);
         console.log(`Port: ${this.port}`);
         console.log(`Time zone: ${this.timeZone}`);
         console.log(`License: ${this.license}`);
@@ -124,14 +131,27 @@ class AppInit
 
     async _template()
     {
-        EasyTemplateEngine.templateFile(`${this.destDir}/config/main.config.js`,this.templateEninge);
+        const jsMainConfig = `${this.destDir}/config/main.config.js`;
+        const tsMainConfig = `${this.destDir}/src/config/main.config.ts`;
+        EasyTemplateEngine.templateFile(this.typeScript ? tsMainConfig : jsMainConfig,this.templateEninge);
+
         EasyTemplateEngine.templateFile(`${this.destDir}/package.json`,this.templateEninge);
     }
 
     async _init()
     {
         ConsoleHelper.logSetup();
-        if (FileHelper.copyDirRecursive(this.initDir, this.destDir)) {
+
+        let copyDir = '';
+
+        if(this.typeScript) {
+            copyDir = `${this.initDir}/ts`
+        }
+        else {
+            copyDir = `${this.initDir}/js`
+        }
+
+        if (FileHelper.copyDirRecursive(copyDir, this.destDir)) {
             await this._template();
             this._createSuccess();
         } else {
@@ -167,7 +187,8 @@ class AppInit
             else
             {
                 console.log('');
-                ConsoleHelper.logSuccessMessage('Zation app is created!');
+                ConsoleHelper.logSuccessMessage(`Zation app ${this.appName} is created!`);
+                ConsoleHelper.logSuccessMessage(`You can start the server with command: 'npm start'`);
             }
             process.exit(code);
         });

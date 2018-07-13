@@ -1,4 +1,6 @@
-module.exports =
+const {Config} = require('zation');
+
+module.exports = Config.serviceConfig(
     {
         services:
             {
@@ -9,4 +11,4 @@ module.exports =
             {
 
             }
-    };
+    });

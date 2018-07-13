@@ -1,0 +1,15 @@
+{
+  "name": "{{appNameLC}}",
+  "version": "{{version}}",
+  "description": "{{description}}",
+  "license": "{{license}}",
+  "main": "compiled/index.js",{{author}} {{git}}
+  "scripts": {
+    "start": "node compiled/index.js",
+    "prestart": "npm run build",
+    "build": "gulp compile"
+  },
+  "dependencies": {
+    "zation": "0.5.3"
+  }
+}

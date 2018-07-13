@@ -6,7 +6,7 @@ LABEL description="Docker file for Zation-Server"
 
 RUN mkdir -p /usr/src/
 WORKDIR /usr/src/
-COPY . /usr/src/
+COPY .. /usr/src/
 
 RUN npm install .
 

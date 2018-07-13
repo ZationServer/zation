@@ -1,0 +1,20 @@
+{
+  "name": "{{appNameLC}}",
+  "version": "{{version}}",
+  "description": "{{description}}",
+  "license": "{{license}}",
+  "main": "compiled/index.js",{{author}}{{git}}
+  "scripts": {
+    "start": "node compiled/index.js",
+    "prestart": "npm run build",
+    "build": "gulp compile"
+  },
+  "dependencies": {
+    "zation": "0.5.3"
+  },
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-typescript": "5.0.0-alpha.3",
+    "typescript": "2.9.2"
+  }
+}
