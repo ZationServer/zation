@@ -66,6 +66,7 @@ class AppInit
             this.templateEninge.addToMap('port',this.port);
             this.templateEninge.addToMap('timeZone',this.timeZone );
             this.templateEninge.addToMap('license',this.license);
+            this.templateEninge.addToMap('zationVersion',AppInit._getZationVersion());
 
             if(this.author !== null) {
                 this.templateEninge.addToMap('author',`\n  "author" : "${this.author}", `);
@@ -127,6 +128,13 @@ class AppInit
                 ConsoleHelper.abort();
             }
         }
+    }
+
+    static _getZationVersion()
+    {
+        let zaDir = __dirname + '/../../';
+        let zaPkg = FileHelper.parsePackageFile(zaDir);
+        return zaPkg.version;
     }
 
     async _template()
