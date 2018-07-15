@@ -22,6 +22,10 @@ class AppInit
         this.force = force;
         this.consoleHelper = new ConsoleHelper();
         this.templateEninge = new EasyTemplateEngine();
+
+        this.npmCommand = (process.platform === "win32" ? "npm.cmd" : "npm");
+        this.npmOptions = {cwd: this.destDir, maxBuffer: Infinity};
+
     }
 
     async process()
@@ -137,6 +141,13 @@ class AppInit
         return zaPkg.version;
     }
 
+    static _getTypeScriptVersion()
+    {
+        let zaDir = __dirname + '/../../';
+        let zaPkg = FileHelper.parsePackageFile(zaDir);
+        return zaPkg['devDependencies']['typescript'];
+    }
+
     async _template()
     {
         const jsMainConfig = `${this.destDir}/config/main.config.js`;
@@ -161,47 +172,86 @@ class AppInit
 
         if (FileHelper.copyDirRecursive(copyDir, this.destDir)) {
             await this._template();
-            this._createSuccess();
+            if(this.typeScript) {
+                await this._installTypescriptGlobal();
+            }
+            await this._installDependencies();
+            this._printSuccess();
         } else {
             ConsoleHelper.logFailedAndEnd();
         }
     }
 
-    _createSuccess()
+    _installDependencies()
     {
-        console.log('Installing app dependencies using npm. This could take a while...');
+        return new Promise((resolve) =>
+        {
+            console.log('Installing app dependencies using npm. This could take a while...');
 
-        let npmCommand = (process.platform === "win32" ? "npm.cmd" : "npm");
-        let options = {
-            cwd: this.destDir,
-            maxBuffer: Infinity
-        };
+            let npmProcess = spawn(this.npmCommand, ['install'], this.npmOptions);
 
-        let npmProcess = spawn(npmCommand, ['install'], options);
+            npmProcess.stdout.on('data', function (data) {
+                process.stdout.write(data);
+            });
 
-        npmProcess.stdout.on('data', function (data) {
-            process.stdout.write(data);
+            npmProcess.stderr.on('data', function (data) {
+                process.stderr.write(data);
+            });
+
+            npmProcess.on('close', function (code) {
+                if (code)
+                {
+                    ConsoleHelper.logErrorMessage(`Failed to install npm dependencies. Exited with code ${code}.`);
+                    process.exit(code);
+                }
+                else
+                {
+                    resolve();
+                }
+            });
+
+            npmProcess.stdin.end();
         });
+    }
 
-        npmProcess.stderr.on('data', function (data) {
-            process.stderr.write(data);
+    _installTypescriptGlobal()
+    {
+        return new Promise((resolve) =>
+        {
+            console.log('Installing typescript global using npm. This could take a while...');
+
+            let npmProcess =
+                spawn(this.npmCommand, [`install -g typescript@${AppInit._getTypeScriptVersion()}`], this.npmOptions);
+
+            npmProcess.stdout.on('data', function (data) {
+                process.stdout.write(data);
+            });
+
+            npmProcess.stderr.on('data', function (data) {
+                process.stderr.write(data);
+            });
+
+            npmProcess.on('close', function (code) {
+                if (code)
+                {
+                    ConsoleHelper.logErrorMessage(`Failed to install typescript global. Exited with code ${code}.`);
+                    process.exit(code);
+                }
+                else
+                {
+                    resolve();
+                }
+            });
+
+            npmProcess.stdin.end();
         });
+    }
 
-        npmProcess.on('close', function (code) {
-            if (code)
-            {
-                ConsoleHelper.logErrorMessage(`Failed to install npm dependencies. Exited with code ${code}.`);
-            }
-            else
-            {
-                console.log('');
-                ConsoleHelper.logSuccessMessage(`Zation app ${this.appName} is created!`);
-                ConsoleHelper.logSuccessMessage(`You can start the server with command: 'npm start'`);
-            }
-            process.exit(code);
-        });
-
-        npmProcess.stdin.end();
+    _printSuccess()
+    {
+        console.log('');
+        ConsoleHelper.logSuccessMessage(`Zation app ${this.appName} is created!`);
+        ConsoleHelper.logSuccessMessage(`You can start the server with command: 'npm start'`);
     }
 }
 

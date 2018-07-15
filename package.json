@@ -1,15 +1,15 @@
 {
   "name": "zation",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "MIT",
   "description": "Appication Framework Master",
-  "main": "compiled/index.js",
-  "types": "compiled/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "build": "gulp compile",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "zation welcome"
+    "install": "node bin/welcome.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,9 @@
     "email": "lucacode1@gmail.com",
     "url": "https://luca.scaringella.de"
   },
+  "files": [
+    "dist/**/*"
+  ],
   "keywords": [
     "esay",
     "application",
@@ -39,13 +42,13 @@
     "fs-extra": "6.0.1",
     "minimist": "1.2.0",
     "typescript-require": "0.2.10",
-    "zation-server": "0.0.3"
+    "zation-server": "0.0.7"
   },
   "devDependencies": {
     "gulp": "3.9.1",
     "gulp-sass": "4.0.1",
     "gulp-typescript": "5.0.0-alpha.3",
-    "typescript": "2.9.2"
+    "typescript": "3.0.0-dev.20180712"
   },
   "bin": {
     "zation": "bin/cli.js"

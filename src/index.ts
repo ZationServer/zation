@@ -4,5 +4,5 @@ GitHub: LucaCode
 ©Copyright by Luca Scaringella
  */
 
-import ZationServer  = require('./../../zation-server');
+import ZationServer  = require('zation-server');
 export = ZationServer;

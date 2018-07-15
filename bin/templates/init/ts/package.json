@@ -3,12 +3,16 @@
   "version": "{{version}}",
   "description": "{{description}}",
   "license": "{{license}}",
-  "main": "compiled/index.js",{{author}}{{git}}
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",{{author}}{{git}}
   "scripts": {
     "start": "node compiled/index.js",
     "prestart": "npm run build",
     "build": "gulp compile"
   },
+  "files": [
+    "dist/**/*"
+  ],
   "dependencies": {
     "zation": "{{zationVersion}}"
   },

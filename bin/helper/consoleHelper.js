@@ -66,6 +66,13 @@ class ConsoleHelper
         console.log('     |__|/         \\__\\/                                 \\__\\/         \\__\\/    ');
     }
 
+    static printWelcome()
+    {
+        ConsoleHelper.printLogo();
+        console.log('                                THANKS FOR USING');
+        console.log('');
+    }
+
     static logFailedToRemoveDir(dirPath)
     {
         ConsoleHelper.logErrorMessage(`Failed to remove existing directory at ${dirPath}.

@@ -51,12 +51,6 @@ else if (command === 'initController')
         await new InitController(destDir,controllerTeDir,force).process();
     })();
 }
-else if(command === 'welcome')
-{
-    ConsoleHelper.printLogo();
-    console.log('                                THANKS FOR USING');
-    console.log('');
-}
 else
 {
     ConsoleHelper.logErrorMessage(`'${command} is not a valid Zation command.'`);

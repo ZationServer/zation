@@ -7,28 +7,19 @@ gulp.task('ts', function () {
     return gulp
         .src('src/**/*.ts')
         .pipe(typescript(tscConfig.compilerOptions))
-        .pipe(gulp.dest('compiled'));
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('scss', function() {
     return gulp.src('src/**/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('compiled'));
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('cof', function() {
     return gulp
-        .src([
-            'src/**/*.png',
-            'src/**/*.xml',
-            'src/**/*.webmanifest',
-            'src/**/*.svg',
-            'src/**/*.jpeg',
-            'src/**/*.js',
-            'src/**/*.ico',
-            'src/**/*.html'
-        ])
-        .pipe(gulp.dest('compiled'));
+        .src(['src/**/*','!src/**/*.ts','!src/**/*.scss'])
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('default', ['compile', 'watch']);
@@ -36,20 +27,7 @@ gulp.task('default', ['compile', 'watch']);
 gulp.task('compile', ['scss','cof','ts']);
 
 gulp.task('watch', function(cb) {
-
     gulp.watch('src/**/*.ts', ['ts']);
     gulp.watch('src/**/*.scss', ['scss']);
-
-    gulp.watch(
-        [
-            'src/**/*.png',
-            'src/**/*.xml',
-            'src/**/*.webmanifest',
-            'src/**/*.svg',
-            'src/**/*.jpeg',
-            'src/**/*.js',
-            'src/**/*.ico',
-            'src/**/*.html'
-        ],
-        ['cof']);
+    gulp.watch(['src/**/*','!src/**/*.ts','!src/**/*.scss'], ['cof']);
 });
