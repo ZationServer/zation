@@ -1,6 +1,6 @@
 import {Config} from 'zation';
 
-export = Config.appConfig(
+exports = Config.appConfig(
     {
         userGroups :
             {
@@ -28,7 +28,7 @@ export = Config.appConfig(
 
         controllerDefault :
             {
-                socketAccess : true,
+                wsAccess : true,
                 httpAccess : true,
                 access : 'all',
             },

@@ -1,6 +1,6 @@
 {
   "name": "zation",
-  "version": "0.0.5",
+  "version": "0.0.9",
   "license": "MIT",
   "description": "Appication Framework Master",
   "main": "dist/index.js",
@@ -21,7 +21,9 @@
     "url": "https://luca.scaringella.de"
   },
   "files": [
-    "dist/**/*"
+    "dist/**/*",
+    "bin/**/*",
+    "assets/**/*"
   ],
   "keywords": [
     "esay",
@@ -42,7 +44,7 @@
     "fs-extra": "6.0.1",
     "minimist": "1.2.0",
     "typescript-require": "0.2.10",
-    "zation-server": "0.0.7"
+    "zation-server": "0.0.8"
   },
   "devDependencies": {
     "gulp": "3.9.1",

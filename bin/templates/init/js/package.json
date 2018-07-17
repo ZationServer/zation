@@ -3,9 +3,9 @@
   "version": "{{version}}",
   "description": "{{description}}",
   "license": "{{license}}",
-  "main": "compiled/index.js",{{author}} {{git}}
+  "main": "index.js",{{author}} {{git}}
   "scripts": {
-    "start": "node compiled/index.js",
+    "start": "node index.js",
     "prestart": "npm run build",
     "build": "gulp compile"
   },

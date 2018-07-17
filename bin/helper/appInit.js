@@ -221,7 +221,7 @@ class AppInit
             console.log('Installing typescript global using npm. This could take a while...');
 
             let npmProcess =
-                spawn(this.npmCommand, [`install -g typescript@${AppInit._getTypeScriptVersion()}`], this.npmOptions);
+                spawn(this.npmCommand, ['install','-g',`typescript@${AppInit._getTypeScriptVersion()}`], this.npmOptions);
 
             npmProcess.stdout.on('data', function (data) {
                 process.stdout.write(data);
