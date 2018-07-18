@@ -19,6 +19,8 @@
   "devDependencies": {
     "gulp": "3.9.1",
     "gulp-typescript": "5.0.0-alpha.3",
-    "typescript": "2.9.2"
+    "typescript": "2.9.2",
+    "graceful-fs": "4.1.11",
+    "minimatch": "3.0.4"
   }
 }

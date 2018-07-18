@@ -1,6 +1,6 @@
 {
   "name": "zation",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "description": "Appication Framework Master",
   "main": "dist/index.js",
@@ -43,13 +43,15 @@
     "empty-dir": "1.0.0",
     "fs-extra": "6.0.1",
     "minimist": "1.2.0",
-    "zation-server": "0.1.0"
+    "zation-server": "0.1.1"
   },
   "devDependencies": {
     "gulp": "3.9.1",
     "gulp-sass": "4.0.1",
     "gulp-typescript": "5.0.0-alpha.3",
-    "typescript": "3.0.0-dev.20180712"
+    "typescript": "3.0.0-dev.20180712",
+    "graceful-fs": "4.1.11",
+    "minimatch": "3.0.4"
   },
   "bin": {
     "zation": "bin/cli.js"
