@@ -1,8 +1,10 @@
-const zation = require('zation');
-zation.start
+const {start,Config} = require('zation');
+
+start
 (
-    {
-        //options
-        debug : false
-    }
+    Config.starterConfig(
+        {
+            //options
+            debug : false
+        })
 );
