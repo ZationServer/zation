@@ -127,13 +127,6 @@ class AppInit
                     ConsoleHelper.logFailedToRemoveDir(this.destDir);
                     process.exit();
                 }
-
-                if(!emptyDir.sync(this.destDir))
-                {
-                    ConsoleHelper.logFailedToRemoveDir(this.destDir);
-                    process.exit();
-                }
-
             }
             else {
                 ConsoleHelper.abort();
@@ -259,6 +252,7 @@ class AppInit
         console.log('');
         ConsoleHelper.logSuccessMessage(`Zation app ${this.appName} is created!`);
         ConsoleHelper.logSuccessMessage(`You can start the server with command: 'npm start'`);
+        process.exit();
     }
 }
 
