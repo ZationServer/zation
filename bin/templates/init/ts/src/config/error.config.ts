@@ -1,6 +1,6 @@
 import {Config} from 'zation';
 
-exports = Config.errorConfig(
+module.exports = Config.errorConfig(
     {
 
     });

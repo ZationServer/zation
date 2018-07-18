@@ -1,6 +1,6 @@
 import {Config} from 'zation';
 
-exports = Config.serviceConfig(
+module.exports = Config.serviceConfig(
     {
         services:
             {

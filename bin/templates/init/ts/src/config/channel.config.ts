@@ -1,6 +1,6 @@
 import {Config} from 'zation';
 
-exports = Config.channelConfig(
+module.exports = Config.channelConfig(
     {
         default :
             {

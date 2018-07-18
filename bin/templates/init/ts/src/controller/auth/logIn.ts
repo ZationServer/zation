@@ -18,4 +18,4 @@ class LogIn extends Controller
     }
 
 }
-export = LogIn;
+module.exports = LogIn;

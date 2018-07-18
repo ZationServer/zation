@@ -8,7 +8,6 @@ const ConsoleHelper      = require('./consoleHelper');
 const EasyTemplateEngine = require('./easyTemplateEngine');
 const fs                 = require('fs');
 const fsExtra            = require('fs-extra');
-                           require('typescript-require');
 
 class InitController
 {
@@ -32,11 +31,8 @@ class InitController
     // noinspection JSMethodCanBeStatic
     getAppConfigPath(str)
     {
-        if(str.lastIndexOf('.js') === -1 && !this.typeScript) {
-            return str + 'app.config.js';
-        }
-        else if(str.lastIndexOf('.ts') === -1 && this.typeScript) {
-            return str + 'app.config.ts';
+        if(str.lastIndexOf('.js') === -1) {
+            return str + `app.config.js`;
         }
         else {
             return str;
@@ -53,7 +49,7 @@ class InitController
         let defaultAppConfigPath = '';
         let defaultControllerPath = '';
         if(this.typeScript) {
-            defaultAppConfigPath = 'src/config/app.config.ts';
+            defaultAppConfigPath = 'dist/config/app.config.js';
             defaultControllerPath = 'src/controller'
         }
         else {
@@ -61,9 +57,10 @@ class InitController
             defaultControllerPath = 'controller'
         }
 
+        const appConfigPathText = `App config path ${this.typeScript ? `(compiled to javascript (run 'npm run build' before))` : ''}:`;
 
         this.appConfigPath
-            = this.getAppConfigPath(await this.consoleHelper.question('App config path:',defaultAppConfigPath));
+            = this.getAppConfigPath(await this.consoleHelper.question(appConfigPathText,defaultAppConfigPath));
 
         this.cDir = await this.consoleHelper.question('Controller directory:',defaultControllerPath);
 

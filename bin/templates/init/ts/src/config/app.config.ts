@@ -1,6 +1,6 @@
 import {Config} from 'zation';
 
-exports = Config.appConfig(
+module.exports = Config.appConfig(
     {
         userGroups :
             {
@@ -41,6 +41,7 @@ exports = Config.appConfig(
                 {
                     name : 'logIn',
                     path : 'auth',
+                    access : 'all',
 
                     input :
                         {

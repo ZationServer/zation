@@ -1,6 +1,6 @@
 import {Config} from 'zation';
 
-exports = Config.eventConfig(
+module.exports = Config.eventConfig(
     {
         express : (smallBag, express) =>
         {

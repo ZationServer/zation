@@ -28,7 +28,7 @@ module.exports = Config.appConfig(
 
         controllerDefault :
             {
-                socketAccess : true,
+                wsAccess : true,
                 httpAccess : true,
                 access : 'all',
             },
@@ -41,6 +41,7 @@ module.exports = Config.appConfig(
                 {
                     name : 'logIn',
                     path : 'auth',
+                    access : 'all',
 
                     input :
                         {

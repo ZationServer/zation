@@ -118,8 +118,15 @@ class AppInit
             if(this.force || isOk)
             {
                 console.log('empty folder...');
-                // noinspection JSUnresolvedFunction
-                fsExtra.emptyDirSync(this.destDir);
+                try
+                {
+                    // noinspection JSUnresolvedFunction
+                    fsExtra.emptyDirSync(this.destDir);
+                }
+                catch (e) {
+                    ConsoleHelper.logFailedToRemoveDir(this.destDir);
+                    process.exit();
+                }
 
                 if(!emptyDir.sync(this.destDir))
                 {

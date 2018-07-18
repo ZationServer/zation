@@ -1,6 +1,6 @@
 import {Config} from 'zation';
 
-exports = Config.mainConfig(
+module.exports = Config.mainConfig(
     {
         port: {{port}},
         appName : '{{appName}}',

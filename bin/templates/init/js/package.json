@@ -5,9 +5,7 @@
   "license": "{{license}}",
   "main": "index.js",{{author}} {{git}}
   "scripts": {
-    "start": "node index.js",
-    "prestart": "npm run build",
-    "build": "gulp compile"
+    "start": "node index.js"
   },
   "dependencies": {
     "zation": "{{zationVersion}}"
