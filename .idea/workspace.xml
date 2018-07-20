@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/templates/init/ts/src/config/channel.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/ts/src/config/channel.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -19,11 +21,11 @@
     <session id="1475986884">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.4" value="2" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.4" value="3" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -34,42 +36,42 @@
           <entry key="controllerTs" value="1" />
           <entry key="dockerignore" value="2" />
           <entry key="gitignore" value="4" />
-          <entry key="js" value="36" />
+          <entry key="js" value="37" />
           <entry key="json" value="21" />
           <entry key="text" value="1" />
-          <entry key="ts" value="25" />
+          <entry key="ts" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Dockerfile" value="3" />
           <entry key="JSON" value="16" />
-          <entry key="JavaScript" value="36" />
+          <entry key="JavaScript" value="37" />
           <entry key="PLAIN_TEXT" value="10" />
-          <entry key="TypeScript" value="25" />
+          <entry key="TypeScript" value="26" />
           <entry key="tsconfig" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TypeScriptServerServiceImpl" value="4" />
+          <entry key="TypeScriptServerServiceImpl" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dockerignore" value="5" />
           <entry key="gitignore" value="11" />
-          <entry key="js" value="1193" />
-          <entry key="json" value="239" />
-          <entry key="ts" value="218" />
+          <entry key="js" value="1199" />
+          <entry key="json" value="240" />
+          <entry key="ts" value="224" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JSON" value="239" />
-          <entry key="JavaScript" value="1193" />
+          <entry key="JSON" value="240" />
+          <entry key="JavaScript" value="1199" />
           <entry key="PLAIN_TEXT" value="16" />
-          <entry key="TypeScript" value="218" />
+          <entry key="TypeScript" value="224" />
         </counts>
       </usages-collector>
     </session>
@@ -129,25 +131,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LICENSE">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+            <state relative-caret-position="254">
+              <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
+            <state relative-caret-position="315">
+              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/templates/init/ts/src/config/channel.config.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -266,7 +272,6 @@
         <option value="$PROJECT_DIR$/bin/templates/init/ts/src/config/service.config.js" />
         <option value="$PROJECT_DIR$/bin/templates/init/ts/.dockerignore" />
         <option value="$PROJECT_DIR$/bin/templates/init/js/config/main.config.js" />
-        <option value="$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js" />
         <option value="$PROJECT_DIR$/bin/templates/init/js/config/error.config.js" />
         <option value="$PROJECT_DIR$/bin/templates/init/js/config/event.config.js" />
         <option value="$PROJECT_DIR$/bin/templates/init/js/config/service.config.js" />
@@ -285,7 +290,6 @@
         <option value="$PROJECT_DIR$/bin/templates/init/js/package.json" />
         <option value="$PROJECT_DIR$/bin/templates/init/js/config/app.config.js" />
         <option value="$PROJECT_DIR$/bin/templates/init/ts/src/config/app.config.ts" />
-        <option value="$PROJECT_DIR$/bin/templates/init/ts/src/config/channel.config.ts" />
         <option value="$PROJECT_DIR$/bin/templates/init/ts/src/config/error.config.ts" />
         <option value="$PROJECT_DIR$/bin/templates/init/ts/src/config/event.config.ts" />
         <option value="$PROJECT_DIR$/bin/templates/init/ts/src/config/main.config.ts" />
@@ -294,6 +298,8 @@
         <option value="$PROJECT_DIR$/bin/helper/initController.js" />
         <option value="$PROJECT_DIR$/bin/templates/init/ts/package.json" />
         <option value="$PROJECT_DIR$/bin/helper/appInit.js" />
+        <option value="$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js" />
+        <option value="$PROJECT_DIR$/bin/templates/init/ts/src/config/channel.config.ts" />
         <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
@@ -329,17 +335,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="zation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zation" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -351,13 +346,24 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="zation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zation" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="8.11.1" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../zation-server" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
@@ -460,11 +466,12 @@
       <workItem from="1531920518542" duration="9946000" />
       <workItem from="1531955508873" duration="50000" />
       <workItem from="1531966103358" duration="81000" />
+      <workItem from="1531989404649" duration="1279000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108690000" />
+    <option name="totallyTimeSpent" value="109969000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -477,6 +484,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11064278" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -575,13 +583,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/undertaker/lib/set-task.js" />
-    <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/zation-server/.npmignore" />
     <entry file="file://$PROJECT_DIR$/node_modules/yargs/yargs.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -689,13 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/templates/init/ts/src/config/channel.config.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/templates/init/ts/src/config/error.config.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -729,6 +723,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/templates/init/ts/package.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -779,17 +780,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        <state relative-caret-position="315">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/templates/init/ts/src/config/channel.config.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
+        <state relative-caret-position="254">
+          <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
         </state>
       </provider>
     </entry>

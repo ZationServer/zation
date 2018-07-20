@@ -4,8 +4,8 @@ module.exports = Config.channelConfig(
     {
         default :
             {
-                publish : false,
-                subscribe : true
+                publishAccess : false,
+                subscribeAccess : true
             },
 
         customChannels :
