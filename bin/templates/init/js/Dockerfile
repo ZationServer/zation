@@ -1,6 +1,4 @@
-FROM node:8.9-alpine
-
-RUN apk add --update \libc6-compat
+FROM node:8.9
 
 LABEL appName="{{appNameLC}}"
 LABEL version="{{version}}"
@@ -10,7 +8,7 @@ RUN mkdir -p /usr/src/
 WORKDIR /usr/src/
 COPY . /usr/src/
 
-RUN npm install .
+RUN npm install
 
 EXPOSE {{port}}
 
