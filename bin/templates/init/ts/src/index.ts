@@ -3,8 +3,9 @@ import {start,Config} from 'zation';
 start
 (
     Config.starterConfig(
-    {
-        //options
-        debug : false
-    })
+        {
+            //options
+            debug : {{useDebug}},
+            startDebug : {{useStartDebug}},
+        })
 );

@@ -30,9 +30,18 @@ class AppInit
 
     async process()
     {
+        this._startMessage();
         await this._getInformation();
         await this._checkDir();
         await this._init();
+    }
+
+    // noinspection JSMethodCanBeStatic
+    _startMessage()
+    {
+        console.log();
+        console.log(`Welcome to init a zation app`);
+        console.log();
     }
 
     async _getInformation()
@@ -52,11 +61,20 @@ class AppInit
         this.license = await this.consoleHelper.question('License:','ISC');
         this.author = await this.consoleHelper.question('Author:');
 
+        this.useDebug =
+            (await this.consoleHelper.question
+            ('Do you want to use debug mode?','no')) === 'yes';
+
+        this.useStartDebug =
+            (await this.consoleHelper.question
+            ('Do you want to use start debug mode?','no')) === 'yes';
+
         console.log('');
 
         this._printInformation();
 
         let isOk = (await this.consoleHelper.question('Is this ok?','yes')) === 'yes';
+        console.log();
         if(!isOk)
         {
             ConsoleHelper.abort();
@@ -71,6 +89,8 @@ class AppInit
             this.templateEninge.addToMap('timeZone',this.timeZone );
             this.templateEninge.addToMap('license',this.license);
             this.templateEninge.addToMap('zationVersion',AppInit._getZationVersion());
+            this.templateEninge.addToMap('useDebug',this.useDebug);
+            this.templateEninge.addToMap('useStartDebug',this.useStartDebug);
 
             if(this.author !== null) {
                 this.templateEninge.addToMap('author',`\n  "author" : "${this.author}", `);
@@ -100,6 +120,8 @@ class AppInit
         console.log(`Time zone: ${this.timeZone}`);
         console.log(`License: ${this.license}`);
         console.log(`Author: ${this.author}`);
+        console.log(`Use debug mode: ${this.useDebug}`);
+        console.log(`Use start debug mode: ${this.useStartDebug}`);
         console.log('');
     }
 
@@ -113,6 +135,7 @@ class AppInit
             {
                 let message = `The folder: '${this.destDir}' is not empty. Do you want to empty it and continue?`;
                 isOk = (await this.consoleHelper.question(message,'no')) === 'yes';
+                console.log();
             }
 
             if(this.force || isOk)
@@ -153,6 +176,10 @@ class AppInit
         const jsMainConfig = `${this.destDir}/config/main.config.js`;
         const tsMainConfig = `${this.destDir}/src/config/main.config.ts`;
         EasyTemplateEngine.templateFile(this.typeScript ? tsMainConfig : jsMainConfig,this.templateEninge);
+
+        const jsIndex = `${this.destDir}/index.js`;
+        const tsIndex = `${this.destDir}/src/index.ts`;
+        EasyTemplateEngine.templateFile(this.typeScript ? tsIndex : jsIndex,this.templateEninge);
 
         EasyTemplateEngine.templateFile(`${this.destDir}/package.json`,this.templateEninge);
 

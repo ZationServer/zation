@@ -5,6 +5,7 @@ start
     Config.starterConfig(
         {
             //options
-            debug : false
+            debug : {{useDebug}},
+            startDebug : {{useStartDebug}},
         })
 );
