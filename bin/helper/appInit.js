@@ -155,6 +155,8 @@ class AppInit
         EasyTemplateEngine.templateFile(this.typeScript ? tsMainConfig : jsMainConfig,this.templateEninge);
 
         EasyTemplateEngine.templateFile(`${this.destDir}/package.json`,this.templateEninge);
+
+        EasyTemplateEngine.templateFile(`${this.destDir}/Dockerfile`,this.templateEninge);
     }
 
     async _init()

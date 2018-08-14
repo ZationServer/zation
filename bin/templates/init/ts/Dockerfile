@@ -1,8 +1,10 @@
-FROM node:8-slim
+FROM node:8.9-alpine
+
+RUN apk add --update \libc6-compat
 
 LABEL maintainer="Zation"
-LABEL version="0.7"
-LABEL description="Docker file for Zation-Server"
+LABEL version="{{zationVersion}}"
+LABEL description="Docker file for {{appNameLC}}"
 
 RUN mkdir -p /usr/src/
 WORKDIR /usr/src/
@@ -10,6 +12,6 @@ COPY .. /usr/src/
 
 RUN npm install .
 
-EXPOSE 8000
+EXPOSE {{port}}
 
 CMD ["npm", "run", "start:docker"]
