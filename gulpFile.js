@@ -22,12 +22,12 @@ gulp.task('cof', function() {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['compile', 'watch']);
+gulp.task('compile', gulp.parallel('scss','cof','ts'));
 
-gulp.task('compile', ['scss','cof','ts']);
-
-gulp.task('watch', function(cb) {
-    gulp.watch('src/**/*.ts', ['ts']);
-    gulp.watch('src/**/*.scss', ['scss']);
-    gulp.watch(['src/**/*','!src/**/*.ts','!src/**/*.scss'], ['cof']);
+gulp.task('watch', function() {
+    gulp.watch('src/**/*.ts', gulp.parallel('ts'));
+    gulp.watch('src/**/*.scss', gulp.parallel('scss'));
+    gulp.watch(['src/**/*','!src/**/*.ts','!src/**/*.scss'], gulp.parallel('cof'));
 });
+
+gulp.task('default', gulp.series('compile','watch'));

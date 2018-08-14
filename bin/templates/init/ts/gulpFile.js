@@ -15,12 +15,12 @@ gulp.task('cof', function() {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['compile', 'watch']);
-
-gulp.task('compile', ['cof','ts']);
+gulp.task('compile', gulp.parallel('cof','ts'));
 
 gulp.task('watch', () =>
 {
-    gulp.watch('src/**/*.ts', ['ts']);
-    gulp.watch(['src/**/*', '!src/**/*.ts'], ['cof']);
+    gulp.watch('src/**/*.ts', gulp.parallel('ts'));
+    gulp.watch(['src/**/*', '!src/**/*.ts'], gulp.parallel('cof'));
 });
+
+gulp.task('default', gulp.series('compile', 'watch'));

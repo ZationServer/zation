@@ -5,7 +5,8 @@
   "license": "{{license}}",
   "main": "index.js",{{author}} {{git}}
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "start:docker": "node dockerwait.js && node index.js"
   },
   "dependencies": {
     "zation": "{{zationVersion}}"
