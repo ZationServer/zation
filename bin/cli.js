@@ -51,6 +51,11 @@ else if (command === 'initController')
         await new InitController(destDir,controllerTeDir,force).process();
     })();
 }
+else if (command === 'projectCommands')
+{
+    ConsoleHelper.logNpmProjectCommands();
+    process.exit();
+}
 else
 {
     ConsoleHelper.logErrorMessage(`'${command} is not a valid Zation command.'`);

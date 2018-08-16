@@ -9,7 +9,12 @@
     "start": "node dist/index.js",
     "start:docker": "node dockerwait.js && node dist/index.js",
     "prestart": "npm run build",
-    "build": "gulp compile"
+    "build": "gulp compile",
+    "watch": "gulp watch",
+    "dockerBuild": "docker build -t zation/{{appNameLC}} . ",
+    "dockerExport" : "docker save --output {{appNameLC}}.tar zation/{{appNameLC}}",
+    "dockerRun": "docker run --name zation-{{appNameLC}} -p{{port}}:{{port}} zation/{{appNameLC}}",
+    "dockerStop": "docker stop zation-{{appNameLC}} && docker rm -f zation-{{appNameLC}}"
   },
   "files": [
     "dist/**/*"

@@ -32,6 +32,11 @@ class ConsoleHelper
         console.log('\x1b[32m%s\x1b[0m', '   [Success]',message);
     }
 
+    static logInfoMessage(message)
+    {
+        console.log('\x1b[34m%s\x1b[0m','   [INFO]',message);
+    }
+
     // noinspection JSUnusedGlobalSymbols
     static logWarningMessage(message)
     {
@@ -40,15 +45,29 @@ class ConsoleHelper
 
     static logHelp()
     {
+        console.log();
         console.log('Usage: zation [options] [command]');
         console.log('Options:');
-        console.log("  -v                Get the version of the current zation installation");
-        console.log('  --help            Get info on how to use this command');
-        console.log('  --force           Force all necessary directory modifications without prompts');
-        console.log();
+        console.log("  -v                    Get the version of the current zation installation");
+        console.log('  --help                Get info on how to use this command');
+        console.log('  --force               Force all necessary directory modifications without prompts');
         console.log('Commands:');
-        console.log(`  init              Init a new zation app in working directory`);
-        console.log(`  initController    Creates zation controller from app config`);
+        console.log(`  init                  Init a new zation app in working directory`);
+        console.log(`  initController        Creates zation controller from app config`);
+        console.log(`  projectCommands       Shows npm project commands (if zation init was used)`)
+    }
+
+    static logNpmProjectCommands()
+    {
+        console.log();
+        console.log('Npm Project Commands (if zation init was used):');
+        console.log(`  npm start                           Starts the server (and build (only typescript))`);
+        console.log(`  npm run build (only typescript)     Build the project`);
+        console.log(`  npm run watch (only typescript)     Starts to build automatically when a file changes`);
+        console.log(`  npm run dockerBuild                 Build an docker image`);
+        console.log(`  npm run dockerExport                Export the docker image in project folder`);
+        console.log(`  npm run dockerRun                   Run docker container`);
+        console.log(`  npm run dockerStop                  Stop docker container`);
     }
 
     static printLogo()

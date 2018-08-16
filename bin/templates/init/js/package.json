@@ -6,7 +6,11 @@
   "main": "index.js",{{author}} {{git}}
   "scripts": {
     "start": "node index.js",
-    "start:docker": "node dockerwait.js && node index.js"
+    "start:docker": "node dockerwait.js && node index.js",
+    "dockerBuild": "docker build -t zation/{{appNameLC}} . ",
+    "dockerExport" : "docker save --output {{appNameLC}}.tar zation/{{appNameLC}}",
+    "dockerRun": "docker run --name zation-{{appNameLC}} -p{{port}}:{{port}} zation/{{appNameLC}}",
+    "dockerStop": "docker stop zation-{{appNameLC}} && docker rm -f zation-{{appNameLC}}"
   },
   "dependencies": {
     "zation": "{{zationVersion}}"
