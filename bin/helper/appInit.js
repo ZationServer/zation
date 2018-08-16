@@ -63,11 +63,11 @@ class AppInit
 
         this.useDebug =
             (await this.consoleHelper.question
-            ('Do you want to use debug mode?','no')) === 'yes';
+            ('Use debug mode?','no')) === 'yes';
 
         this.useStartDebug =
             (await this.consoleHelper.question
-            ('Do you want to use start debug mode?','no')) === 'yes';
+            ('Use start debug mode?','no')) === 'yes';
 
         console.log('');
 
@@ -280,8 +280,8 @@ class AppInit
     {
         console.log('');
         ConsoleHelper.logSuccessMessage(`Zation app ${this.appName} is created!`);
-        ConsoleHelper.logInfoMessage(`You can start the server with command: 'npm start'`);
-        ConsoleHelper.logInfoMessage(`The 'zation projectCommands' command will show you more possible npm commands`);
+        ConsoleHelper.logInfoMessage(`   You can start the server with command: 'npm start'`);
+        ConsoleHelper.logInfoMessage(`   The 'zation projectCommands' command will show you more possible npm commands`);
         process.exit();
     }
 }

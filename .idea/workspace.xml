@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cli.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cli.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/helper/appInit.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/appInit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/helper/consoleHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/consoleHelper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/js/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/js/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/ts/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/ts/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -65,16 +63,16 @@
           <entry key="Dockerfile" value="41" />
           <entry key="dockerignore" value="9" />
           <entry key="gitignore" value="11" />
-          <entry key="js" value="3466" />
-          <entry key="json" value="339" />
+          <entry key="js" value="3488" />
+          <entry key="json" value="340" />
           <entry key="ts" value="304" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Dockerfile" value="41" />
-          <entry key="JSON" value="339" />
-          <entry key="JavaScript" value="3466" />
+          <entry key="JSON" value="340" />
+          <entry key="JavaScript" value="3488" />
           <entry key="PLAIN_TEXT" value="20" />
           <entry key="TypeScript" value="304" />
         </counts>
@@ -136,11 +134,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="231">
+              <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -158,7 +156,7 @@
         <entry file="file://$PROJECT_DIR$/bin/cli.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1281">
-              <caret line="61" column="28" lean-forward="true" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
+              <caret line="61" column="28" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -172,11 +170,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/helper/appInit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="288" column="25" lean-forward="true" selection-start-line="288" selection-start-column="25" selection-end-line="288" selection-end-column="25" />
+            <state relative-caret-position="3698">
+              <caret line="283" column="41" selection-start-line="283" selection-start-column="41" selection-end-line="283" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -194,7 +192,7 @@
         <entry file="file://$PROJECT_DIR$/bin/templates/init/ts/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="441">
-              <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+              <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -223,8 +221,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/helper/consoleHelper.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="40" column="37" lean-forward="true" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+            <state relative-caret-position="168">
+              <caret line="65" column="90" lean-forward="true" selection-start-line="65" selection-start-column="90" selection-end-line="65" selection-end-column="90" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -309,12 +307,12 @@
         <option value="$PROJECT_DIR$/bin/templates/init/js/Dockerfile" />
         <option value="$PROJECT_DIR$/bin/templates/init/ts/Dockerfile" />
         <option value="$PROJECT_DIR$/bin/helper/dockerHelper.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/bin/templates/init/ts/package.json" />
         <option value="$PROJECT_DIR$/bin/templates/init/js/package.json" />
         <option value="$PROJECT_DIR$/bin/cli.js" />
-        <option value="$PROJECT_DIR$/bin/helper/consoleHelper.js" />
         <option value="$PROJECT_DIR$/bin/helper/appInit.js" />
+        <option value="$PROJECT_DIR$/bin/helper/consoleHelper.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -359,6 +357,11 @@
             <path>
               <item name="zation" type="b2602c69:ProjectViewProjectNode" />
               <item name="zation" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zation" type="462c0819:PsiDirectoryNode" />
               <item name="bin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -366,35 +369,6 @@
               <item name="zation" type="462c0819:PsiDirectoryNode" />
               <item name="bin" type="462c0819:PsiDirectoryNode" />
               <item name="helper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zation" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zation" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="init" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zation" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="init" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zation" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="init" type="462c0819:PsiDirectoryNode" />
-              <item name="ts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -525,12 +499,12 @@
       <workItem from="1534237920854" duration="1219000" />
       <workItem from="1534245277975" duration="19634000" />
       <workItem from="1534339734813" duration="471000" />
-      <workItem from="1534364166498" duration="7987000" />
+      <workItem from="1534364166498" duration="10035000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140592000" />
+    <option name="totallyTimeSpent" value="142640000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -822,7 +796,7 @@
     <entry file="file://$PROJECT_DIR$/bin/templates/init/ts/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
-          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -847,34 +821,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/cli.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1281">
-          <caret line="61" column="28" lean-forward="true" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
+          <caret line="61" column="28" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/helper/appInit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3698">
+          <caret line="283" column="41" selection-start-line="283" selection-start-column="41" selection-end-line="283" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/helper/consoleHelper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="40" column="37" lean-forward="true" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+        <state relative-caret-position="168">
+          <caret line="65" column="90" lean-forward="true" selection-start-line="65" selection-start-column="90" selection-end-line="65" selection-end-column="90" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/helper/appInit.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="288" column="25" lean-forward="true" selection-start-line="288" selection-start-column="25" selection-end-line="288" selection-end-column="25" />
+        <state relative-caret-position="231">
+          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
         </state>
       </provider>
     </entry>

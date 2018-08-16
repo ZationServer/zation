@@ -65,7 +65,7 @@ class ConsoleHelper
         console.log(`  npm run build (only typescript)     Build the project`);
         console.log(`  npm run watch (only typescript)     Starts to build automatically when a file changes`);
         console.log(`  npm run dockerBuild                 Build an docker image`);
-        console.log(`  npm run dockerExport                Export the docker image in project folder`);
+        console.log(`  npm run dockerExport                Export the docker image in the project folder`);
         console.log(`  npm run dockerRun                   Run docker container`);
         console.log(`  npm run dockerStop                  Stop docker container`);
     }
