@@ -10,6 +10,7 @@ const ConsoleHelper    = require('./helper/consoleHelper');
 const FileHelper       = require('./helper/fileHelper');
 const AppInit          = require('./helper/appInit');
 const InitController   = require('./helper/initController');
+const NpmPackageCopy   = require('./helper/npmPackageCopy');
 
 const path = require('path');
 const argv = require('minimist')(process.argv.slice(2));
@@ -29,7 +30,7 @@ if (argv['help'])
     process.exit();
 }
 
-if (argv['v'])
+if (argv['v'] || argv['version'])
 {
     let zaDir = __dirname + '/../';
     let zaPkg = FileHelper.parsePackageFile(zaDir);
@@ -56,8 +57,34 @@ else if (command === 'projectCommands')
     ConsoleHelper.logNpmProjectCommands();
     process.exit();
 }
+else if (command === 'cloneClusterState')
+{
+    (async () =>
+    {
+        let finishedText = `You can start the zation-cluster-state server with 'node index.js'`;
+        await new NpmPackageCopy
+        (destDir,'zation-cluster-state',finishedText,force).process();
+        process.exit();
+    })();
+}
+else if (command === 'cloneClusterBroker')
+{
+    (async () =>
+    {
+        let finishedText = `You can start the zation-cluster-broker server with 'node index.js'`;
+        await new NpmPackageCopy
+        (destDir,'zation-cluster-broker',finishedText,force).process();
+        process.exit();
+    })();
+}
+else if(!command)
+{
+    ConsoleHelper.logHelp();
+    process.exit();
+}
 else
 {
+    console.log();
     ConsoleHelper.logErrorMessage(`'${command} is not a valid Zation command.'`);
     ConsoleHelper.logHelp();
     process.exit();

@@ -188,10 +188,10 @@ class AppInit
 
     async _init()
     {
+        let startTimeStamp = Date.now();
         ConsoleHelper.logSetup();
 
         let copyDir = '';
-
         if(this.typeScript) {
             copyDir = `${this.initDir}/ts`
         }
@@ -205,7 +205,7 @@ class AppInit
                 await this._installTypescriptGlobal();
             }
             await this._installDependencies();
-            this._printSuccess();
+            this._printSuccess(Date.now() - startTimeStamp);
         } else {
             ConsoleHelper.logFailedAndEnd();
         }
@@ -276,10 +276,10 @@ class AppInit
         });
     }
 
-    _printSuccess()
+    _printSuccess(processTime)
     {
         console.log('');
-        ConsoleHelper.logSuccessMessage(`Zation app ${this.appName} is created!`);
+        ConsoleHelper.logSuccessMessage(`Zation app '${this.appName}' is created in ${processTime}!`);
         ConsoleHelper.logInfoMessage(`   You can start the server with command: 'npm start'`);
         ConsoleHelper.logInfoMessage(`   The 'zation projectCommands' command will show you more possible npm commands`);
         process.exit();

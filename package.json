@@ -43,7 +43,9 @@
     "empty-dir": "1.0.0",
     "fs-extra": "6.0.1",
     "minimist": "1.2.0",
-    "zation-server": "0.2.9"
+    "zation-server": "0.2.9",
+    "global-dirs": "0.1.1",
+    "is-path-inside": "2.0.0"
   },
   "devDependencies": {
     "gulp": "4.0.0",
