@@ -48,15 +48,20 @@ class ConsoleHelper
         console.log();
         console.log('Usage: zation [options] [command]');
         console.log('Options:');
-        console.log("  -v | -version         Get the version of the current zation installation");
-        console.log('  --help                Get info on how to use this command');
-        console.log('  --force               Force all necessary directory modifications without prompts');
+        console.log("  -v | -version                   Get the version of the current zation installation");
+        console.log('  --help                          Get info on how to use this command');
+        console.log('  --force                         Force all necessary directory');
+        console.log('                                  modifications without prompt');
         console.log('Commands:');
-        console.log(`  init                  Init a new zation app in working directory`);
-        console.log(`  initController        Creates zation controller from app config`);
-        console.log(`  projectCommands       Shows npm project commands (if zation init was used)`);
-        console.log(`  cloneClusterState     Clone the zation-cluster-state package`);
-        console.log(`  cloneClusterBroker    Clone the zation-cluster-broker package`);
+        console.log(`  init [folderName]               Init a new zation app in working directory`);
+        console.log(`                                  or optional in folder`);
+        console.log(`  initController                  Creates zation controller from app config`);
+        console.log(`  projectCommands                 Shows npm project commands (if zation init was used)`);
+        console.log(`  cloneClusterState [folderName]  Clone the zation-cluster-state package`);
+        console.log(`                                  in working directory or optional in folder`);
+        console.log(`  cloneClusterBroker [folderName] Clone the zation-cluster-broker package`);
+        console.log(`                                  in working directory or optional in folder`);
+        console.log();
     }
 
     static logNpmProjectCommands()

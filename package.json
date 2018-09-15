@@ -40,12 +40,12 @@
     "tools"
   ],
   "dependencies": {
+    "download-git-repo": "1.1.0",
     "empty-dir": "1.0.0",
     "fs-extra": "6.0.1",
     "minimist": "1.2.0",
     "zation-server": "0.2.9",
-    "global-dirs": "0.1.1",
-    "is-path-inside": "2.0.0"
+    "fs": "0.0.1-security"
   },
   "devDependencies": {
     "gulp": "4.0.0",

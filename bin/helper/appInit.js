@@ -12,19 +12,20 @@ const path               = require('path');
 const childProcess       = require('child_process');
 const spawn              = childProcess.spawn;
 const fsExtra            = require('fs-extra');
+const fs                 = require('fs');
 
 class AppInit
 {
-    constructor(destDir,initDir,force)
+    constructor(destDir,folderName,initDir,force)
     {
         this.destDir = destDir;
         this.initDir = initDir;
         this.force = force;
+        this.folderName = folderName;
         this.consoleHelper = new ConsoleHelper();
         this.templateEninge = new EasyTemplateEngine();
 
         this.npmCommand = (process.platform === "win32" ? "npm.cmd" : "npm");
-        this.npmOptions = {cwd: this.destDir, maxBuffer: Infinity};
 
     }
 
@@ -46,7 +47,8 @@ class AppInit
 
     async _getInformation()
     {
-        let defaultAppName = this.destDir.substring((this.destDir.lastIndexOf(path.sep)+path.sep.length));
+        let defaultAppName = !!this.folderName ? this.folderName :
+            this.destDir.substring((this.destDir.lastIndexOf(path.sep)+path.sep.length));
 
         this.typeScript =
             (await this.consoleHelper.question
@@ -57,7 +59,7 @@ class AppInit
         this.version = await this.consoleHelper.question('Version:','1.0.0');
         this.git = await this.consoleHelper.question('Git repository:');
         this.port = Number.parseInt(await this.consoleHelper.question('Port:',3000));
-        this.timeZone = await this.consoleHelper.question('Time zone:','Europe/Berlin');
+        this.timeZone = await this.consoleHelper.question('Time zone:');
         this.license = await this.consoleHelper.question('License:','ISC');
         this.author = await this.consoleHelper.question('Author:');
 
@@ -99,6 +101,14 @@ class AppInit
                 this.templateEninge.addToMap('author','');
             }
 
+            if(!this.timeZone) {
+                this.templateEninge.addToMap('timeZone','');
+            }
+
+            else {
+                this.templateEninge.addToMap('timeZone',`\n        timeZone : "${this.timeZone}", `);
+            }
+
             if(this.git !== null) {
                 this.templateEninge.addToMap('git',`\n  "repository": {\n    "type": "git",\n    "url": "${this.git}"\n  },`);
             }
@@ -127,13 +137,23 @@ class AppInit
 
     async _checkDir()
     {
+        let message = `The folder: '${this.destDir}' is not empty. Do you want to empty it and continue?`;
+
+        if(!!this.folderName) {
+            this.destDir = path.normalize(this.destDir + '/' + this.folderName);
+            message = `There is already a directory at '${this.destDir}'. Do you want to overwrite it?`;
+        }
+
+        if(!fs.existsSync(this.destDir)) {
+            fs.mkdirSync(this.destDir);
+        }
+
         if(!emptyDir.sync(this.destDir))
         {
             let isOk = false;
 
             if(!this.force)
             {
-                let message = `The folder: '${this.destDir}' is not empty. Do you want to empty it and continue?`;
                 isOk = (await this.consoleHelper.question(message,'no')) === 'yes';
                 console.log();
             }
@@ -217,7 +237,7 @@ class AppInit
         {
             console.log('Installing app dependencies using npm. This could take a while...');
 
-            let npmProcess = spawn(this.npmCommand, ['install'], this.npmOptions);
+            let npmProcess = spawn(this.npmCommand, ['install'], {cwd: this.destDir, maxBuffer: Infinity});
 
             npmProcess.stdout.on('data', function (data) {
                 process.stdout.write(data);
@@ -279,7 +299,7 @@ class AppInit
     _printSuccess(processTime)
     {
         console.log('');
-        ConsoleHelper.logSuccessMessage(`Zation app '${this.appName}' is created in ${processTime}!`);
+        ConsoleHelper.logSuccessMessage(`Zation app '${this.appName}' is created in ${processTime}ms!`);
         ConsoleHelper.logInfoMessage(`   You can start the server with command: 'npm start'`);
         ConsoleHelper.logInfoMessage(`   The 'zation projectCommands' command will show you more possible npm commands`);
         process.exit();

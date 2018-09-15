@@ -15,6 +15,7 @@ const NpmPackageCopy   = require('./helper/npmPackageCopy');
 const path = require('path');
 const argv = require('minimist')(process.argv.slice(2));
 const command = argv._[0];
+const arg1 = argv._[1];
 const force = argv['force'];
 
 const initTeDir       = __dirname + '/templates/init';
@@ -42,7 +43,7 @@ if (command === 'init')
 {
     (async () =>
     {
-        await new AppInit(destDir,initTeDir,force).process();
+        await new AppInit(destDir,arg1,initTeDir,force).process();
     })();
 }
 else if (command === 'initController')
@@ -61,9 +62,9 @@ else if (command === 'cloneClusterState')
 {
     (async () =>
     {
-        let finishedText = `You can start the zation-cluster-state server with 'node index.js'`;
+        let finishedText = `You can start the zation-cluster-state server with 'npm start'`;
         await new NpmPackageCopy
-        (destDir,'zation-cluster-state',finishedText,force).process();
+        (destDir,arg1,'direct:https://github.com/ZationServer/zation-cluster-state.git',finishedText,force).process();
         process.exit();
     })();
 }
@@ -71,9 +72,9 @@ else if (command === 'cloneClusterBroker')
 {
     (async () =>
     {
-        let finishedText = `You can start the zation-cluster-broker server with 'node index.js'`;
+        let finishedText = `You can start the zation-cluster-broker server with 'npm start'`;
         await new NpmPackageCopy
-        (destDir,'zation-cluster-broker',finishedText,force).process();
+        (destDir,arg1,'direct:https://github.com/ZationServer/zation-cluster-broker.git',finishedText,force).process();
         process.exit();
     })();
 }

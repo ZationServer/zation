@@ -8,45 +8,59 @@ const ConsoleHelper      = require('./consoleHelper');
 const emptyDir           = require('empty-dir');
 const childProcess       = require('child_process');
 const spawn              = childProcess.spawn;
-const exec               = childProcess.exec;
+const download           = require('download-git-repo');
 const fsExtra            = require('fs-extra');
+const path               = require('path');
 const fs                 = require('fs');
-const globalDirs         = require('global-dirs');
-const isPathInside       = require('is-path-inside');
 
 class NpmPackageCopy
 {
-    constructor(destDir,npmModuleName,finishedText,force)
+    constructor(destDir,folderName,git,finishedText,force)
     {
         this.destDir = destDir;
-        this.npmPackageName = npmModuleName;
+        this.folderName = folderName;
+        this.git = git;
         this.finishedText = finishedText;
         this.force = force;
         this.consoleHelper = new ConsoleHelper();
 
         this.npmCommand = (process.platform === "win32" ? "npm.cmd" : "npm");
-        this.npmOptions = {cwd: this.destDir, maxBuffer: Infinity};
     }
 
     async process() {
+        console.log();
         await this._checkDir();
         await this._init();
     }
 
     async _checkDir()
     {
-        if(!emptyDir.sync(this.destDir)) {
+        let message = `The folder: '${this.destDir}' is not empty. Do you want to empty it and continue?`;
+
+        if(!!this.folderName) {
+            this.destDir = path.normalize(this.destDir + '/' + this.folderName);
+            message = `There is already a directory at '${this.destDir}'. Do you want to overwrite it?`;
+        }
+
+        if(!fs.existsSync(this.destDir)) {
+            fs.mkdirSync(this.destDir);
+        }
+
+        if(!emptyDir.sync(this.destDir))
+        {
             let isOk = false;
 
-            if (!this.force) {
-                let message = `The folder: '${this.destDir}' is not empty. Do you want to empty it and continue?`;
-                isOk = (await this.consoleHelper.question(message, 'no')) === 'yes';
+            if(!this.force)
+            {
+                isOk = (await this.consoleHelper.question(message,'no')) === 'yes';
                 console.log();
             }
 
-            if (this.force || isOk) {
+            if(this.force || isOk)
+            {
                 console.log('empty folder...');
-                try {
+                try
+                {
                     // noinspection JSUnresolvedFunction
                     fsExtra.emptyDirSync(this.destDir);
                 }
@@ -62,18 +76,38 @@ class NpmPackageCopy
     }
 
     async _init() {
-        await this._installNpmClone();
-        await this._installModule();
-        this._printSuccess();
+        await this._copyRepo();
+        await this._installDependencies();
+        this.successPrint();
+        process.exit();
     }
 
-    _installModule()
+    successPrint() {
+        ConsoleHelper.logSuccessMessage('Git repository was successfully cloned!');
+        ConsoleHelper.logInfoMessage(this.finishedText);
+    }
+
+    _copyRepo()
+    {
+        console.log('Clone repository...');
+        console.log();
+        return new Promise((resolve) => {
+            download(this.git,this.destDir, { clone: true }, (err) => {
+                if(err) {
+                    ConsoleHelper.logFailedAndEnd('Error by cloning git repository!');
+                }
+                resolve();
+            })
+        });
+    }
+
+    _installDependencies()
     {
         return new Promise((resolve) =>
         {
-            console.log(`Clone npm package '${this.npmPackageName}' and install dependencies. This could take a while...`);
+            console.log('Installing app dependencies using npm. This could take a while...');
 
-            let npmProcess = exec(`npm-clone install ${this.npmPackageName}`);
+            let npmProcess = spawn(this.npmCommand, ['install'], {cwd: this.destDir, maxBuffer: Infinity});
 
             npmProcess.stdout.on('data', function (data) {
                 process.stdout.write(data);
@@ -83,63 +117,20 @@ class NpmPackageCopy
                 process.stderr.write(data);
             });
 
-            npmProcess.on('close', (code) => {
-                if (code) {
-                    ConsoleHelper.logErrorMessage(`Failed to copy package '${this.npmPackageName}' and install npm dependencies. Exited with code ${code}.`);
+            npmProcess.on('close', function (code) {
+                if (code)
+                {
+                    ConsoleHelper.logErrorMessage(`Failed to install npm dependencies. Exited with code ${code}.`);
                     process.exit(code);
                 }
-                else {
+                else
+                {
                     resolve();
                 }
             });
+
             npmProcess.stdin.end();
         });
-    }
-
-    // noinspection JSMethodCanBeStatic
-    _checkNpmCopyInstalled(npmModuleName) {
-        return isPathInside(npmModuleName, globalDirs['yarn']['packages']) ||
-            isPathInside(npmModuleName, fs.realpathSync(globalDirs['npm']['packages']));
-    }
-
-    _installNpmClone()
-    {
-        return new Promise((resolve) =>
-        {
-            if(!this._checkNpmCopyInstalled('npm-clone')) {
-                console.log('Installing npm-clone global using npm...');
-
-                let npmProcess =
-                    spawn(this.npmCommand, ['install','-g','npm-clone'], this.npmOptions);
-
-                npmProcess.stdout.on('data', function (data) {
-                    process.stdout.write(data);
-                });
-
-                npmProcess.stderr.on('data', function (data) {
-                    process.stderr.write(data);
-                });
-
-                npmProcess.on('close', function (code) {
-                    if (code) {
-                        ConsoleHelper.logErrorMessage(`Failed to install npm-clone global. Exited with code ${code}.`);
-                        process.exit(code);
-                    }
-                    else {
-                        resolve();
-                    }
-                });
-                npmProcess.stdin.end();
-            }
-        });
-    }
-
-    _printSuccess()
-    {
-        console.log('');
-        ConsoleHelper.logSuccessMessage(`Npm package ${this.npmPackageName} is cloned!`);
-        ConsoleHelper.logInfoMessage(`   ${this.finishedText}`);
-        process.exit();
     }
 }
 
