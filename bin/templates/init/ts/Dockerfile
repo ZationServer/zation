@@ -10,6 +10,8 @@ COPY . /usr/src/
 
 RUN npm install
 
+RUN npm install pm2 -g
+
 RUN npm run build
 
 RUN rm -rf /usr/src/src

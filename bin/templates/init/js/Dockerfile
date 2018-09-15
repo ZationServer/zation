@@ -10,6 +10,8 @@ COPY . /usr/src/
 
 RUN npm install
 
+RUN npm install pm2 -g
+
 EXPOSE {{port}}
 
 CMD ["npm", "run", "start:docker"]
