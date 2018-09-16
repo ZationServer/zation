@@ -300,8 +300,8 @@ class AppInit
     {
         console.log('');
         ConsoleHelper.logSuccessMessage(`Zation app '${this.appName}' is created in ${processTime}ms!`);
-        ConsoleHelper.logInfoMessage(`   You can start the server with command: 'npm start'`);
-        ConsoleHelper.logInfoMessage(`   The 'zation projectCommands' command will show you more possible npm commands`);
+        ConsoleHelper.logInfoMessage(`   You can start the server with the command: 'npm start'`);
+        ConsoleHelper.logInfoMessage(`   The command 'zation projectCommands' will show you more possible npm commands`);
         process.exit();
     }
 }

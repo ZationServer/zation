@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="add pm2 support">
+    <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="update template chConfig to new Syntax">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cli.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cli.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/helper/appInit.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/appInit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/helper/consoleHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/consoleHelper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/helper/npmPackageCopy.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/npmPackageCopy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/js/config/main.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/js/config/main.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/ts/src/config/main.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/ts/src/config/main.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -180,35 +173,35 @@
         <counts>
           <entry key="Dockerfile" value="2" />
           <entry key="dockerignore" value="1" />
-          <entry key="js" value="12" />
+          <entry key="js" value="17" />
           <entry key="json" value="4" />
-          <entry key="ts" value="2" />
+          <entry key="ts" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Dockerfile" value="2" />
           <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="12" />
+          <entry key="JavaScript" value="17" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="TypeScript" value="2" />
+          <entry key="TypeScript" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Dockerfile" value="17" />
-          <entry key="js" value="1257" />
+          <entry key="js" value="1272" />
           <entry key="json" value="40" />
           <entry key="ts" value="3" />
-          <entry key="txt" value="20" />
+          <entry key="txt" value="199" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Dockerfile" value="17" />
           <entry key="JSON" value="40" />
-          <entry key="JavaScript" value="1257" />
-          <entry key="PLAIN_TEXT" value="20" />
+          <entry key="JavaScript" value="1272" />
+          <entry key="PLAIN_TEXT" value="199" />
           <entry key="TypeScript" value="3" />
         </counts>
       </usages-collector>
@@ -222,29 +215,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/helper/appInit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="108" column="75" lean-forward="true" selection-start-line="108" selection-start-column="75" selection-end-line="108" selection-end-column="75" />
+            <state relative-caret-position="411">
+              <caret line="303" column="82" lean-forward="true" selection-start-line="303" selection-start-column="82" selection-end-line="303" selection-end-column="82" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/templates/init/ts/package.json">
+        <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-55">
-              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+            <state relative-caret-position="460">
+              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/templates/init/ts/src/config/channel.config.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/error.config.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/event.config.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/app.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -259,45 +271,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/templates/init/ts/src/config/main.config.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/cli.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="68" column="9" lean-forward="true" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/helper/fileHelper.js">
+        <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/service.config.js">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/helper/initController.js">
+        <entry file="file://$PROJECT_DIR$/bin/templates/init/ts/src/config/main.config.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-562">
-              <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/helper/consoleHelper.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="60" column="75" selection-start-line="60" selection-start-column="75" selection-end-line="60" selection-end-column="75" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="138">
+              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -364,15 +346,12 @@
         <option value="$PROJECT_DIR$/bin/helper/welcome.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/bin/templates/init/ts/.gitignore" />
-        <option value="$PROJECT_DIR$/bin/templates/init/js/config/app.config.js" />
         <option value="$PROJECT_DIR$/bin/templates/init/ts/src/config/app.config.ts" />
         <option value="$PROJECT_DIR$/bin/templates/init/ts/src/config/error.config.ts" />
         <option value="$PROJECT_DIR$/bin/templates/init/ts/src/config/event.config.ts" />
         <option value="$PROJECT_DIR$/bin/templates/init/ts/src/config/service.config.ts" />
         <option value="$PROJECT_DIR$/bin/templates/init/ts/src/controller/auth/logIn.ts" />
         <option value="$PROJECT_DIR$/bin/helper/initController.js" />
-        <option value="$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js" />
-        <option value="$PROJECT_DIR$/bin/templates/init/ts/src/config/channel.config.ts" />
         <option value="$PROJECT_DIR$/bin/templates/init/js/index.js" />
         <option value="$PROJECT_DIR$/bin/templates/init/ts/src/index.ts" />
         <option value="$PROJECT_DIR$/bin/templates/init/js/dockerwait.js" />
@@ -393,6 +372,9 @@
         <option value="$PROJECT_DIR$/bin/cli.js" />
         <option value="$PROJECT_DIR$/bin/helper/consoleHelper.js" />
         <option value="$PROJECT_DIR$/bin/helper/npmPackageCopy.js" />
+        <option value="$PROJECT_DIR$/bin/templates/init/js/config/app.config.js" />
+        <option value="$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js" />
+        <option value="$PROJECT_DIR$/bin/templates/init/ts/src/config/channel.config.ts" />
         <option value="$PROJECT_DIR$/bin/helper/appInit.js" />
       </list>
     </option>
@@ -639,7 +621,7 @@
       <workItem from="1534364166498" duration="10708000" />
       <workItem from="1534506101158" duration="2557000" />
       <workItem from="1535565115657" duration="8609000" />
-      <workItem from="1537038093942" duration="9749000" />
+      <workItem from="1537038093942" duration="12070000" />
     </task>
     <task id="LOCAL-00001" summary="add pm2 support">
       <created>1537041074067</created>
@@ -648,11 +630,25 @@
       <option name="project" value="LOCAL" />
       <updated>1537041074067</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add cluster state and broker clone support&#10;add new folderName support&#10;add new timeZone null support&#10;fix bugs">
+      <created>1537054953459</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1537054953459</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update template chConfig to new Syntax">
+      <created>1537087399752</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1537087399752</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164228000" />
+    <option name="totallyTimeSpent" value="166549000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -667,7 +663,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1430585" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16208598" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -679,7 +675,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Statistic" order="8" weight="0.32939914" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4976867" visible="true" weight="0.25307125" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4976867" visible="true" weight="0.25307125" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50033045" side_tool="true" weight="0.32624114" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3286638" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
@@ -696,18 +692,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add pm2 support" />
-    <option name="LAST_COMMIT_MESSAGE" value="add pm2 support" />
+    <MESSAGE value="add cluster state and broker clone support&#10;add new folderName support&#10;add new timeZone null support&#10;fix bugs" />
+    <MESSAGE value="update template chConfig to new Syntax" />
+    <option name="LAST_COMMIT_MESSAGE" value="update template chConfig to new Syntax" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/service.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/undertaker/lib/set-task.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/zation-server/.npmignore" />
     <entry file="file://$PROJECT_DIR$/node_modules/yargs/yargs.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/yargs/index.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/zation-server/package.json" />
@@ -718,13 +707,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/zation-server/dist/lib/helper/configEditTool/appConfigStructure.d.ts" />
     <entry file="file://$PROJECT_DIR$/dist/index.js" />
-    <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/app.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="46" column="25" lean-forward="true" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -774,20 +756,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/templates/init/ts/src/config/channel.config.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
@@ -959,13 +927,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/main.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/templates/init/ts/src/config/main.config.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -973,10 +934,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/app.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/error.config.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/event.config.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/main.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/service.config.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/templates/init/ts/src/config/channel.config.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bin/helper/appInit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="108" column="75" lean-forward="true" selection-start-line="108" selection-start-column="75" selection-end-line="108" selection-end-column="75" />
+        <state relative-caret-position="411">
+          <caret line="303" column="82" lean-forward="true" selection-start-line="303" selection-start-column="82" selection-end-line="303" selection-end-column="82" />
         </state>
       </provider>
     </entry>
