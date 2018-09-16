@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="update to version 0.3.0">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="update to version 0.3.1">
+      <change beforePath="$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/templates/init/ts/src/config/channel.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/ts/src/config/channel.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -190,19 +191,19 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Dockerfile" value="17" />
-          <entry key="js" value="1272" />
-          <entry key="json" value="49" />
-          <entry key="ts" value="3" />
-          <entry key="txt" value="252" />
+          <entry key="js" value="1282" />
+          <entry key="json" value="51" />
+          <entry key="ts" value="4" />
+          <entry key="txt" value="253" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Dockerfile" value="17" />
-          <entry key="JSON" value="49" />
-          <entry key="JavaScript" value="1272" />
-          <entry key="PLAIN_TEXT" value="252" />
-          <entry key="TypeScript" value="3" />
+          <entry key="JSON" value="51" />
+          <entry key="JavaScript" value="1282" />
+          <entry key="PLAIN_TEXT" value="253" />
+          <entry key="TypeScript" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -218,8 +219,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="254">
+              <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -236,8 +237,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+            <state relative-caret-position="437">
+              <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -245,8 +246,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/templates/init/ts/src/config/channel.config.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+            <state relative-caret-position="391">
+              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -372,9 +373,9 @@
         <option value="$PROJECT_DIR$/bin/helper/consoleHelper.js" />
         <option value="$PROJECT_DIR$/bin/helper/npmPackageCopy.js" />
         <option value="$PROJECT_DIR$/bin/templates/init/js/config/app.config.js" />
+        <option value="$PROJECT_DIR$/bin/helper/appInit.js" />
         <option value="$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js" />
         <option value="$PROJECT_DIR$/bin/templates/init/ts/src/config/channel.config.ts" />
-        <option value="$PROJECT_DIR$/bin/helper/appInit.js" />
         <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
@@ -548,7 +549,7 @@
       <workItem from="1534364166498" duration="10708000" />
       <workItem from="1534506101158" duration="2557000" />
       <workItem from="1535565115657" duration="8609000" />
-      <workItem from="1537038093942" duration="12954000" />
+      <workItem from="1537038093942" duration="13480000" />
     </task>
     <task id="LOCAL-00001" summary="add pm2 support">
       <created>1537041074067</created>
@@ -585,11 +586,18 @@
       <option name="project" value="LOCAL" />
       <updated>1537137620646</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update to version 0.3.1">
+      <created>1537138470706</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1537138470706</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167433000" />
+    <option name="totallyTimeSpent" value="167959000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -604,19 +612,20 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16208598" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16208598" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" weight="0.32923833" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3297414" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49966952" visible="true" weight="0.31941032" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49966952" weight="0.31941032" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Statistic" order="8" weight="0.32939914" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4976867" weight="0.25307125" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4976867" visible="true" weight="0.25307125" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50033045" side_tool="true" weight="0.32624114" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3286638" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
@@ -637,7 +646,8 @@
     <MESSAGE value="update template chConfig to new Syntax" />
     <MESSAGE value="change app init success log" />
     <MESSAGE value="update to version 0.3.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="update to version 0.3.0" />
+    <MESSAGE value="update to version 0.3.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="update to version 0.3.1" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/yargs/yargs.js" />
@@ -893,20 +903,6 @@
     <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/service.config.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/templates/init/ts/src/config/channel.config.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/helper/appInit.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
@@ -914,10 +910,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/templates/init/ts/src/config/channel.config.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="254">
+          <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
         </state>
       </provider>
     </entry>

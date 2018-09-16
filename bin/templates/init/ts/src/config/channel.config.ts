@@ -6,7 +6,7 @@ module.exports = Config.channelConfig(
             {
                 default :
                     {
-                        publishAccess : false,
+                        clientPublishAccess : false,
                         subscribeAccess : true,
                     },
             },
@@ -15,7 +15,7 @@ module.exports = Config.channelConfig(
             {
                 default :
                     {
-                        publishAccess : false,
+                        clientPublishAccess : false,
                         subscribeAccess : true,
                     },
             },
