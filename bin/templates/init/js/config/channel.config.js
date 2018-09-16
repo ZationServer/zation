@@ -2,19 +2,21 @@ const {Config} = require('zation');
 
 module.exports = Config.channelConfig(
     {
-        default :
-            {
-                publishAccess : false,
-                subscribeAccess : true
-            },
-
         customChannels :
             {
-
+                default :
+                    {
+                        publishAccess : false,
+                        subscribeAccess : true,
+                    },
             },
 
         customIdChannels :
             {
-
-            }
+                default :
+                    {
+                        publishAccess : false,
+                        subscribeAccess : true,
+                    },
+            },
     });
