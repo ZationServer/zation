@@ -72,7 +72,7 @@ else if (command === 'cloneClusterBroker')
 {
     (async () =>
     {
-        let finishedText = `You can start the zation-cluster-broker server with 'npm start'`;
+        let finishedText = `You can start the zation-cluster-broker server with 'STATE_SERVER_HOST="localhost" node index.js'`;
         await new NpmPackageCopy
         (destDir,arg1,'direct:https://github.com/ZationServer/zation-cluster-broker.git',finishedText,force).process();
         process.exit();

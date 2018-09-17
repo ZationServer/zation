@@ -301,6 +301,10 @@ class AppInit
         console.log('');
         ConsoleHelper.logSuccessMessage(`Zation app '${this.appName}' is created in ${processTime}ms!`);
         ConsoleHelper.logInfoMessage(`   You can start the server with the command: 'npm start'`);
+        if(!!this.folderName) {
+            ConsoleHelper.logInfoMessage(`   But do not forget to change the directory with 'cd ${this.folderName}'`);
+        }
+        ConsoleHelper.logInfoMessage(`   At permission error, try to start the server with sudo`);
         ConsoleHelper.logInfoMessage(`   The command 'zation projectCommands' will show you more possible npm commands`);
         process.exit();
     }

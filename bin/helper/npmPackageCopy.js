@@ -85,6 +85,10 @@ class NpmPackageCopy
     successPrint() {
         ConsoleHelper.logSuccessMessage('Git repository was successfully cloned!');
         ConsoleHelper.logInfoMessage(this.finishedText);
+        if(!!this.folderName) {
+            ConsoleHelper.logInfoMessage(`   But do not forget to change the directory with 'cd ${this.folderName}'`);
+        }
+        ConsoleHelper.logInfoMessage(`   At permission error, try to start the server with sudo`);
     }
 
     _copyRepo()
