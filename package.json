@@ -1,6 +1,6 @@
 {
   "name": "zation",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "license": "MIT",
   "description": "Appication Framework Master",
   "main": "dist/index.js",
@@ -44,7 +44,7 @@
     "empty-dir": "1.0.0",
     "fs-extra": "6.0.1",
     "minimist": "1.2.0",
-    "zation-server": "0.3.2",
+    "zation-server": "0.3.3",
     "fs": "0.0.1-security"
   },
   "devDependencies": {
