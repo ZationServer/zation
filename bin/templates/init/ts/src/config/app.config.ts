@@ -30,6 +30,8 @@ module.exports = Config.appConfig(
             {
                 wsAccess : true,
                 httpAccess : true,
+                httpPostAllowed : true,
+                httpGetAllowed : true,
                 access : 'all',
             },
 
@@ -45,10 +47,14 @@ module.exports = Config.appConfig(
 
                     input :
                         {
-                            userGroup :
+                            email :
+                                {
+                                    type : 'email',
+                                },
+                            password :
                                 {
                                     type : 'string',
-                                    isOptional : true
+                                    minLength : 3
                                 },
                         },
                 },

@@ -1,10 +1,10 @@
 const {Controller,Result,TaskError,TaskErrorBag,ErrorType} = require('zation');
 class LogIn extends Controller
 {
-    async handle(bag,{userName,password})
+    async handle(bag,{email,password})
     {
         //check something with the input...
-        await bag.authTo('user');
+        await bag.authenticate('user');
     }
 
     async initialize(smallBag)
