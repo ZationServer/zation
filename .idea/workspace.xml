@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="update to tp version 0.3.5">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cli.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cli.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/js/controller/auth/logIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/js/controller/auth/logIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/ts/src/controller/auth/logIn.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/init/ts/src/controller/auth/logIn.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="update to tp version 0.3.5" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -169,7 +162,7 @@
     <session id="955376553">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
@@ -417,7 +410,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="718" />
+    <option name="x" value="404" />
+    <option name="width" value="1036" />
     <option name="height" value="900" />
   </component>
   <component name="ProjectView">
@@ -572,7 +566,7 @@
       <workItem from="1537038093942" duration="13849000" />
       <workItem from="1537178748634" duration="1718000" />
       <workItem from="1537205023148" duration="4657000" />
-      <workItem from="1537267851440" duration="2862000" />
+      <workItem from="1537267851440" duration="2863000" />
     </task>
     <task id="LOCAL-00001" summary="add pm2 support">
       <created>1537041074067</created>
@@ -669,7 +663,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177565000" />
+    <option name="totallyTimeSpent" value="177566000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -682,7 +676,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16208598" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
