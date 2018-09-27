@@ -121,6 +121,11 @@ class AppInit
     _printInformation()
     {
         console.log('Information: ');
+        console.log(`Path: ${
+                !!this.folderName ? 
+                path.normalize(this.destDir + '/' + this.folderName) : 
+                path.normalize(this.destDir)
+        }`);
         console.log(`Project type: ${this.typeScript ? 'typescript' : 'javascript'}`);
         console.log(`App name: ${this.appName}`);
         console.log(`Description: ${this.description}`);
