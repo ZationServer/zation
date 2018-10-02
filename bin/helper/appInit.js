@@ -24,9 +24,7 @@ class AppInit
         this.folderName = folderName;
         this.consoleHelper = new ConsoleHelper();
         this.templateEninge = new EasyTemplateEngine();
-
         this.npmCommand = (process.platform === "win32" ? "npm.cmd" : "npm");
-
     }
 
     async process()
