@@ -3,7 +3,6 @@ class LogIn extends Controller
 {
     async handle(bag,{email,password})
     {
-        //chek something...
         await bag.authenticate('user');
     }
     
