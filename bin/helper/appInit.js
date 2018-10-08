@@ -63,11 +63,14 @@ class AppInit
 
         this.useDebug =
             (await this.consoleHelper.question
-            ('Use debug mode?','no')) === 'yes';
+            ('Use debug mode?','true')) === 'yes';
 
         this.useStartDebug =
             (await this.consoleHelper.question
             ('Use start debug mode?','no')) === 'yes';
+
+        this.panelUserName = await this.consoleHelper.question('Panel user name:','admin');
+        this.panelPassword = await this.consoleHelper.question('Panel password:','admin');
 
         console.log('');
 
@@ -91,6 +94,8 @@ class AppInit
             this.templateEninge.addToMap('zationVersion',AppInit._getZationVersion());
             this.templateEninge.addToMap('useDebug',this.useDebug);
             this.templateEninge.addToMap('useStartDebug',this.useStartDebug);
+            this.templateEninge.addToMap('panelUserName',this.panelUserName);
+            this.templateEninge.addToMap('panelPassword',this.panelPassword);
 
             if(this.author !== null) {
                 this.templateEninge.addToMap('author',`\n  "author" : "${this.author}", `);
@@ -135,6 +140,8 @@ class AppInit
         console.log(`Author: ${this.author}`);
         console.log(`Use debug mode: ${this.useDebug}`);
         console.log(`Use start debug mode: ${this.useStartDebug}`);
+        console.log(`Panel user name: ${this.panelUserName}`);
+        console.log(`Panel password: ${this.panelPassword}`);
         console.log('');
     }
 
