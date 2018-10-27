@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="add new client init support&#10;improve console log&#10;change import sever template from zation to zation-server&#10;improve zation init process&#10;add shortcuts &#10;and more...">
+    <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="fix bugs and improve console.log">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/helper/clientInit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="276">
+              <caret line="139" column="29" lean-forward="true" selection-start-line="139" selection-start-column="29" selection-end-line="139" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -40,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/helper/consoleHelper.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1470">
-              <caret line="102" column="42" lean-forward="true" selection-start-line="102" selection-start-column="42" selection-end-line="102" selection-end-column="42" />
+            <state relative-caret-position="390">
+              <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
             </state>
           </provider>
         </entry>
@@ -49,17 +48,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/cli.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-582">
-              <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
+            <state relative-caret-position="224">
+              <caret line="79" column="1" lean-forward="true" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="39" column="11" lean-forward="true" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+            <state relative-caret-position="340">
+              <caret line="46" column="27" lean-forward="true" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -67,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/helper/serverInit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-211">
-              <caret line="134" column="66" selection-start-line="134" selection-start-column="66" selection-end-line="134" selection-end-column="66" />
+            <state relative-caret-position="213">
+              <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
             </state>
           </provider>
         </entry>
@@ -125,6 +124,7 @@
       <find>logFail</find>
       <find>_get</find>
       <find>isApp</find>
+      <find>Console.</find>
     </findStrings>
     <replaceStrings>
       <replace>let</replace>
@@ -165,7 +165,6 @@
         <option value="$PROJECT_DIR$/../../testZone/server/package.json" />
         <option value="$PROJECT_DIR$/bin/templates/initServer/ts/package.json" />
         <option value="$PROJECT_DIR$/bin/templates/initClient/node/package.json" />
-        <option value="$PROJECT_DIR$/bin/helper/serverInit.js" />
         <option value="$PROJECT_DIR$/bin/templates/initClient/node/src/index.ts" />
         <option value="$PROJECT_DIR$/../../testZone/nodeClient/tsconfig.json" />
         <option value="$PROJECT_DIR$/../zation-server/src/lib/main/zationWorker.ts" />
@@ -180,13 +179,14 @@
         <option value="$PROJECT_DIR$/../../testZone/nodeClient/package.json" />
         <option value="$PROJECT_DIR$/bin/templates/initClient/web/src/index.ts" />
         <option value="$PROJECT_DIR$/bin/templates/initClient/web/package.json" />
-        <option value="$PROJECT_DIR$/bin/helper/clientInit.js" />
-        <option value="$PROJECT_DIR$/bin/helper/consoleHelper.js" />
-        <option value="$PROJECT_DIR$/bin/cli.js" />
         <option value="$PROJECT_DIR$/../zation-cluster-state/.gitignore" />
         <option value="$PROJECT_DIR$/../zation-server/src/lib/main/zationMaster.ts" />
         <option value="$PROJECT_DIR$/../zation-server/package.json" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/bin/cli.js" />
+        <option value="$PROJECT_DIR$/bin/helper/consoleHelper.js" />
+        <option value="$PROJECT_DIR$/bin/helper/serverInit.js" />
+        <option value="$PROJECT_DIR$/bin/helper/clientInit.js" />
       </list>
     </option>
   </component>
@@ -223,6 +223,17 @@
             <path>
               <item name="zation" type="b2602c69:ProjectViewProjectNode" />
               <item name="zation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zation" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zation" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="helper" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -356,7 +367,7 @@
       <workItem from="1538571128030" duration="311000" />
       <workItem from="1538665451709" duration="7351000" />
       <workItem from="1540057112343" duration="17000" />
-      <workItem from="1540557486641" duration="11464000" />
+      <workItem from="1540557486641" duration="12201000" />
     </task>
     <task id="LOCAL-00001" summary="add pm2 support">
       <created>1537041074067</created>
@@ -484,11 +495,25 @@
       <option name="project" value="LOCAL" />
       <updated>1540650807173</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="update version to 0.3.8">
+      <created>1540651678562</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1540651678562</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fix bugs and improve console.log">
+      <created>1540652454041</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1540652454041</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="217492000" />
+    <option name="totallyTimeSpent" value="218229000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -503,8 +528,8 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.79079497" visible="true" weight="0.31782946" />
-      <window_info id="Structure" order="1" sideWeight="0.20920502" side_tool="true" visible="true" weight="0.31782946" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.78984237" visible="true" weight="0.31782946" />
+      <window_info id="Structure" order="1" sideWeight="0.21015762" side_tool="true" visible="true" weight="0.31782946" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Gulp" order="3" side_tool="true" />
       <window_info id="npm" order="4" side_tool="true" />
@@ -517,7 +542,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32923833" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Statistic" order="8" weight="0.32939914" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4976867" visible="true" weight="0.13614458" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4976867" visible="true" weight="0.3120482" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50033045" side_tool="true" weight="0.32624114" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3280098" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
@@ -549,7 +574,9 @@
     <MESSAGE value="small format update" />
     <MESSAGE value="add panel user/password support" />
     <MESSAGE value="add new client init support&#10;improve console log&#10;change import sever template from zation to zation-server&#10;improve zation init process&#10;add shortcuts &#10;and more..." />
-    <option name="LAST_COMMIT_MESSAGE" value="add new client init support&#10;improve console log&#10;change import sever template from zation to zation-server&#10;improve zation init process&#10;add shortcuts &#10;and more..." />
+    <MESSAGE value="update version to 0.3.8" />
+    <MESSAGE value="fix bugs and improve console.log" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bugs and improve console.log" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/bin/helper/versionManager.js">
@@ -826,13 +853,6 @@
     <entry file="file://$PROJECT_DIR$/bin/templates/initClient/web/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/helper/serverInit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-211">
-          <caret line="134" column="66" selection-start-line="134" selection-start-column="66" selection-end-line="134" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/templates/initClient/web/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -850,13 +870,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/helper/clientInit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/templates/initClient/node/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -867,24 +880,38 @@
     <entry file="file://$PROJECT_DIR$/bin/templates/initClient/web/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/helper/consoleHelper.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1470">
-          <caret line="102" column="42" lean-forward="true" selection-start-line="102" selection-start-column="42" selection-end-line="102" selection-end-column="42" />
+        <state relative-caret-position="340">
+          <caret line="46" column="27" lean-forward="true" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/cli.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-582">
-          <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
+        <state relative-caret-position="224">
+          <caret line="79" column="1" lean-forward="true" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/bin/helper/consoleHelper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="39" column="11" lean-forward="true" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+        <state relative-caret-position="390">
+          <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/helper/serverInit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/helper/clientInit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="139" column="29" lean-forward="true" selection-start-line="139" selection-start-column="29" selection-end-line="139" selection-end-column="29" />
         </state>
       </provider>
     </entry>
