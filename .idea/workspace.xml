@@ -1,65 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="add new client init support&#10;improve console log&#10;change import sever template from zation to zation-server&#10;improve zation init process&#10;add shortcuts &#10;and more...">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/helper/clientInit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/helper/fileSystemHelper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/helper/npmRunner.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/helper/versionManager.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/initClient/node/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/initClient/node/src/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/initClient/web/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/initClient/web/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/initClient/web/src/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/initClient/web/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/initClient/web/webpack.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/initServer/js/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/initServer/ts/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/initServer/ts/gulpFile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/templates/initServer/ts/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cli.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cli.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/helper/appInit.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/serverInit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/helper/consoleHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/consoleHelper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/helper/fileHelper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/helper/initController.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/initController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/helper/npmPackageCopy.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/npmPackageCopy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/controller/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/controller/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/controller/controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/controller/controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/js/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/js/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/js/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initClient/node/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/js/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/js/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/js/config/app.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/js/config/app.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/js/config/channel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/js/config/channel.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/js/config/error.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/js/config/error.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/js/config/event.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/js/config/event.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/js/config/main.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/js/config/main.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/js/config/service.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/js/config/service.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/js/controller/auth/logIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/js/controller/auth/logIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/js/dockerwait.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/js/dockerwait.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/js/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/js/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/ts/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/ts/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/ts/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initClient/web/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/ts/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/ts/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/ts/dockerwait.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/ts/dockerwait.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/ts/gulpFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initClient/node/gulpFile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/ts/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/ts/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/ts/src/config/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/ts/src/config/app.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/ts/src/config/channel.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/ts/src/config/channel.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/ts/src/config/error.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/ts/src/config/error.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/ts/src/config/event.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/ts/src/config/event.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/ts/src/config/main.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/ts/src/config/main.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/ts/src/config/service.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/ts/src/config/service.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/ts/src/controller/auth/logIn.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/ts/src/controller/auth/logIn.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/ts/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/ts/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/init/ts/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initClient/node/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-    </list>
+    <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="add new client init support&#10;improve console log&#10;change import sever template from zation to zation-server&#10;improve zation init process&#10;add shortcuts &#10;and more..." />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -113,7 +55,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/cli.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="-855">
               <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
             </state>
           </provider>
@@ -279,21 +221,6 @@
               <item name="zation" type="b2602c69:ProjectViewProjectNode" />
               <item name="zation" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="zation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zation" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zation" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -426,7 +353,7 @@
       <workItem from="1538571128030" duration="311000" />
       <workItem from="1538665451709" duration="7351000" />
       <workItem from="1540057112343" duration="17000" />
-      <workItem from="1540557486641" duration="10739000" />
+      <workItem from="1540557486641" duration="10958000" />
     </task>
     <task id="LOCAL-00001" summary="add pm2 support">
       <created>1537041074067</created>
@@ -547,11 +474,18 @@
       <option name="project" value="LOCAL" />
       <updated>1539027164280</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="add new client init support&#10;improve console log&#10;change import sever template from zation to zation-server&#10;improve zation init process&#10;add shortcuts &#10;and more...">
+      <created>1540650807173</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1540650807173</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216767000" />
+    <option name="totallyTimeSpent" value="216986000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -564,9 +498,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.78994614" visible="true" weight="0.31782946" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.78994614" visible="true" weight="0.31782946" />
       <window_info id="Structure" order="1" sideWeight="0.21005386" side_tool="true" visible="true" weight="0.31782946" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Gulp" order="3" side_tool="true" />
@@ -584,7 +517,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50033045" side_tool="true" weight="0.32624114" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3280098" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
-      <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Messages" order="13" visible="true" weight="0.32891566" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -946,7 +879,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/cli.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
+        <state relative-caret-position="-855">
           <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
         </state>
       </provider>
