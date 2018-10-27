@@ -64,10 +64,10 @@ class ClientInit
         this.description = await this.consoleHelper.question('Description:','Zation application client');
         this.version = await this.consoleHelper.question('Version:','1.0.0');
         this.git = await this.consoleHelper.question('Git repository:');
-        this.serverHost = Number.parseInt(await this.consoleHelper.question('Server host:','localhost'));
-        this.serverPath = Number.parseInt(await this.consoleHelper.question('Server path:','/zation'));
+        this.serverHost = await this.consoleHelper.question('Server host:','localhost');
+        this.serverPath = await this.consoleHelper.question('Server path:','/zation');
         this.serverPort = Number.parseInt(await this.consoleHelper.question('Server port:',3000));
-        this.serverPostKey = Number.parseInt(await this.consoleHelper.question('Server post key:','zation'));
+        this.serverPostKey = await this.consoleHelper.question('Server post key:','zation');
         this.license = await this.consoleHelper.question('License:','ISC');
         this.author = await this.consoleHelper.question('Author:');
         this.useDebug =
@@ -138,7 +138,7 @@ class ClientInit
         ConsoleHelper.logBusyMessage('Process template files...');
 
         if(this.isNodeOption || this.isWebOption) {
-            EasyTemplateEngine.templateFile(`${this.destDir}/src/index.ts`);
+            EasyTemplateEngine.templateFile(`${this.destDir}/src/index.ts`,this.templateEninge);
         }
 
         EasyTemplateEngine.templateFile(`${this.destDir}/package.json`,this.templateEninge);
@@ -147,7 +147,7 @@ class ClientInit
     async _init()
     {
         let startTimeStamp = Date.now();
-        ConsoleHelper.logSetup();
+        ConsoleHelper.logBusyInit();
 
         const copyDir = `${this.initDir}/${this.lowerOption}`;
 

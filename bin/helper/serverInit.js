@@ -149,7 +149,7 @@ class ServerInit
     async _init()
     {
         let startTimeStamp = Date.now();
-        ConsoleHelper.logSetup();
+        ConsoleHelper.logBusyInit();
 
         let copyDir = '';
         if(this.typeScript) {

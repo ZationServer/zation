@@ -86,7 +86,7 @@ else if(!command)
 else
 {
     console.log();
-    ConsoleHelper.logErrorMessage(`'${command} is not a valid Zation command.'`);
+    ConsoleHelper.logErrorMessage(`'${command}' is not a valid Zation command.`);
     ConsoleHelper.logHelp();
     process.exit();
 }

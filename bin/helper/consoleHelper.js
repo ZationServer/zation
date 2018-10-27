@@ -55,7 +55,7 @@ class ConsoleHelper
         console.log('Usage: zation [options] [command]');
         console.log('Options:');
         console.log("  -v | -version                   Get the version of the current zation installation.");
-        console.log('  --help                          Get info on how to use this command.');
+        console.log('  --help                          Get info on how to use zation in cli.');
         console.log('  --force                         Force all necessary directory');
         console.log('                                  modifications without prompt.');
         console.log('Commands:');
@@ -119,9 +119,9 @@ class ConsoleHelper
 
     static printVersion()
     {
-        Console.log(`Zation Version: ${VersionManager.getZationVersion()}`);
-        Console.log(`Zation Server Version: ${VersionManager.getZationServerVersion()}`);
-        Console.log(`Zation Client Version: ${VersionManager.getZationClientVersion()}`);
+        console.log(`Zation Version: ${VersionManager.getZationVersion()}`);
+        console.log(`Zation Server Version: ${VersionManager.getZationServerVersion()}`);
+        console.log(`Zation Client Version: ${VersionManager.getZationClientVersion()}`);
     }
 
     static logFailedToRemoveDir(dirPath)
@@ -135,9 +135,8 @@ class ConsoleHelper
         ConsoleHelper.logErrorMessage('Failed to init necessary files. Please check your permissions and try again.');
     }
 
-    static logSetup()
-    {
-        console.log('init app...');
+    static logBusyInit() {
+        ConsoleHelper.logBusyMessage('init app...');
     }
 
     question(question, defaultValue)
