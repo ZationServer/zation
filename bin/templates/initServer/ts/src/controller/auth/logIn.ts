@@ -1,11 +1,11 @@
 import {Controller,Result,TaskError,TaskErrorBag,ErrorType} from 'zation-server';
-class {{name}} extends Controller
+class LogIn extends Controller
 {
-    async handle(bag,{{input}})
+    async handle(bag,{email,password})
     {
-
+        await bag.authenticate('user');
     }
-
+    
     async initialize(smallBag)
     {
 
@@ -15,5 +15,6 @@ class {{name}} extends Controller
     {
 
     }
+
 }
-export = {{name}};
+module.exports = LogIn;

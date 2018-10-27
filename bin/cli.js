@@ -7,8 +7,8 @@ GitHub: LucaCode
  */
 
 const ConsoleHelper    = require('./helper/consoleHelper');
-const FileHelper       = require('./helper/fileHelper');
-const AppInit          = require('./helper/appInit');
+const ServerInit       = require('./helper/serverInit');
+const ClientInit       = require('./helper/clientInit');
 const InitController   = require('./helper/initController');
 const NpmPackageCopy   = require('./helper/npmPackageCopy');
 
@@ -18,7 +18,8 @@ const command = argv._[0];
 const arg1 = argv._[1];
 const force = argv['force'];
 
-const initTeDir       = __dirname + '/templates/init';
+const initServerDir   = __dirname + '/templates/initServer';
+const initClientDir   = __dirname + '/templates/initClient';
 const controllerTeDir = __dirname + '/templates/controller';
 
 const destDir = path.normalize(process.cwd());
@@ -33,33 +34,33 @@ if (argv['help'])
 
 if (argv['v'] || argv['version'])
 {
-    let zaDir = __dirname + '/../';
-    let zaPkg = FileHelper.parsePackageFile(zaDir);
-    console.log('v' + zaPkg.version);
+    ConsoleHelper.printVersion();
     process.exit();
 }
 
-if (command === 'init')
-{
+if (command === 'initServer' || command === 'is') {
     (async () =>
     {
-        await new AppInit(destDir,arg1,initTeDir,force).process();
+        await new ServerInit(destDir,arg1,initServerDir,force).process();
     })();
 }
-else if (command === 'initController')
-{
+else if (command === 'initClient' || command === 'ic') {
+    (async () =>
+    {
+        await new ClientInit(destDir,arg1,initClientDir,force).process();
+    })();
+}
+else if (command === 'initController' || command === 'ico') {
     (async () =>
     {
         await new InitController(destDir,controllerTeDir,force).process();
     })();
 }
-else if (command === 'projectCommands')
-{
+else if (command === 'projectCommands' || command === 'pc') {
     ConsoleHelper.logNpmProjectCommands();
     process.exit();
 }
-else if (command === 'cloneClusterState')
-{
+else if (command === 'cloneClusterState' || command === 'ccs') {
     (async () =>
     {
         let finishedText = `   You can start the zation-cluster-state server with 'npm start'`;
@@ -68,8 +69,7 @@ else if (command === 'cloneClusterState')
         process.exit();
     })();
 }
-else if (command === 'cloneClusterBroker')
-{
+else if (command === 'cloneClusterBroker' || command === 'ccb') {
     (async () =>
     {
         let finishedText = `   You can start the zation-cluster-broker server with 'STATE_SERVER_HOST="localhost" node index.js'`;

@@ -5,4 +5,9 @@ GitHub: LucaCode
  */
 
 import ZationServer  = require('zation-server');
-export = ZationServer;
+import ZationClient  = require('zation-client');
+
+export {
+    ZationServer as Server,
+    ZationClient as Client
+};

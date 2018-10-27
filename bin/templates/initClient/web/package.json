@@ -1,0 +1,30 @@
+{
+  "name": "{{appNameLC}}",
+  "version": "{{version}}",
+  "description": "{{description}}",
+  "license": "{{license}}",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",{{author}}{{git}}
+  "scripts": {
+    "start": "npm run open",
+    "open": "concurrently \"http-server -a localhost -p 1080\" \"open http://localhost:1080\"",
+    "prestart": "npm run build",
+    "build": "webpack"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "dependencies": {
+    "zation-client": "0.2.7",
+    "@types/jquery": "3.3.22",
+    "jquery": "3.3.1"
+  },
+  "devDependencies": {
+    "concurrently": "4.0.1",
+    "http-server": "0.11.1",
+    "ts-loader": "5.2.2",
+    "typescript": "2.9.2",
+    "webpack": "4.23.1",
+    "webpack-cli": "3.1.2"
+  }
+}

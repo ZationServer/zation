@@ -41,7 +41,6 @@ class InitController
 
     async _getInformation()
     {
-
         this.typeScript =
             (await this.consoleHelper.question
             ('Is your project an typescript project?','yes')) === 'yes';
@@ -88,18 +87,13 @@ class InitController
     {
         this.fullCDir = `${this.destDir}/${this.cDir}`;
 
-        if(fs.existsSync(this.fullCDir))
-        {
-            if(!fs.lstatSync(this.fullCDir).isDirectory())
-            {
-                ConsoleHelper.logErrorMessage(`Controller directory path: '${this.fullCDir}' is not a directory!`);
-                ConsoleHelper.abort();
+        if(fs.existsSync(this.fullCDir)) {
+            if(!fs.lstatSync(this.fullCDir).isDirectory()) {
+                ConsoleHelper.logFailedAndEnd(`Controller directory path: '${this.fullCDir}' is not a directory!`);
             }
         }
-        else
-        {
-            ConsoleHelper.logErrorMessage(`Controller directory on path: '${this.fullCDir}' is not found!`);
-            ConsoleHelper.abort();
+        else {
+            ConsoleHelper.logFailedAndEnd(`Controller directory on path: '${this.fullCDir}' is not found!`);
         }
     }
 
@@ -109,20 +103,15 @@ class InitController
 
         if(fs.existsSync(fullAppConfigPath))
         {
-            try
-            {
+            try {
                 this.appConfig = require(fullAppConfigPath);
             }
-            catch(e)
-            {
-                ConsoleHelper.logErrorMessage(`Error to require config! Error: ${e}`);
-                ConsoleHelper.abort();
+            catch(e) {
+                ConsoleHelper.logFailedAndEnd(`Error to require config! Error: ${e}`);
             }
         }
-        else
-        {
-            ConsoleHelper.logErrorMessage(`App config file on path: '${fullAppConfigPath}' not found!`);
-            ConsoleHelper.abort();
+        else {
+            ConsoleHelper.logFailedAndEnd(`App config file on path: '${fullAppConfigPath}' not found!`);
         }
     }
 
@@ -131,33 +120,27 @@ class InitController
         let controller = this.appConfig['controller'];
         if(controller !== undefined)
         {
-            if(typeof controller === "object")
-            {
+            if(typeof controller === "object") {
                 await this._createAllController(controller);
             }
-            else
-            {
-                ConsoleHelper.logWarningMessage(`Value of 'controller' property is not an object!`);
-                ConsoleHelper.abort();
+            else {
+                ConsoleHelper.logFailedAndEnd(`Value of 'controller' property is not an object!`);
             }
         }
-        else
-        {
-            ConsoleHelper.logWarningMessage(`'controller' property does not exist!`);
-            ConsoleHelper.abort();
+        else {
+            ConsoleHelper.logFailedAndEnd(`'controller' property does not exist!`);
         }
 
     }
 
     async _createAllController(controller)
     {
+        ConsoleHelper.logBusyMessage('Create controller...');
         let createdController = [];
         for(let cName in controller)
         {
-            if(controller.hasOwnProperty(cName))
-            {
-                if(await this._createController(controller[cName],cName))
-                {
+            if(controller.hasOwnProperty(cName)) {
+                if(await this._createController(controller[cName],cName)) {
                     createdController.push(cName);
                 }
             }
@@ -178,24 +161,20 @@ class InitController
             {
                 let isOk = false;
 
-                if(!this.force)
-                {
+                if(!this.force) {
                     isOk = (await
                         this.consoleHelper.question(`Complication with directory: '${fullCPath}', remove dir?`,'no')) === 'yes';
                 }
 
-                if(this.force || isOk)
-                {
+                if(this.force || isOk) {
                     // noinspection JSUnresolvedFunction
                     fsExtra.removeSync(fullCPath);
                 }
-                else
-                {
+                else {
                     return false;
                 }
             }
-            else
-            {
+            else {
                 return false;
             }
         }
@@ -227,8 +206,7 @@ class InitController
             }
             return `{${keys.join(', ')}}`;
         }
-        else
-        {
+        else {
             return '{}';
         }
     }
@@ -243,12 +221,10 @@ class InitController
     _getCFullPath(name,path)
     {
         let cF = '';
-        if(path === undefined)
-        {
+        if(path === undefined) {
             cF = name;
         }
-        else
-        {
+        else {
             cF = path + '/' + name;
         }
 
@@ -257,12 +233,10 @@ class InitController
 
     _getCDirFullPath(path)
     {
-        if(path === undefined)
-        {
+        if(path === undefined) {
             return `${this.destDir}/${this.cDir}`
         }
-        else
-        {
+        else {
             return `${this.destDir}/${this.cDir}/${path}`
         }
     }
@@ -271,14 +245,11 @@ class InitController
     _createSuccess(controllerCreated)
     {
         console.log('');
-
-        if(controllerCreated.length === 0)
-        {
+        if(controllerCreated.length === 0) {
             ConsoleHelper.logSuccessMessage
             ('No Controller was init!');
         }
-        else
-        {
+        else {
             ConsoleHelper.logSuccessMessage
             (`Controller: '${controllerCreated.toString()}' ${controllerCreated.length > 1 ? 'are' : 'is'} init!`);
         }
