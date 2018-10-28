@@ -6,6 +6,7 @@ GitHub: LucaCode
 
 const readLine        = require('readline');
 const VersionManager  = require('./versionManager');
+const isWindows       = require('is-windows');
 
 class ConsoleHelper
 {
@@ -52,6 +53,9 @@ class ConsoleHelper
     {
         console.log();
         console.log('Usage: zation [options] [command]');
+        if(!isWindows()) {
+            console.log('At permission error, try to use the command with sudo.`');
+        }
         console.log('Options:');
         console.log("  -v | -version                   Get the version of the current zation installation.");
         console.log('  --help                          Get info on how to use zation in cli.');

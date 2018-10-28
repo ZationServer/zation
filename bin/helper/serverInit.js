@@ -10,6 +10,7 @@ const FileSystemHelper   = require('./fileSystemHelper');
 const VersionManager     = require('./versionManager');
 const NpmRunner          = require('./npmRunner');
 const path               = require('path');
+const isWindows          = require('is-windows');
 
 class ServerInit
 {
@@ -173,12 +174,14 @@ class ServerInit
     _printSuccess(processTime)
     {
         console.log('');
-        ConsoleHelper.logSuccessMessage(`Zation server app '${this.appName}' is created in ${processTime}ms!`);
+        ConsoleHelper.logSuccessMessage(`Zation server app '${this.appName}' is created in ${(processTime / 1000).toFixed(1)} s!`);
         ConsoleHelper.logInfoMessage(`   You can start the server with the command: 'npm start'.`);
         if(!!this.folderName) {
             ConsoleHelper.logInfoMessage(`   But do not forget to change the directory with 'cd ${this.folderName}'.`);
         }
-        ConsoleHelper.logInfoMessage(`   At permission error, try to start the server with sudo.`);
+        if(!isWindows()) {
+            ConsoleHelper.logInfoMessage(`   At permission error, try to start the server with sudo.`);
+        }
         ConsoleHelper.logInfoMessage(`   The command 'zation projectCommands' or 'zation pc' will show you more possible npm commands.`);
         process.exit();
     }
