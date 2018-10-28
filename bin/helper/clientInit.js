@@ -10,12 +10,16 @@ const FileSystemHelper   = require('./fileSystemHelper');
 const NpmRunner          = require('./npmRunner');
 const path               = require('path');
 const VersionManager     = require('./versionManager');
+const isWindows          = require('is-windows');
 
 class ClientInit
 {
-    constructor(destDir,folderName,initDir,force)
+    constructor(cliDir,folderName,initDir,force)
     {
-        this.destDir = destDir;
+        this.cliPath = cliDir;
+        this.destDir = folderName ?
+            path.normalize(cliDir + '/' + folderName) :
+            path.normalize(cliDir);
         this.initDir = initDir;
         this.force = force;
         this.folderName = folderName;
@@ -29,7 +33,7 @@ class ClientInit
     {
         this._startMessage();
         await this._getInformation();
-        await FileSystemHelper.checkDir(this.destDir,this.consoleHelper,this.force,this.folderName);
+        await FileSystemHelper.checkDir(this.destDir,this.consoleHelper,this.force,!!this.folderName);
         await this._init();
     }
 
@@ -44,9 +48,9 @@ class ClientInit
     async _getInformation()
     {
         let defaultAppName = !!this.folderName ? this.folderName :
-            this.destDir.substring((this.destDir.lastIndexOf(path.sep)+path.sep.length));
+            this.cliPath.substring((this.cliPath.lastIndexOf(path.sep)+path.sep.length));
 
-        console.log('What kind of client project do you want to create ?');
+        console.log('What kind of client project do you want to create?');
         console.log('Options:');
         console.log('   Web:      Creates an web client typescript project with webpack.');
         console.log('   Node:     Creates an client typescript project with gulp.');
@@ -72,7 +76,7 @@ class ClientInit
         this.author = await this.consoleHelper.question('Author:');
         this.useDebug =
             (await this.consoleHelper.question
-            ('Use debug mode?','true')) === 'yes';
+            ('Use debug mode?','no')) === 'yes';
         console.log('');
 
         this._printInformation();
@@ -106,6 +110,10 @@ class ClientInit
 
             this.templateEninge.addToMap('nlServerPostKey',this.serverPath !== 'zation' ?
                 `\n        postKey : '${this.serverPostKey}', ` : '');
+
+            if(this.isWebOption){
+                this.templateEninge.addToMap('openCommand',isWindows ? 'start' : 'open');
+            }
         }
     }
 
@@ -113,11 +121,7 @@ class ClientInit
     {
         console.log('Information: ');
         console.log(`Zation client version: ${this.zationClientVersion}`);
-        console.log(`Project path: ${
-            !!this.folderName ?
-                path.normalize(this.destDir + '/' + this.folderName) :
-                path.normalize(this.destDir)
-            }`);
+        console.log(`Project path: ${this.destDir}`);
         console.log(`Project type: ${this.lowerOption}`);
         console.log(`App name: ${this.appName}`);
         console.log(`Description: ${this.description}`);
@@ -155,15 +159,8 @@ class ClientInit
         //abort if failed
         FileSystemHelper.copyDirRecursive(copyDir, this.destDir);
         await this._template();
-        await NpmRunner.installGlobal(`typescript${VersionManager.getTypeScriptVersion()}`,this.destDir);
-
-        if(this.isNodeOption) {
-            await NpmRunner.installGlobal(`gulp`,this.destDir);
-        }
-        if(this.isWebOption) {
-            await NpmRunner.installGlobal(`webpack`,this.destDir);
-        }
-
+        await NpmRunner.installGlobal(`typescript@${VersionManager.getTypeScriptVersion()}`,this.destDir);
+        console.log();
         await NpmRunner.installDependencies(this.destDir);
         this._printSuccess(Date.now() - startTimeStamp);
     }
@@ -173,12 +170,12 @@ class ClientInit
     {
         console.log('');
         ConsoleHelper.logSuccessMessage(`Zation client app '${this.appName}' is created in ${processTime}ms!`);
-        ConsoleHelper.logInfoMessage(`   You can start the client with the command: 'npm start'`);
+        ConsoleHelper.logInfoMessage(`   You can start the client with the command: 'npm start'.`);
         if(!!this.folderName) {
-            ConsoleHelper.logInfoMessage(`   But do not forget to change the directory with 'cd ${this.folderName}'`);
+            ConsoleHelper.logInfoMessage(`   But do not forget to change the directory with 'cd ${this.folderName}'.`);
         }
-        ConsoleHelper.logInfoMessage(`   At permission error, try to start the client with sudo`);
-        ConsoleHelper.logInfoMessage(`   The command 'zation projectCommands' or 'zation pc' will show you more possible npm commands`);
+        ConsoleHelper.logInfoMessage(`   At permission error, try to start the client with sudo.`);
+        ConsoleHelper.logInfoMessage(`   The command 'zation projectCommands' or 'zation pc' will show you more possible npm commands.`);
         process.exit();
     }
 }

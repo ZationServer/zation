@@ -9,8 +9,7 @@ const VersionManager  = require('./versionManager');
 
 class ConsoleHelper
 {
-    constructor()
-    {
+    constructor() {
         this._r = readLine.createInterface({
             input: process.stdin,
             output: process.stdout
@@ -136,7 +135,7 @@ class ConsoleHelper
     }
 
     static logBusyInit() {
-        ConsoleHelper.logBusyMessage('init app...');
+        ConsoleHelper.logBusyMessage('Init app...');
     }
 
     question(question, defaultValue)
@@ -169,8 +168,7 @@ class ConsoleHelper
         });
     }
 
-    static logFailedAndEnd(message)
-    {
+    static logFailedAndEnd(message) {
         ConsoleHelper.logErrorMessage(message);
         process.exit();
     }

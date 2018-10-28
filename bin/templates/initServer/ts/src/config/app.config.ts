@@ -11,11 +11,6 @@ module.exports = Config.appConfig(
                 default : 'guest'
             },
 
-        versionControl :
-            {
-                Default : 1.0,
-            },
-
         validationGroups :
             {
 
@@ -26,7 +21,7 @@ module.exports = Config.appConfig(
 
             },
 
-        controllerDefault :
+        controllerDefaults :
             {
                 wsAccess : true,
                 httpAccess : true,
@@ -41,8 +36,8 @@ module.exports = Config.appConfig(
             {
                 logIn :
                 {
-                    name : 'logIn',
-                    path : 'auth',
+                    fileName : 'logIn',
+                    filePath : 'auth',
                     access : 'all',
 
                     input :

@@ -7,7 +7,7 @@
   "types": "dist/index.d.ts",{{author}}{{git}}
   "scripts": {
     "start": "npm run open",
-    "open": "concurrently \"http-server -a localhost -p 1080\" \"open http://localhost:1080\"",
+    "open": "concurrently \"http-server -a localhost -p 1080\" \"{{openCommand}} http://localhost:1080\"",
     "prestart": "npm run build",
     "build": "webpack"
   },
@@ -15,7 +15,7 @@
     "dist/**/*"
   ],
   "dependencies": {
-    "zation-client": "0.2.7",
+    "zation-client": "{{zationClientVersion}}",
     "@types/jquery": "3.3.22",
     "jquery": "3.3.1"
   },

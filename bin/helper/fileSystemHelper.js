@@ -4,11 +4,9 @@ GitHub: LucaCode
 ©Copyright by Luca Scaringella
  */
 
-const fsExtra       = require('fs-extra');
-const ConsoleHelper = require('./consoleHelper');
-const path          = require('path');
-const emptyDir      = require('empty-dir');
-const fs            = require('fs');
+const fsExtra         = require('fs-extra');
+const emptyDir        = require('empty-dir');
+const fs              = require('fs');
 
 class FileSystemHelper
 {
@@ -18,8 +16,7 @@ class FileSystemHelper
             // noinspection JSUnresolvedFunction,JSUnresolvedVariable
             fsExtra.accessSync(filePath, fsExtra.constants.F_OK);
         }
-        catch (err)
-        {
+        catch (err) {
             return false;
         }
         return true;
@@ -40,6 +37,8 @@ class FileSystemHelper
 
     static copyDirRecursive(src,destination)
     {
+        const ConsoleHelper = require('./consoleHelper');
+
         try {
             // noinspection JSUnresolvedFunction
             fsExtra.copySync(src,destination);
@@ -49,14 +48,13 @@ class FileSystemHelper
         }
     }
 
-    static async checkDir(destDir,consoleHelper,force,folderName)
+    static async checkDir(destDir,instanceCH,force,isFolderName)
     {
-        let message = `The folder: '${destDir}' is not empty. Do you want to empty it and continue?`;
+        const ConsoleHelper = require('./consoleHelper');
 
-        if(!!folderName) {
-            destDir = path.normalize(destDir + '/' + folderName);
-            message = `There is already a directory at '${destDir}'. Do you want to overwrite it?`;
-        }
+        const message = isFolderName ?
+            `There is already a directory at '${destDir}'. Do you want to overwrite it?` :
+            `The folder: '${destDir}' is not empty. Do you want to empty it and continue?`;
 
         if(!fs.existsSync(destDir)) {
             fs.mkdirSync(destDir);
@@ -67,12 +65,12 @@ class FileSystemHelper
             let isOk = false;
 
             if(!force) {
-                isOk = (await consoleHelper.question(message,'no')) === 'yes';
+                isOk = (await instanceCH.question(message,'no')) === 'yes';
                 console.log();
             }
 
             if(force || isOk) {
-                ConsoleHelper.logBusyMessage('empty folder...');
+                ConsoleHelper.logBusyMessage('Empty folder...');
                 try {
                     // noinspection JSUnresolvedFunction
                     fsExtra.emptyDirSync(destDir);

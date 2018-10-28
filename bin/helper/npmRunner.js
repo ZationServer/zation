@@ -33,11 +33,11 @@ class NpmRunner
 
             npmProcess.on('close', function (code) {
                 if (code) {
-                    ConsoleHelper.logErrorMessage(`Failed to install ${onlyName} global. Exited with code ${code}.`);
+                    ConsoleHelper.logErrorMessage(`Failed to install ${onlyName} globally. Exited with code ${code}.`);
                     process.exit(code);
                 }
                 else {
-                    ConsoleHelper.logSuccessMessage(`Package ${onlyName} was successfully installed globally.`);
+                    ConsoleHelper.logSuccessMessage(`Package ${onlyName} was successfully globally installed.`);
                     resolve();
                 }
             });
