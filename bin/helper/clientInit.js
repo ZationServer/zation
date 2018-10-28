@@ -112,7 +112,7 @@ class ClientInit
                 `\n        postKey : '${this.serverPostKey}', ` : '');
 
             if(this.isWebOption){
-                this.templateEninge.addToMap('openCommand',isWindows ? 'start' : 'open');
+                this.templateEninge.addToMap('openCommand',isWindows() ? 'start' : 'open');
             }
         }
     }
