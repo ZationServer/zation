@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="fix bugs and improve console.log">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/zation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/zation.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/helper/clientInit.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/clientInit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/helper/consoleHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/consoleHelper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/helper/fileSystemHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/fileSystemHelper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/helper/npmRunner.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/npmRunner.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/helper/serverInit.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/serverInit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/initClient/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initClient/web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/initServer/js/config/app.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/js/config/app.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/templates/initServer/ts/src/config/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/ts/src/config/app.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="fix bugs and improve console.log" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -28,6 +15,7 @@
     <session id="1475986884">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -109,8 +97,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/templates/initServer/ts/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+            <state relative-caret-position="158">
+              <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -283,7 +271,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="679" />
     <option name="y" value="166" />
     <option name="width" value="1920" />
@@ -445,7 +433,7 @@
       <workItem from="1538665451709" duration="7351000" />
       <workItem from="1540057112343" duration="17000" />
       <workItem from="1540557486641" duration="12201000" />
-      <workItem from="1540653256772" duration="9613000" />
+      <workItem from="1540653256772" duration="9685000" />
     </task>
     <task id="LOCAL-00001" summary="add pm2 support">
       <created>1537041074067</created>
@@ -591,7 +579,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227842000" />
+    <option name="totallyTimeSpent" value="227914000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -604,10 +592,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7881579" visible="true" weight="0.31770286" />
-      <window_info id="Structure" order="1" sideWeight="0.2118421" side_tool="true" visible="true" weight="0.31770286" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.78664196" visible="true" weight="0.31770286" />
+      <window_info id="Structure" order="1" sideWeight="0.21335807" side_tool="true" visible="true" weight="0.31770286" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Gulp" order="3" side_tool="true" />
       <window_info id="npm" order="4" side_tool="true" />
@@ -620,7 +607,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32923833" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Statistic" order="8" weight="0.32939914" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4976867" visible="true" weight="0.18454936" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4976867" visible="true" weight="0.42167383" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50033045" side_tool="true" weight="0.32624114" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32725322" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
@@ -996,8 +983,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/templates/initServer/ts/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+        <state relative-caret-position="158">
+          <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
         </state>
       </provider>
     </entry>
