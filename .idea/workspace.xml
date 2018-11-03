@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="fix is windows error">
+    <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="improve log">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/helper/clientInit.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/clientInit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/helper/consoleHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/consoleHelper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/helper/serverInit.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/serverInit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/templates/initServer/js/config/app.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/js/config/app.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/templates/initServer/ts/src/config/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/ts/src/config/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,28 +20,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/helper/clientInit.js">
+        <entry file="file://$PROJECT_DIR$/bin/helper/npmRunner.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="169" column="5" lean-forward="true" selection-start-line="169" selection-start-column="5" selection-end-line="169" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/helper/npmPackageCopy.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-142">
-              <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bin/helper/initController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1024">
-              <caret line="155" column="8" selection-start-line="155" selection-start-column="8" selection-end-line="155" selection-end-column="8" />
+            <state>
+              <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="54" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -49,8 +34,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/helper/fileSystemHelper.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+            <state relative-caret-position="840">
+              <caret line="60" column="9" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/helper/easyTemplateEngine.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -61,8 +57,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/helper/serverInit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="176" column="91" selection-start-line="176" selection-start-column="91" selection-end-line="176" selection-end-column="91" />
+            <state relative-caret-position="251">
+              <caret line="169" column="55" selection-start-line="169" selection-start-column="55" selection-end-line="169" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/templates/initServer/js/config/app.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bin/templates/initServer/ts/src/config/app.config.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -70,8 +84,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+            <state relative-caret-position="435">
+              <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/cli.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -79,8 +102,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/helper/consoleHelper.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-166">
-              <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+            <state relative-caret-position="795">
+              <caret line="57" column="9" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -89,25 +112,7 @@
         <entry file="file://$PROJECT_DIR$/bin/templates/initServer/ts/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="15" column="41" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/templates/initClient/node/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/templates/initServer/ts/src/config/app.config.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+              <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -154,57 +159,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/bin/templates/initServer/js/config/channel.config.js" />
-        <option value="$PROJECT_DIR$/bin/templates/initServer/js/config/error.config.js" />
-        <option value="$PROJECT_DIR$/bin/templates/initServer/js/config/event.config.js" />
-        <option value="$PROJECT_DIR$/bin/templates/initServer/js/config/main.config.js" />
-        <option value="$PROJECT_DIR$/bin/templates/initServer/js/config/service.config.js" />
-        <option value="$PROJECT_DIR$/bin/templates/initServer/js/controller/auth/logIn.js" />
-        <option value="$PROJECT_DIR$/bin/templates/initServer/js/index.js" />
-        <option value="$PROJECT_DIR$/bin/templates/initServer/js/dockerwait.js" />
-        <option value="$PROJECT_DIR$/bin/templates/initServer/js/package.json" />
-        <option value="$PROJECT_DIR$/bin/templates/initServer/ts/src/config/channel.config.ts" />
-        <option value="$PROJECT_DIR$/bin/templates/initServer/ts/src/config/error.config.ts" />
-        <option value="$PROJECT_DIR$/bin/templates/initServer/ts/src/config/event.config.ts" />
-        <option value="$PROJECT_DIR$/bin/templates/initServer/ts/src/config/main.config.ts" />
-        <option value="$PROJECT_DIR$/bin/templates/initServer/ts/src/config/service.config.ts" />
-        <option value="$PROJECT_DIR$/bin/templates/initServer/ts/src/controller/auth/logIn.ts" />
-        <option value="$PROJECT_DIR$/bin/templates/initServer/ts/src/index.ts" />
-        <option value="$PROJECT_DIR$/bin/templates/initServer/ts/dockerwait.js" />
-        <option value="$PROJECT_DIR$/bin/templates/controller/controller.ts" />
-        <option value="$PROJECT_DIR$/bin/templates/controller/controller.js" />
-        <option value="$PROJECT_DIR$/src/index.ts" />
-        <option value="$PROJECT_DIR$/dist/test.ts" />
-        <option value="$PROJECT_DIR$/bin/helper/initController.js" />
-        <option value="$PROJECT_DIR$/../../testZone/server/package.json" />
-        <option value="$PROJECT_DIR$/bin/templates/initServer/ts/package.json" />
-        <option value="$PROJECT_DIR$/bin/templates/initClient/node/package.json" />
-        <option value="$PROJECT_DIR$/bin/templates/initClient/node/src/index.ts" />
-        <option value="$PROJECT_DIR$/../../testZone/nodeClient/tsconfig.json" />
-        <option value="$PROJECT_DIR$/../zation-server/src/lib/main/zationWorker.ts" />
         <option value="$PROJECT_DIR$/../zation-server/src/lib/helper/client/prepareClientJs.ts" />
         <option value="$PROJECT_DIR$/../zation-js-client/src/index.ts" />
         <option value="$PROJECT_DIR$/../zation-js-client/gulpFile.js" />
-        <option value="$PROJECT_DIR$/../zation-js-client/package.json" />
         <option value="$PROJECT_DIR$/../../testZone/nodeClient/webpack.config.js" />
         <option value="$PROJECT_DIR$/../../testZone/nodeClient/index.html" />
         <option value="$PROJECT_DIR$/bin/templates/initClient/node/.gitignore" />
         <option value="$PROJECT_DIR$/../../testZone/nodeClient/package.json" />
         <option value="$PROJECT_DIR$/bin/templates/initClient/web/src/index.ts" />
         <option value="$PROJECT_DIR$/../zation-cluster-state/.gitignore" />
-        <option value="$PROJECT_DIR$/../zation-server/src/lib/main/zationMaster.ts" />
-        <option value="$PROJECT_DIR$/../zation-server/package.json" />
         <option value="$PROJECT_DIR$/bin/cli.js" />
         <option value="$PROJECT_DIR$/bin/helper/npmRunner.js" />
         <option value="$PROJECT_DIR$/bin/helper/fileSystemHelper.js" />
-        <option value="$PROJECT_DIR$/bin/templates/initServer/js/config/app.config.js" />
-        <option value="$PROJECT_DIR$/bin/templates/initServer/ts/src/config/app.config.ts" />
         <option value="$PROJECT_DIR$/bin/templates/initClient/web/package.json" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/bin/helper/consoleHelper.js" />
-        <option value="$PROJECT_DIR$/bin/helper/clientInit.js" />
         <option value="$PROJECT_DIR$/../../testZone/nodeClient/src/index.ts" />
         <option value="$PROJECT_DIR$/bin/helper/serverInit.js" />
+        <option value="$PROJECT_DIR$/bin/helper/clientInit.js" />
+        <option value="$PROJECT_DIR$/../zation-server/src/lib/public/panel/webpack.config.js" />
+        <option value="$PROJECT_DIR$/../zation-server/src/lib/public/panel/src/index.ts" />
+        <option value="$PROJECT_DIR$/../zation-server/src/lib/public/panel/index.html" />
+        <option value="$PROJECT_DIR$/../zation-server/webpack.config.js" />
+        <option value="$PROJECT_DIR$/../../testZone/server/src/config/main.config.ts" />
+        <option value="$PROJECT_DIR$/bin/templates/initServer/js/config/app.config.js" />
+        <option value="$PROJECT_DIR$/../zation-server/src/lib/helper/validator/easyValidator.ts" />
+        <option value="$PROJECT_DIR$/../zation-js-client/src/lib/helper/react/onErrorBuilder/presetErrorFilter.ts" />
+        <option value="$PROJECT_DIR$/../zation-server/src/lib/helper/zationTaskErrors/validatorTaskErrors.ts" />
+        <option value="$PROJECT_DIR$/../zation-server/src/lib/helper/input/inputValueProcessor.ts" />
+        <option value="$PROJECT_DIR$/../zation-server/src/lib/helper/input/inputProcessor.ts" />
+        <option value="$PROJECT_DIR$/../zation-server/src/lib/helper/tools/zationReqTools.ts" />
+        <option value="$PROJECT_DIR$/../zation-server/src/lib/helper/configEditTool/appConfigStructure.ts" />
+        <option value="$PROJECT_DIR$/../zation-server/src/lib/helper/input/processTaskEngine.ts" />
+        <option value="$PROJECT_DIR$/../zation-server/src/lib/helper/config/structures.ts" />
+        <option value="$PROJECT_DIR$/../zation-server/src/lib/helper/config/configChecker.ts" />
+        <option value="$PROJECT_DIR$/../zation-server/src/lib/helper/config/configPreCompiler.ts" />
+        <option value="$PROJECT_DIR$/../zation-server/src/lib/helper/convert/convertEngine.ts" />
+        <option value="$PROJECT_DIR$/../zation-server/src/lib/helper/input/inputMainProcessor.ts" />
+        <option value="$PROJECT_DIR$/../zation-server/src/lib/helper/input/inputReqProcessor.ts" />
+        <option value="$PROJECT_DIR$/../zation-server/gulpFile.js" />
+        <option value="$PROJECT_DIR$/../zation-server/src/lib/helper/token/tokenEngine.ts" />
+        <option value="$PROJECT_DIR$/../zation-server/src/lib/helper/token/tokenTools.ts" />
+        <option value="$PROJECT_DIR$/../zation-server/src/lib/main/zationWorker.ts" />
+        <option value="$PROJECT_DIR$/../zation-js-client/src/lib/helper/request/zationRequest.ts" />
+        <option value="$PROJECT_DIR$/../zation-js-client/package.json" />
+        <option value="$PROJECT_DIR$/../../testZone/server/src/config/app.config.ts" />
+        <option value="$PROJECT_DIR$/../../testZone/server/src/config/channel.config.ts" />
+        <option value="$PROJECT_DIR$/../../testZone/server/src/controller/sendMessage.ts" />
+        <option value="$PROJECT_DIR$/../../testZone/server/src/public/index.html" />
+        <option value="$PROJECT_DIR$/../zation-server/src/lib/main/zationMaster.ts" />
+        <option value="$PROJECT_DIR$/../zation-server/package.json" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/bin/templates/initServer/ts/src/config/app.config.ts" />
       </list>
     </option>
   </component>
@@ -240,17 +245,6 @@
             <path>
               <item name="zation" type="b2602c69:ProjectViewProjectNode" />
               <item name="zation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zation" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zation" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-              <item name="helper" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -386,7 +380,8 @@
       <workItem from="1540057112343" duration="17000" />
       <workItem from="1540557486641" duration="12201000" />
       <workItem from="1540653256772" duration="9685000" />
-      <workItem from="1540743606798" duration="831000" />
+      <workItem from="1540743606798" duration="1287000" />
+      <workItem from="1541196206421" duration="1869000" />
     </task>
     <task id="LOCAL-00001" summary="add pm2 support">
       <created>1537041074067</created>
@@ -535,11 +530,25 @@
       <option name="project" value="LOCAL" />
       <updated>1540743656058</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="fix is windows error&#10;improve log&#10;update to version 0.4.0">
+      <created>1540744718755</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1540744718755</updated>
+    </task>
+    <task id="LOCAL-00023" summary="improve log">
+      <created>1540744988799</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1540744988799</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228745000" />
+    <option name="totallyTimeSpent" value="231070000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -551,11 +560,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.78520626" visible="true" weight="0.31712472" />
-      <window_info id="Structure" order="1" sideWeight="0.21479374" side_tool="true" visible="true" weight="0.31712472" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7837838" visible="true" weight="0.31642002" />
+      <window_info id="Structure" order="1" sideWeight="0.21621622" side_tool="true" visible="true" weight="0.31642002" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Gulp" order="3" side_tool="true" />
       <window_info id="npm" order="4" side_tool="true" />
@@ -603,7 +611,9 @@
     <MESSAGE value="update version to 0.3.8" />
     <MESSAGE value="fix bugs and improve console.log" />
     <MESSAGE value="fix is windows error" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix is windows error" />
+    <MESSAGE value="fix is windows error&#10;improve log&#10;update to version 0.4.0" />
+    <MESSAGE value="improve log" />
+    <option name="LAST_COMMIT_MESSAGE" value="improve log" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/bin/templates/initServer/ts/src/config/channel.config.ts">
@@ -766,26 +776,9 @@
     <entry file="file://$PROJECT_DIR$/bin/templates/initServer/ts/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/cli.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1244">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/welcome.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/helper/npmRunner.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-966">
-          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="54" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -799,22 +792,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/helper/easyTemplateEngine.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-315">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/templates/initServer/js/config/app.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
@@ -874,20 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/templates/initServer/ts/src/config/app.config.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/templates/initServer/ts/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="41" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/is-windows/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -895,38 +858,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/helper/serverInit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="176" column="91" selection-start-line="176" selection-start-column="91" selection-end-line="176" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/helper/clientInit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="169" column="5" lean-forward="true" selection-start-line="169" selection-start-column="5" selection-end-line="169" selection-end-column="5" />
+        <state relative-caret-position="2415">
+          <caret line="165" column="5" selection-start-line="165" selection-start-column="5" selection-end-line="165" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/helper/npmPackageCopy.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-142">
+        <state relative-caret-position="45">
           <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/helper/initController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3720">
+          <caret line="252" column="41" selection-start-line="252" selection-start-column="41" selection-end-line="252" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/helper/npmRunner.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="54" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/helper/fileSystemHelper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+        <state relative-caret-position="840">
+          <caret line="60" column="9" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/helper/easyTemplateEngine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -935,15 +910,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/helper/consoleHelper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-166">
-          <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+        <state relative-caret-position="795">
+          <caret line="57" column="9" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/helper/initController.js">
+    <entry file="file://$PROJECT_DIR$/bin/templates/initServer/ts/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1024">
-          <caret line="155" column="8" selection-start-line="155" selection-start-column="8" selection-end-line="155" selection-end-column="8" />
+        <state relative-caret-position="225">
+          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/helper/serverInit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="169" column="55" selection-start-line="169" selection-start-column="55" selection-end-line="169" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/cli.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/templates/initServer/js/config/app.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/templates/initServer/ts/src/config/app.config.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
         </state>
       </provider>
     </entry>

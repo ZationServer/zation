@@ -11,7 +11,7 @@ module.exports = Config.appConfig(
                 default : 'guest'
             },
 
-        validationGroups :
+        inputGroups :
             {
 
             },
