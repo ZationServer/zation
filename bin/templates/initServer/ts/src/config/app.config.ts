@@ -11,16 +11,6 @@ module.exports = Config.appConfig(
                 default : 'guest'
             },
 
-        inputGroups :
-            {
-
-            },
-
-        objects :
-            {
-
-            },
-
         controllerDefaults :
             {
                 wsAccess : true,
