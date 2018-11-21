@@ -150,8 +150,8 @@ class InitController
 
     async _createController(cConfig,cName)
     {
-        let realCName = cConfig['name'] !== undefined ? cConfig['name'] : cName;
-        let path      = cConfig['path'];
+        let realCName = cConfig['fileName'] !== undefined ? cConfig['fileName'] : cName;
+        let path      = cConfig['filePath'];
 
         let fullCPath = this._getCFullPath(realCName,path);
 
