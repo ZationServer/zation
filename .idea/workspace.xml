@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="fix controller init path bug&#10;update server version to 0.4.8 and client to 0.3.5&#10;and update version to 0.4.5">
+    <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="update version to 0.4.6&#10;and server version to 0.4.9">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -37,7 +38,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/templates/initClient/web/src/index.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
+            <state relative-caret-position="330">
               <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
@@ -58,8 +59,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="55" column="26" lean-forward="true" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
+            <state relative-caret-position="30">
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -68,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/bin/helper/initController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2325">
-              <caret line="159" column="53" lean-forward="true" selection-start-line="159" selection-start-column="53" selection-end-line="159" selection-end-column="53" />
+              <caret line="159" column="53" selection-start-line="159" selection-start-column="53" selection-end-line="159" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -211,7 +212,10 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="833" />
@@ -379,7 +383,8 @@
       <workItem from="1542754743924" duration="94000" />
       <workItem from="1542820966098" duration="705000" />
       <workItem from="1542822868820" duration="584000" />
-      <workItem from="1542838956153" duration="35000" />
+      <workItem from="1542838956153" duration="131000" />
+      <workItem from="1542843645369" duration="44000" />
     </task>
     <task id="LOCAL-00001" summary="add pm2 support">
       <created>1537041074067</created>
@@ -577,11 +582,18 @@
       <option name="project" value="LOCAL" />
       <updated>1542835622837</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="update version to 0.4.6&#10;and server version to 0.4.9">
+      <created>1542839036735</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1542839036735</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="233552000" />
+    <option name="totallyTimeSpent" value="233692000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -596,8 +608,8 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7766714" visible="true" weight="0.31642002" />
-      <window_info id="Structure" order="1" sideWeight="0.22332859" side_tool="true" visible="true" weight="0.31642002" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.77524894" visible="true" weight="0.31642002" />
+      <window_info id="Structure" order="1" sideWeight="0.22475107" side_tool="true" visible="true" weight="0.31642002" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Gulp" order="3" side_tool="true" />
       <window_info id="npm" order="4" side_tool="true" />
@@ -624,7 +636,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change app init success log" />
     <MESSAGE value="update to version 0.3.0" />
     <MESSAGE value="update to version 0.3.1" />
     <MESSAGE value="update to version 0.3.2&#10;update channel config template problem" />
@@ -649,7 +660,8 @@
     <MESSAGE value="update server version&#10;zation update to version 0.4.3" />
     <MESSAGE value="update server/client version&#10;zation update to version 0.4.4" />
     <MESSAGE value="fix controller init path bug&#10;update server version to 0.4.8 and client to 0.3.5&#10;and update version to 0.4.5" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix controller init path bug&#10;update server version to 0.4.8 and client to 0.3.5&#10;and update version to 0.4.5" />
+    <MESSAGE value="update version to 0.4.6&#10;and server version to 0.4.9" />
+    <option name="LAST_COMMIT_MESSAGE" value="update version to 0.4.6&#10;and server version to 0.4.9" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/bin/templates/initServer/js/dockerwait.js">
@@ -936,7 +948,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/templates/initClient/web/src/index.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
+        <state relative-caret-position="330">
           <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
@@ -954,7 +966,7 @@
     <entry file="file://$PROJECT_DIR$/bin/helper/initController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2325">
-          <caret line="159" column="53" lean-forward="true" selection-start-line="159" selection-start-column="53" selection-end-line="159" selection-end-column="53" />
+          <caret line="159" column="53" selection-start-line="159" selection-start-column="53" selection-end-line="159" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -988,8 +1000,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="55" column="26" lean-forward="true" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
+        <state relative-caret-position="30">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
         </state>
       </provider>
     </entry>
