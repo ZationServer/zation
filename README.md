@@ -3,9 +3,8 @@
 <h1 align="center">
   <!-- Logo -->
   <br/>
-  Zation
+  <img src="https://zation.de/test/_media/zationLogo_animated.svg" alt="Logo Zation"/>
 	<br/>
-
   <!-- Documentation -->
   <a href="https://zation.de">
       <img src="https://img.shields.io/badge/Documentation-%20In%20progress-brightgreen.svg" alt="Vulnerabilities"/>
@@ -46,10 +45,7 @@ For the communication to the client, Zation is using the HTTP and WebSocket prot
 Zation will offer more than one client driver in different programming languages. 
 At the moment there is only one client driver in JavaScript, so you have to write your client in JavaScript.
 
-The developer of the Zation framework is Luca Scaringella. 
-The framework will constantly be maintained and improved.
-
-> If you really don't know how you can implement something after reading this documentation. Try to look in the documentation of the Zation API. If this not helps, you can send me a message to <a href="mailto:info@zation.de">info@zation.de</a>.
+> If you really don't know how you can implement something after reading the documentation. Try to look in the documentation of the Zation API. If this not helps, you can send me a message to <a href="mailto:info@zation.de">info@zation.de</a>.
 
 ## Donate
 
