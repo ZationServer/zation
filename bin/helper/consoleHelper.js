@@ -70,7 +70,7 @@ class ConsoleHelper
         console.log(`                                  in working directory or optional in folder.`);
         console.log(`  cloneClusterBroker [folderName] Clone the zation-cluster-broker package`);
         console.log(`                                  in working directory or optional in folder.`);
-        console.log(`  initController                  Creates zation controller from app config.`);
+        console.log(`  initController [path]           Init a new zation controller in working directory.`);
         console.log(`                                  `);
         console.log(`  projectCommands or pc           Shows npm project commands (if zation init was used).`);
         console.log();

@@ -52,7 +52,7 @@ class ServerInit
 
         this.typeScript =
             (await this.consoleHelper.question
-            ('Do you want to create a typescript project (better code completion)?','yes')) === 'yes';
+            ('Do you want to create a typescript project (better code completion and recommend)?','yes')) === 'yes';
 
         this.appName = await this.consoleHelper.question('App name:',defaultAppName);
         this.description = await this.consoleHelper.question('Description:','Zation application server');

@@ -1,7 +1,7 @@
-const {Controller,Result,TaskError,TaskErrorBag,ErrorType} = require('zation-server');
+const {Config,Controller,Result,TaskError,TaskErrorBag} = require('zation-server');
 class {{name}} extends Controller
 {
-    async handle(bag,{{input}})
+    async handle(bag,{})
     {
 
     }
@@ -15,5 +15,11 @@ class {{name}} extends Controller
     {
 
     }
+
 }
+
+LogInController.config = Config.controllerConfig({
+
+});
+
 module.exports = {{name}};

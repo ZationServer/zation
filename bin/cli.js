@@ -53,7 +53,7 @@ else if (command === 'initClient' || command === 'ic') {
 else if (command === 'initController' || command === 'ico') {
     (async () =>
     {
-        await new InitController(destDir,controllerTeDir,force).process();
+        await new InitController(destDir,arg1,controllerTeDir,force).process();
     })();
 }
 else if (command === 'projectCommands' || command === 'pc') {

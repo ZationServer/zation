@@ -11,10 +11,11 @@ const fsExtra            = require('fs-extra');
 
 class InitController
 {
-    constructor(destDir,cTemplateDir,force)
+    constructor(destDir,path,cTemplateDir,force)
     {
         this.force = force;
         this.destDir = destDir;
+        this.path = path;
         this.cTemplateDir = cTemplateDir;
 
         this.consoleHelper = new ConsoleHelper();
@@ -22,21 +23,10 @@ class InitController
 
     async process()
     {
+        this._processFullPath();
         await this._getInformation();
         await this._checkControllerDir();
-        await this._checkConfig();
         await this._init();
-    }
-
-    // noinspection JSMethodCanBeStatic
-    getAppConfigPath(str)
-    {
-        if(str.lastIndexOf('.js') === -1) {
-            return str + `app.config.js`;
-        }
-        else {
-            return str;
-        }
     }
 
     async _getInformation()
@@ -45,23 +35,14 @@ class InitController
             (await this.consoleHelper.question
             ('Is your project an typescript project?','yes')) === 'yes';
 
-        let defaultAppConfigPath = '';
-        let defaultControllerPath = '';
-        if(this.typeScript) {
-            defaultAppConfigPath = 'dist/config/app.config.js';
-            defaultControllerPath = 'src/controller'
-        }
-        else {
-            defaultAppConfigPath = 'config/app.config.js';
-            defaultControllerPath = 'controller'
+        this.name =
+            await this.consoleHelper.question('Name of the Controller:','MyController');
+
+        if(this.name < 1) {
+            ConsoleHelper.logFailedAndEnd(`The name must have at least one character.`);
         }
 
-        const appConfigPathText = `App config path ${this.typeScript ? `(compiled to javascript (run 'npm run build' before))` : ''}:`;
-
-        this.appConfigPath
-            = this.getAppConfigPath(await this.consoleHelper.question(appConfigPathText,defaultAppConfigPath));
-
-        this.cDir = await this.consoleHelper.question('Controller directory:',defaultControllerPath);
+        this.name = this._firstLetterUpperCase(this.name);
 
         console.log('');
         this._printInformation();
@@ -75,140 +56,86 @@ class InitController
         }
     }
 
+    _processFullPath()
+    {
+        this.fullPath = this.destDir;
+        if(this.path) {
+            if(!this.path.startsWith('/')) {
+                this.fullPath+='/';
+            }
+            this.fullPath+=this.path;
+            if(!this.fullPath.endsWith('/')){
+                this.fullPath+='/';
+            }
+        }
+        else {
+            this.fullPath+='/';
+        }
+    }
+
     _printInformation()
     {
         console.log('Information: ');
-        console.log(`App config path: ${this.destDir}/${this.appConfigPath}`);
-        console.log(`Controller directory: ${this.destDir}/${this.cDir}`);
+        console.log(`Project type: ${this.typeScript ? 'typescript' : 'javascript'}`);
+        console.log(`Controller Name: ${this.name}`);
+        console.log(`Full Path: ${this.fullPath}${this.name}.${this.typeScript?'ts':'js'}`);
         console.log('');
     }
 
     async _checkControllerDir()
     {
-        this.fullCDir = `${this.destDir}/${this.cDir}`;
-
-        if(fs.existsSync(this.fullCDir)) {
-            if(!fs.lstatSync(this.fullCDir).isDirectory()) {
-                ConsoleHelper.logFailedAndEnd(`Controller directory path: '${this.fullCDir}' is not a directory!`);
+        if(fs.existsSync(this.fullPath)) {
+            if(!fs.lstatSync(this.fullPath).isDirectory()) {
+                ConsoleHelper.logFailedAndEnd(`Controller directory path: '${this.fullPath}' is not a directory!`);
             }
         }
         else {
-            ConsoleHelper.logFailedAndEnd(`Controller directory on path: '${this.fullCDir}' is not found!`);
-        }
-    }
-
-    async _checkConfig()
-    {
-        let fullAppConfigPath = `${this.destDir}/${this.appConfigPath}`;
-
-        if(fs.existsSync(fullAppConfigPath))
-        {
-            try {
-                this.appConfig = require(fullAppConfigPath);
-            }
-            catch(e) {
-                ConsoleHelper.logFailedAndEnd(`Error to require config! Error: ${e}`);
-            }
-        }
-        else {
-            ConsoleHelper.logFailedAndEnd(`App config file on path: '${fullAppConfigPath}' not found!`);
+            ConsoleHelper.logFailedAndEnd(`Controller directory on path: '${this.fullPath}' is not found!`);
         }
     }
 
     async _init()
     {
-        let controller = this.appConfig['controller'];
-        if(controller !== undefined)
-        {
-            if(typeof controller === "object") {
-                await this._createAllController(controller);
-            }
-            else {
-                ConsoleHelper.logFailedAndEnd(`Value of 'controller' property is not an object!`);
-            }
-        }
-        else {
-            ConsoleHelper.logFailedAndEnd(`'controller' property does not exist!`);
-        }
-
-    }
-
-    async _createAllController(controller)
-    {
         ConsoleHelper.logBusyMessage('Create controller...');
-        let createdController = [];
-        for(let cName in controller)
-        {
-            if(controller.hasOwnProperty(cName)) {
-                if(await this._createController(controller[cName],cName)) {
-                    createdController.push(cName);
-                }
-            }
-        }
-        this._createSuccess(createdController);
+        await this._createController();
+        this._createSuccess();
     }
 
-    async _createController(cConfig,cName)
+    async _createController()
     {
-        let realCName = cConfig['fileName'] !== undefined ? cConfig['fileName'] : cName;
-        let path      = cConfig['filePath'];
-
-        let fullCPath = this._getCFullPath(realCName,path);
+        let fullCPath = this.fullPath + this.name + this.typeScript?'ts':'js';
 
         if(fs.existsSync(fullCPath))
         {
+            let isOk = false;
+
             if(fs.lstatSync(fullCPath).isDirectory())
             {
-                let isOk = false;
-
                 if(!this.force) {
                     isOk = (await
                         this.consoleHelper.question(`Complication with directory: '${fullCPath}', remove dir?`,'no')) === 'yes';
                 }
-
-                if(this.force || isOk) {
-                    // noinspection JSUnresolvedFunction
-                    fsExtra.removeSync(fullCPath);
-                }
-                else {
-                    return false;
+            }
+            else if(fs.lstatSync(fullCPath).isFile())
+            {
+                if(!this.force) {
+                    isOk = (await
+                        this.consoleHelper.question(`Complication with file: '${fullCPath}', remove file?`,'no')) === 'yes';
                 }
             }
-            else {
-                return false;
+
+            if(this.force || isOk) {
+                // noinspection JSUnresolvedFunction
+                fsExtra.removeSync(fullCPath);
             }
         }
 
         // noinspection JSUnresolvedFunction
-        fsExtra.ensureDirSync(this._getCDirFullPath(path));
+        fsExtra.ensureDirSync(this.fullPath);
         let templateEngine = new EasyTemplateEngine();
-        templateEngine.addToMap('name',this._firstLetterUpperCase(realCName));
-        templateEngine.addToMap('input',this._createInputObj(cConfig));
-
+        templateEngine.addToMap('name',this.name);
         EasyTemplateEngine.templateFromFile
         (this.cTemplateDir + `/controller.${this.typeScript ? 'ts' : 'js'}`,fullCPath,templateEngine);
-
-        return true;
-    }
-
-    // noinspection JSMethodCanBeStatic
-    _createInputObj(config)
-    {
-        if(typeof config['input'] === "object")
-        {
-            let keys = [];
-            let input = config['input'];
-            for(let k in input) {
-                if (input.hasOwnProperty(k))
-                {
-                    keys.push(k);
-                }
-            }
-            return `{${keys.join(', ')}}`;
-        }
-        else {
-            return '{}';
-        }
     }
 
     // noinspection JSMethodCanBeStatic
@@ -218,41 +145,11 @@ class InitController
     }
 
     // noinspection JSMethodCanBeStatic
-    _getCFullPath(name,path)
-    {
-        let cF = '';
-        if(path === undefined) {
-            cF = name;
-        }
-        else {
-            cF = path + '/' + name;
-        }
-
-        return `${this.destDir}/${this.cDir}/${cF}.${this.typeScript ? 'ts' : 'js'}`;
-    }
-
-    _getCDirFullPath(path)
-    {
-        if(path === undefined) {
-            return `${this.destDir}/${this.cDir}`
-        }
-        else {
-            return `${this.destDir}/${this.cDir}/${path}`
-        }
-    }
-
-    // noinspection JSMethodCanBeStatic
-    _createSuccess(controllerCreated)
+    _createSuccess()
     {
         console.log('');
-        if(controllerCreated.length === 0) {
-            ConsoleHelper.logSuccessMessage
-            ('No Controller was init!');
-        }
-        else {
-            ConsoleHelper.logSuccessMessage
-            (`Controller: '${controllerCreated.toString()}' ${controllerCreated.length > 1 ? 'are' : 'is'} init!`);
-        }
+        ConsoleHelper.logSuccessMessage
+        (`Controller: '${this.name}' is initialized!`);
 
         process.exit();
     }
