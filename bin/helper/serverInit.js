@@ -52,7 +52,7 @@ class ServerInit
 
         this.typeScript =
             (await this.consoleHelper.question
-            ('Do you want to create a typescript project (better code completion and recommend)?','yes')) === 'yes';
+            ('Do you want to create a typescript project (recommended)?','yes')) === 'yes';
 
         this.appName = await this.consoleHelper.question('App name:',defaultAppName);
         this.description = await this.consoleHelper.question('Description:','Zation application server');
@@ -133,8 +133,8 @@ class ServerInit
     async _template()
     {
         ConsoleHelper.logBusyMessage('Process template files...');
-        const jsMainConfig = `${this.destDir}/config/main.config.js`;
-        const tsMainConfig = `${this.destDir}/src/config/main.config.ts`;
+        const jsMainConfig = `${this.destDir}/configs/main.config.js`;
+        const tsMainConfig = `${this.destDir}/src/configs/main.config.ts`;
         EasyTemplateEngine.templateFile(this.typeScript ? tsMainConfig : jsMainConfig,this.templateEninge);
 
         const jsIndex = `${this.destDir}/index.js`;

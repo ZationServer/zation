@@ -25,7 +25,6 @@ class InitController
     {
         this._processFullPath();
         await this._getInformation();
-        await this._checkControllerDir();
         await this._init();
     }
 
@@ -47,7 +46,7 @@ class InitController
         console.log('');
         this._printInformation();
 
-        let isOk = (await this.consoleHelper.question('Init controller from config?','yes')) === 'yes';
+        let isOk = (await this.consoleHelper.question('Initialize controller?','yes')) === 'yes';
         console.log('');
 
         if(!isOk)
@@ -82,18 +81,6 @@ class InitController
         console.log('');
     }
 
-    async _checkControllerDir()
-    {
-        if(fs.existsSync(this.fullPath)) {
-            if(!fs.lstatSync(this.fullPath).isDirectory()) {
-                ConsoleHelper.logFailedAndEnd(`Controller directory path: '${this.fullPath}' is not a directory!`);
-            }
-        }
-        else {
-            ConsoleHelper.logFailedAndEnd(`Controller directory on path: '${this.fullPath}' is not found!`);
-        }
-    }
-
     async _init()
     {
         ConsoleHelper.logBusyMessage('Create controller...');
@@ -103,7 +90,7 @@ class InitController
 
     async _createController()
     {
-        let fullCPath = this.fullPath + this.name + this.typeScript?'ts':'js';
+        let fullCPath = this.fullPath + this.name + '.' + (this.typeScript?'ts':'js');
 
         if(fs.existsSync(fullCPath))
         {

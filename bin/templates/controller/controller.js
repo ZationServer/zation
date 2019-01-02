@@ -18,7 +18,7 @@ class {{name}} extends Controller
 
 }
 
-LogInController.config = Config.controllerConfig({
+{{name}}.config = Config.controllerConfig({
 
 });
 
