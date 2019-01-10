@@ -4,7 +4,7 @@
   <!-- Logo -->
   <br/>
   <a href="https://zation.de">
-      <img src="assets/logo/zationWideLogo.svg" alt="Logo Zation"/>
+      <img src="assets/logo/zationWideLogo.svg" alt="Logo Zation" style="margin-bottom: 3%; width: 60%;"/>
   </a>
 	<br/>
   <!-- Documentation -->
