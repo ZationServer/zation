@@ -3,10 +3,12 @@
 <h1 align="center">
   <!-- Logo -->
   <br/>
-  <img src="https://zation.de/test/_media/zationLogo_animated.svg" alt="Logo Zation"/>
+  <a href="https://zation.de">
+      <img src="assets/logo/zationWideLogo.svg" alt="Logo Zation"/>
+  </a>
 	<br/>
   <!-- Documentation -->
-  <a href="https://zation.de">
+  <a href="https://zation.de/documentation/#/">
       <img src="https://img.shields.io/badge/Documentation-%20In%20progress-brightgreen.svg" alt="Vulnerabilities"/>
   </a>
   <!-- Stability -->
