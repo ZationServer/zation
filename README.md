@@ -6,7 +6,8 @@
   <a href="https://zation.de">
       <img src="assets/logo/zationWideLogo.svg" alt="Logo Zation" height="200"/>
   </a>
-	<br/>
+  <br/>
+  <br/>
   <!-- Documentation -->
   <a href="https://zation.de/documentation/#/">
       <img src="https://img.shields.io/badge/Documentation-%20In%20progress-brightgreen.svg" alt="Vulnerabilities"/>
