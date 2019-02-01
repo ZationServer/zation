@@ -156,16 +156,13 @@ class ConsoleHelper
 
             this._r.question(questionTxt,(a) =>
             {
-                if(a !== '')
-                {
+                if(a !== '') {
                     resolve(a);
                 }
-                else if(defaultValue)
-                {
+                else if(defaultValue) {
                     resolve(defaultValue);
                 }
-                else
-                {
+                else {
                     resolve(null);
                 }
             });

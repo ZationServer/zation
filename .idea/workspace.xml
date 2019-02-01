@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="update version to 0.4.9&#10;update server version to 0.5.2&#10;update client version to 0.4.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/helper/clientInit.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/clientInit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/helper/initController.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/initController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/helper/serverInit.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/serverInit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/helper/consoleHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/consoleHelper.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -78,8 +76,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/helper/consoleHelper.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-403">
-              <caret line="118" column="53" selection-start-line="118" selection-start-column="53" selection-end-line="118" selection-end-column="53" />
+            <state relative-caret-position="2145">
+              <caret line="164" column="21" selection-start-line="164" selection-start-column="21" selection-end-line="164" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -408,7 +406,7 @@
       <workItem from="1547068669617" duration="190000" />
       <workItem from="1547129691157" duration="2676000" />
       <workItem from="1547585675209" duration="655000" />
-      <workItem from="1549044175781" duration="121000" />
+      <workItem from="1549044175781" duration="794000" />
     </task>
     <task id="LOCAL-00001" summary="add pm2 support">
       <created>1537041074067</created>
@@ -638,7 +636,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256066000" />
+    <option name="totallyTimeSpent" value="256739000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -986,8 +984,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/helper/consoleHelper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-403">
-          <caret line="118" column="53" selection-start-line="118" selection-start-column="53" selection-end-line="118" selection-end-column="53" />
+        <state relative-caret-position="2145">
+          <caret line="164" column="21" selection-start-line="164" selection-start-column="21" selection-end-line="164" selection-end-column="21" />
         </state>
       </provider>
     </entry>
