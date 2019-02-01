@@ -135,9 +135,7 @@ class InitController
     _createSuccess()
     {
         console.log('');
-        ConsoleHelper.logSuccessMessage
-        (`Controller: '${this.name}' is initialized!`);
-
+        ConsoleHelper.logSuccessMessage(`Controller: '${this.name}' is initialized! 🎉`);
         process.exit();
     }
 }

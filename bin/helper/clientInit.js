@@ -169,7 +169,7 @@ class ClientInit
     _printSuccess(processTime)
     {
         console.log('');
-        ConsoleHelper.logSuccessMessage(`Zation client app '${this.appName}' is created in ${(processTime / 1000).toFixed(1)}s.`);
+        ConsoleHelper.logSuccessMessage(`Zation client app '${this.appName}' is created in ${(processTime / 1000).toFixed(1)}s. 🎉`);
         ConsoleHelper.logInfoMessage(`   You can start the client with the command: 'npm start'.`);
         if(!!this.folderName) {
             ConsoleHelper.logInfoMessage(`   But do not forget to change the directory with 'cd ${this.folderName}'.`);
