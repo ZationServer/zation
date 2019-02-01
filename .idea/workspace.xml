@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="update version to 0.4.9&#10;update server version to 0.5.2&#10;update client version to 0.4.1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/helper/consoleHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/consoleHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="422">
+              <caret line="55" column="28" lean-forward="true" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -73,7 +73,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/helper/consoleHelper.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2145">
@@ -201,11 +201,11 @@
         <option value="$PROJECT_DIR$/bin/templates/controller/controller.js" />
         <option value="$PROJECT_DIR$/LICENSE" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/bin/helper/serverInit.js" />
         <option value="$PROJECT_DIR$/bin/helper/clientInit.js" />
         <option value="$PROJECT_DIR$/bin/helper/initController.js" />
         <option value="$PROJECT_DIR$/bin/helper/consoleHelper.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -234,17 +234,6 @@
             <path>
               <item name="zation" type="b2602c69:ProjectViewProjectNode" />
               <item name="zation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zation" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zation" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-              <item name="helper" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -406,7 +395,7 @@
       <workItem from="1547068669617" duration="190000" />
       <workItem from="1547129691157" duration="2676000" />
       <workItem from="1547585675209" duration="655000" />
-      <workItem from="1549044175781" duration="794000" />
+      <workItem from="1549044175781" duration="866000" />
     </task>
     <task id="LOCAL-00001" summary="add pm2 support">
       <created>1537041074067</created>
@@ -636,7 +625,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256739000" />
+    <option name="totallyTimeSpent" value="256811000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -649,9 +638,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.76054215" visible="true" weight="0.27004218" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.76054215" visible="true" weight="0.27004218" />
       <window_info id="Structure" order="1" sideWeight="0.23945783" side_tool="true" visible="true" weight="0.27004218" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Gulp" order="3" side_tool="true" />
@@ -666,7 +654,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32923833" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Statistic" order="8" weight="0.32939914" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4976867" visible="true" weight="0.32244897" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4976867" visible="true" weight="0.32244897" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50033045" side_tool="true" weight="0.32624114" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32725322" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
@@ -928,13 +916,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/helper/serverInit.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -986,6 +967,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2145">
           <caret line="164" column="21" selection-start-line="164" selection-start-column="21" selection-end-line="164" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="55" column="28" lean-forward="true" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
         </state>
       </provider>
     </entry>
