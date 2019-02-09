@@ -98,6 +98,8 @@ class ClientInit
             this.templateEninge.addToMap('license',this.license);
             this.templateEninge.addToMap('zationClientVersion',this.zationClientVersion);
             this.templateEninge.addToMap('useDebug',this.useDebug);
+            this.templateEninge.addToMap('typescriptVersion',VersionManager.getTypeScriptVersion());
+            this.templateEninge.addToMap('typescriptGulpVersion',VersionManager.getTypescriptGulpVersion());
 
             this.templateEninge.addToMap('author',this.author !== null ?
                 `\n  "author" : "${this.author}", ` : '');

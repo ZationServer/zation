@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "gulp": "4.0.0",
-    "gulp-typescript": "5.0.0-alpha.3",
-    "typescript": "2.9.2"
+    "gulp-typescript": "{{typescriptGulpVersion}}",
+    "typescript": "{{typescriptVersion}}"
   }
 }

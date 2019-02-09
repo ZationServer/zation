@@ -96,6 +96,8 @@ class ServerInit
             this.templateEninge.addToMap('useStartDebug',this.useStartDebug);
             this.templateEninge.addToMap('panelUserName',this.panelUserName);
             this.templateEninge.addToMap('panelPassword',this.panelPassword);
+            this.templateEninge.addToMap('typescriptVersion',VersionManager.getTypeScriptVersion());
+            this.templateEninge.addToMap('typescriptGulpVersion',VersionManager.getTypescriptGulpVersion());
 
             this.templateEninge.addToMap('author',this.author !== null ?
                 `\n  "author" : "${this.author}", ` : '');

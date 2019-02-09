@@ -30,6 +30,10 @@ class VersionManager
         return VersionManager.getPackageJson()['dependencies']['zation-client'];
     }
 
+    static getTypescriptGulpVersion() {
+        return VersionManager.getPackageJson()['devDependencies']['gulp-typescript'];
+    }
+
 }
 
 module.exports = VersionManager;

@@ -39,8 +39,8 @@
     "tools"
   ],
   "dependencies": {
-    "zation-server": "0.6.8",
-    "zation-client": "0.4.9",
+    "zation-server": "0.7.2",
+    "zation-client": "0.5.1",
     "download-git-repo": "1.1.0",
     "empty-dir": "1.0.0",
     "fs-extra": "6.0.1",
@@ -51,8 +51,8 @@
   "devDependencies": {
     "gulp": "4.0.0",
     "gulp-sass": "4.0.1",
-    "gulp-typescript": "5.0.0-alpha.3",
-    "typescript": "3.0.3",
+    "gulp-typescript": "5.0.0",
+    "typescript": "3.3.3",
     "graceful-fs": "4.1.11",
     "minimatch": "3.0.4"
   },
