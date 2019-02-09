@@ -6,9 +6,5 @@ module.exports = Config.serviceConfig(
             {
 
             },
-
-        customServices:
-            {
-
-            }
+        serviceModules : []
     });
