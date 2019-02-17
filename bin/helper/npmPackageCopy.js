@@ -13,7 +13,9 @@ class NpmPackageCopy
 {
     constructor(destDir,folderName,git,finishedText,force)
     {
-        this.destDir = destDir;
+        this.destDir = folderName ?
+            path.normalize(destDir + '/' + folderName) :
+            path.normalize(destDir);
         this.folderName = folderName;
         this.git = git;
         this.finishedText = finishedText;
@@ -23,7 +25,7 @@ class NpmPackageCopy
 
     async process() {
         console.log();
-        await FileSystemHelper.checkDir(this.destDir,this.consoleHelper,this.force,this.folderName);
+        await FileSystemHelper.checkDir(this.destDir,this.consoleHelper,this.force,!!this.folderName);
         await this._init();
     }
 
