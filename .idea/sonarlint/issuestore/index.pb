@@ -25,3 +25,11 @@ K
 bin/helper/consoleHelper.js,4/6/46701ca5cf39e39ec9c4e29fac07bf859528fba0
 <
 package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
+N
+bin/helper/fileSystemHelper.js,c/7/c756a9e93f14c84edfb1c3212d3b3509485ae561
+L
+bin/helper/npmPackageCopy.js,0/5/057a01e15e7373347c1dd10e419887c252a8cd1d
+A
+package-lock.json,f/a/fa288d1472d29beccb489a676f68739ad365fc47
+;
+gulpFile.js,4/3/43f7c493c2c98cf8bc8fd33bee08f7b0612aeb1b
