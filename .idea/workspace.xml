@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="update version to 0.4.9&#10;update server version to 0.5.2&#10;update client version to 0.4.1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -18,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
-              <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+            <state relative-caret-position="810">
+              <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -412,7 +414,8 @@
       <workItem from="1550501599369" duration="311000" />
       <workItem from="1550506566882" duration="178000" />
       <workItem from="1550521498122" duration="57000" />
-      <workItem from="1550581142649" duration="13000" />
+      <workItem from="1550581142649" duration="139000" />
+      <workItem from="1550615646024" duration="101000" />
     </task>
     <task id="LOCAL-00001" summary="add pm2 support">
       <created>1537041074067</created>
@@ -642,7 +645,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263661000" />
+    <option name="totallyTimeSpent" value="263888000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -655,10 +658,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7410526" visible="true" weight="0.16395418" />
-      <window_info id="Structure" order="1" sideWeight="0.25894737" side_tool="true" visible="true" weight="0.16395418" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7389474" visible="true" weight="0.16395418" />
+      <window_info id="Structure" order="1" sideWeight="0.26105264" side_tool="true" visible="true" weight="0.16395418" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Gulp" order="3" side_tool="true" />
       <window_info id="npm" order="4" side_tool="true" />
@@ -935,8 +937,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+        <state relative-caret-position="810">
+          <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
         </state>
       </provider>
     </entry>
