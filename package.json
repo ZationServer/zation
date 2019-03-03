@@ -53,7 +53,8 @@
     "gulp-typescript": "5.0.0",
     "typescript": "3.3.3",
     "graceful-fs": "4.1.11",
-    "minimatch": "3.0.4"
+    "minimatch": "3.0.4",
+    "extend": ">=3.0.2"
   },
   "bin": {
     "zation": "bin/cli.js"
