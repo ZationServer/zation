@@ -1,6 +1,6 @@
 {
   "name": "zation",
-  "version": "0.7.6",
+  "version": "0.7.7",
   "license": "MIT",
   "description": "Appication Framework Master",
   "main": "dist/index.js",
@@ -39,8 +39,8 @@
     "tools"
   ],
   "dependencies": {
-    "zation-server": "0.8.5",
-    "zation-client": "0.5.4",
+    "zation-server": "0.8.7",
+    "zation-client": "0.5.5",
     "download-git-repo": "1.1.0",
     "empty-dir": "1.0.0",
     "fs-extra": "6.0.1",
