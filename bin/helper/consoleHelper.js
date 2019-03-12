@@ -82,6 +82,7 @@ class ConsoleHelper
         console.log('Npm Project Commands (if zation init was used):');
         console.log('  For server project:');
         console.log(`     npm start                           Starts the server (and build it (only typescript)).`);
+        console.log(`     npm run check                       Checks all Zation configurations.`);
         console.log(`     npm run build (only typescript)     Builds the project.`);
         console.log(`     npm run watch (only typescript)     Starts to build automatically when a file changes.`);
         console.log(`     npm run dockerBuild                 Builds an docker image.`);

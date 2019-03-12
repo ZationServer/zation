@@ -7,5 +7,6 @@ start
             //options
             debug : {{useDebug}},
             startDebug : {{useStartDebug}},
-        })
+        }),
+    process.env.CHECK
 );

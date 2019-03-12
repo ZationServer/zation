@@ -6,6 +6,7 @@
   "main": "index.js",{{author}} {{git}}
   "scripts": {
     "start": "node index.js",
+    "check": "CHECK=true node index.js",
     "start:docker": "node dockerwait.js && pm2 start index.js && pm2 logs index",
     "dockerBuild": "docker build -t zation/{{appNameLC}} . ",
     "dockerExport" : "docker save --output {{appNameLC}}.tar zation/{{appNameLC}}",
