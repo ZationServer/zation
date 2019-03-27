@@ -165,9 +165,11 @@ class ServerInit
         //abort if failed
         FileSystemHelper.copyDirRecursive(copyDir, this.destDir);
         await this._template();
+        /*
         if(this.typeScript) {
             await NpmRunner.installGlobal(`typescript@${VersionManager.getTypeScriptVersion()}`,this.destDir);
         }
+        */
         await NpmRunner.installDependencies(this.destDir);
         this._printSuccess(Date.now() - startTimeStamp);
     }
