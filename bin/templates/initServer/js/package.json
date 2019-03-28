@@ -6,7 +6,8 @@
   "main": "index.js",{{author}} {{git}}
   "scripts": {
     "start": "node index.js",
-    "check": "CHECK=true node index.js",
+    "test": "mocha --exit -r ts-node/register test/**/*.ts",
+    "check": "START_MODE=2 node index.js",
     "start:docker": "node dockerwait.js && pm2 start index.js && pm2 logs index",
     "dockerBuild": "docker build -t zation/{{appNameLC}} . ",
     "dockerExport" : "docker save --output {{appNameLC}}.tar zation/{{appNameLC}}",
@@ -14,6 +15,10 @@
     "dockerStop": "docker stop zation-{{appNameLC}} && docker rm -f zation-{{appNameLC}}"
   },
   "dependencies": {
-    "zation-server": "{{zationServerVersion}}"
+    "zation-server": "{{zationServerVersion}}",
+    "typescript": "{{typescriptVersion}}",
+    "zation-assured": "{{zationAssuredVersion}}",
+    "mocha": "^6.0.2",
+    "ts-node": "^8.0.3"
   }
 }

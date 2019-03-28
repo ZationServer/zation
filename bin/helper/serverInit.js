@@ -27,6 +27,7 @@ class ServerInit
         this.templateEninge = new EasyTemplateEngine();
 
         this.zationServerVersion = VersionManager.getZationServerVersion();
+        this.zationAssuredVersion = VersionManager.getZationAssuredVersion();
     }
 
     async process()
@@ -92,6 +93,7 @@ class ServerInit
             this.templateEninge.addToMap('timeZone',this.timeZone );
             this.templateEninge.addToMap('license',this.license);
             this.templateEninge.addToMap('zationServerVersion',this.zationServerVersion);
+            this.templateEninge.addToMap('zationAssuredVersion',this.zationAssuredVersion);
             this.templateEninge.addToMap('useDebug',this.useDebug);
             this.templateEninge.addToMap('useStartDebug',this.useStartDebug);
             this.templateEninge.addToMap('panelUserName',this.panelUserName);
@@ -115,6 +117,7 @@ class ServerInit
     {
         console.log('Information: ');
         console.log(`Zation server version: ${this.zationServerVersion}`);
+        console.log(`Zation assured version: ${this.zationAssuredVersion}`);
         console.log(`Project path: ${this.destDir}`);
         console.log(`Project type: ${this.typeScript ? 'typescript' : 'javascript'}`);
         console.log(`App name: ${this.appName}`);

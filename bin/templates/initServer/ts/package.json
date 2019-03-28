@@ -7,7 +7,8 @@
   "types": "dist/index.d.ts",{{author}}{{git}}
   "scripts": {
     "start": "node dist/index.js",
-    "check": "npm run build && CHECK=true node dist/index.js",
+    "test": "npm run build && mocha --exit -r ts-node/register test/**/*.ts",
+    "check": "npm run build && START_MODE=2 node dist/index.js",
     "start:docker": "node dockerwait.js && pm2 start dist/index.js && pm2 logs index",
     "prestart": "npm run build",
     "build": "gulp compile",
@@ -26,6 +27,9 @@
   "devDependencies": {
     "gulp": "4.0.0",
     "gulp-typescript": "{{typescriptGulpVersion}}",
-    "typescript": "{{typescriptVersion}}"
+    "typescript": "{{typescriptVersion}}",
+    "zation-assured": "{{zationAssuredVersion}}",
+    "mocha": "^6.0.2",
+    "ts-node": "^8.0.3"
   }
 }

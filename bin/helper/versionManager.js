@@ -18,6 +18,10 @@ class VersionManager
         return VersionManager.getPackageJson()['dependencies']['zation-server'];
     }
 
+    static getZationAssuredVersion() {
+        return VersionManager.getPackageJson()['dependencies']['zation-assured'];
+    }
+
     static getZationVersion() {
         return VersionManager.getPackageJson().version;
     }

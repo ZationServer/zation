@@ -82,6 +82,7 @@ class ConsoleHelper
         console.log('Npm Project Commands (if zation init was used):');
         console.log('  For server project:');
         console.log(`     npm start                           Starts the server (and build it (only typescript)).`);
+        console.log(`     npm test                            Runs all tests (and build it (only typescript)).`);
         console.log(`     npm run check                       Checks all Zation configurations.`);
         console.log(`     npm run build (only typescript)     Builds the project.`);
         console.log(`     npm run watch (only typescript)     Starts to build automatically when a file changes.`);
@@ -124,8 +125,9 @@ class ConsoleHelper
     static printVersion()
     {
         console.log(`Zation Version: ${VersionManager.getZationVersion()}`);
-        console.log(`Zation Server Version: ${VersionManager.getZationServerVersion()}`);
-        console.log(`Zation Client Version: ${VersionManager.getZationClientVersion()}`);
+        console.log(`Zation Server  Version: ${VersionManager.getZationServerVersion()}`);
+        console.log(`Zation Assured Version: ${VersionManager.getZationAssuredVersion()}`);
+        console.log(`Zation Client  Version: ${VersionManager.getZationClientVersion()}`);
     }
 
     static logFailedToRemoveDir(dirPath)

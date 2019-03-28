@@ -1,12 +1,6 @@
-const {start,Config} = require('zation-server');
+const {start}        = require('zation-server');
+const StarterConfig  = require('./configs/starter.config');
 
-start
-(
-    Config.starterConfig(
-        {
-            //options
-            debug : {{useDebug}},
-            startDebug : {{useStartDebug}},
-        }),
-    process.env.CHECK
-);
+(async () => {
+    await start(StarterConfig,process.env.START_MODE);
+})();

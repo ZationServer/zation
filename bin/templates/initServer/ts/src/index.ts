@@ -1,12 +1,6 @@
-import {start,Config} from 'zation-server';
+import {start}       from 'zation-server';
+import StarterConfig from './configs/starter.config';
 
-start
-(
-    Config.starterConfig(
-        {
-            //options
-            debug : {{useDebug}},
-            startDebug : {{useStartDebug}},
-        }),
-    process.env.CHECK
-);
+(async () => {
+    await start(StarterConfig,process.env.START_MODE);
+})();
