@@ -34,6 +34,7 @@ describe('LogInController Test',async () => {
     when(testClient,'Test Not Valid Input')
         .authRequest({email : 'notvalid.de'})
         .assertThat()
+        .isNotSuccessful()
         .buildHasError()
             .presets()
             .inputIsNotTypeEmail()
