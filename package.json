@@ -1,6 +1,6 @@
 {
   "name": "zation",
-  "version": "0.8.7",
+  "version": "0.8.8",
   "license": "MIT",
   "description": "Appication Framework Master",
   "main": "dist/index.js",
