@@ -161,8 +161,6 @@ class ClientInit
         //abort if failed
         FileSystemHelper.copyDirRecursive(copyDir, this.destDir);
         await this._template();
-        await NpmRunner.installGlobal(`typescript@${VersionManager.getTypeScriptVersion()}`,this.destDir);
-        console.log();
         await NpmRunner.installDependencies(this.destDir);
         this._printSuccess(Date.now() - startTimeStamp);
     }
