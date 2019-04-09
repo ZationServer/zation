@@ -6,7 +6,7 @@
   <!-- Logo -->
   <br/>
   <a href="https://zation.de">
-      <img src="https://zation.de/img/zationBackgroundLogo.svg" alt="Logo Zation" height="200"/>
+      <img src="https://zation.de/img/zationWideLogo.svg" alt="Logo Zation" height="200"/>
   </a>
   <br/>
   <br/>
