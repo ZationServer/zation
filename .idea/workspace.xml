@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c4953e7-aa15-49e0-9124-a5109720c4ce" name="Default" comment="update version to 0.4.9&#10;update server version to 0.5.2&#10;update client version to 0.4.1">
-      <change beforePath="$PROJECT_DIR$/bin/helper/clientInit.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/clientInit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/helper/serverInit.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/helper/serverInit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/templates/initServer/js/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/js/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/templates/initServer/ts/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/bin/templates/initServer/ts/Dockerfile" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,28 +17,24 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+        <entry file="file://$PROJECT_DIR$/bin/helper/serverInit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+            <state relative-caret-position="317">
+              <caret line="173" selection-start-line="173" selection-end-line="173" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/helper/clientInit.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="162" column="31" selection-start-line="162" selection-start-column="31" selection-end-line="162" selection-end-column="31" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/bin/templates/initServer/js/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bin/helper/serverInit.js">
+        <entry file="file://$PROJECT_DIR$/bin/templates/initServer/ts/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="173" lean-forward="true" selection-start-line="173" selection-end-line="173" />
+            <state relative-caret-position="270">
+              <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -160,8 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../zation-server/src/lib/helper/logger/logger.ts" />
-        <option value="$PROJECT_DIR$/../zation-server/src/lib/helper/constants/workerMessageActions.ts" />
         <option value="$PROJECT_DIR$/../zation-server/src/lib/main/zationBroker.ts" />
         <option value="$PROJECT_DIR$/../zation-server/src/lib/helper/sc/scWorker.ts" />
         <option value="$PROJECT_DIR$/../zation-server/src/lib/main/zationWorker.ts" />
@@ -211,6 +205,8 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/bin/helper/clientInit.js" />
         <option value="$PROJECT_DIR$/bin/helper/serverInit.js" />
+        <option value="$PROJECT_DIR$/bin/templates/initServer/js/Dockerfile" />
+        <option value="$PROJECT_DIR$/bin/templates/initServer/ts/Dockerfile" />
       </list>
     </option>
   </component>
@@ -233,17 +229,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="zation" type="cbb8eebc:String" user="zation" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -261,6 +246,30 @@
               <item name="zation" type="462c0819:PsiDirectoryNode" />
               <item name="bin" type="462c0819:PsiDirectoryNode" />
               <item name="helper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zation" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zation" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="initClient" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="zation" type="cbb8eebc:String" user="zation" />
             </path>
           </expand>
           <select />
@@ -443,6 +452,7 @@
       <workItem from="1553779752523" duration="128000" />
       <workItem from="1553792355296" duration="807000" />
       <workItem from="1554302064306" duration="60000" />
+      <workItem from="1554807163670" duration="128000" />
     </task>
     <task id="LOCAL-00001" summary="add pm2 support">
       <created>1537041074067</created>
@@ -672,7 +682,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="272221000" />
+    <option name="totallyTimeSpent" value="272349000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -687,8 +697,8 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7108239" visible="true" weight="0.17721519" />
-      <window_info id="Structure" order="1" sideWeight="0.28917608" side_tool="true" visible="true" weight="0.17721519" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7092084" visible="true" weight="0.17721519" />
+      <window_info id="Structure" order="1" sideWeight="0.2907916" side_tool="true" visible="true" weight="0.17721519" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Gulp" order="3" side_tool="true" />
       <window_info id="npm" order="4" side_tool="true" />
@@ -744,8 +754,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="update version to 0.4.9&#10;update server version to 0.5.2&#10;update client version to 0.4.1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bin/templates/initServer/src/config/app.config.ts" />
-    <entry file="file://$PROJECT_DIR$/bin/templates/initServer/src/config/main.config.ts" />
     <entry file="file://$PROJECT_DIR$/bin/templates/initServer/src/config/error.config.ts" />
     <entry file="file://$PROJECT_DIR$/bin/templates/initServer/src/config/event.config.ts" />
     <entry file="file://$PROJECT_DIR$/bin/templates/initServer/src/config/channel.config.ts" />
@@ -973,6 +981,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/helper/clientInit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2370">
+          <caret line="162" column="31" selection-start-line="162" selection-start-column="31" selection-end-line="162" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bin/templates/initServer/js/test/test.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -1031,24 +1053,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/helper/clientInit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="162" column="31" selection-start-line="162" selection-start-column="31" selection-end-line="162" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/helper/serverInit.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
-          <caret line="173" lean-forward="true" selection-start-line="173" selection-end-line="173" />
+          <caret line="173" selection-start-line="173" selection-end-line="173" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/templates/initServer/js/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/templates/initServer/ts/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
         </state>
       </provider>
     </entry>

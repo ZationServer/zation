@@ -1,4 +1,4 @@
-FROM node:8.9
+FROM node:11.7.0
 
 LABEL appName="{{appNameLC}}"
 LABEL version="{{version}}"
