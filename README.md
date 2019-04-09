@@ -63,7 +63,7 @@ Your new projects will come with example code, tests, and more.
 
 ## Learn More 📚
 
-- [Read the documentation @ https://zationjs.org/documentation/#/?id=zation](https://zationjs.org/documentation/#/?id=zation)
+- [Read the documentation @docs.zationjs.org](https://docs.zationjs.org)
 
 > If you really don't know how you can implement something after reading the documentation. Try to look in the documentation of the Zation API. If this not helps, you can send me a message to <a href="mailto:info@zation.de">info@zation.de</a>.
 

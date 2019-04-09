@@ -42,8 +42,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="120">
-                <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+              <first_editor relative-caret-position="344">
+                <caret line="67" column="46" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="46" />
               </first_editor>
               <second_editor />
             </state>
@@ -457,7 +457,7 @@
       <workItem from="1553779752523" duration="128000" />
       <workItem from="1553792355296" duration="807000" />
       <workItem from="1554302064306" duration="60000" />
-      <workItem from="1554807163670" duration="1726000" />
+      <workItem from="1554807163670" duration="2737000" />
     </task>
     <task id="LOCAL-00001" summary="add pm2 support">
       <created>1537041074067</created>
@@ -687,7 +687,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="273947000" />
+    <option name="totallyTimeSpent" value="274958000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -702,7 +702,7 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7092084" visible="true" weight="0.17721519" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7092084" visible="true" weight="0.17721519" />
       <window_info id="Structure" order="1" sideWeight="0.2907916" side_tool="true" visible="true" weight="0.17721519" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Gulp" order="3" side_tool="true" />
@@ -716,7 +716,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32923833" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Statistic" order="8" weight="0.32939914" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4976867" visible="true" weight="0.36836734" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4976867" visible="true" weight="0.36836734" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50033045" side_tool="true" weight="0.32624114" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32725322" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
@@ -1068,8 +1068,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="120">
-            <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <first_editor relative-caret-position="344">
+            <caret line="67" column="46" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="46" />
           </first_editor>
           <second_editor />
         </state>
