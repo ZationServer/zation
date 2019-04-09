@@ -1,4 +1,6 @@
+# Zation 
 
+*Highly scalable, structured, secure, real-time application server framework 🚀.*
 
 <h1 align="center">
   <!-- Logo -->
@@ -30,7 +32,7 @@
   </a>  
 </h1>
 
-
+## What is Zation?
 Zation is an application server framework which lets you build fast, real-time, secure and scalable backends. 
 You can scale it on more CPU cores or machines/instances. 
 It's ideal for creating real-time apps e.g mobile apps with react-native, multiplayer games or real-time statistic apps.
