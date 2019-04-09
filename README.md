@@ -71,6 +71,6 @@ Your new projects will come with example code, tests, and more.
 
 Please consider donating if you think Zation is helpful to you or that my work is valuable. 
 I am happy if you can help me. 
-Click [here](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=P3DNYQQGX3THW&source=url) to donate. :heart:
+Click [here](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=P3DNYQQGX3THW&source=url) to donate. 💰
 
 
