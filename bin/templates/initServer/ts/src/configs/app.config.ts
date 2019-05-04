@@ -15,7 +15,7 @@ module.exports = Config.appConfig(
         controllerDefaults :
             {
                 wsAccess : true,
-                httpAccess : true,
+                httpAccess : false,
                 httpPostAllowed : true,
                 httpGetAllowed : true,
                 access : 'all',
