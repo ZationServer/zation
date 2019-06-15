@@ -39,6 +39,8 @@
     "tools"
   ],
   "dependencies": {
+    "commander": "2.20.0",
+    "terminal-kit": "1.28.1",
     "zation-server": "0.9.7",
     "zation-client": "0.7.6",
     "zation-assured": "0.1.6",
