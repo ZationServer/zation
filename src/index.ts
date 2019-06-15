@@ -4,9 +4,9 @@ GitHub: LucaCode
 ©Copyright by Luca Scaringella
  */
 
-import ZationServer  = require('zation-server');
-import ZationClient  = require('zation-client');
-import ZationAssured = require('zation-assured');
+import * as ZationServer  from 'zation-server';
+import * as ZationClient  from 'zation-client';
+import * as ZationAssured from 'zation-assured';
 
 export {
     ZationServer as Server,
