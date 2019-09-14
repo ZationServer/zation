@@ -67,6 +67,16 @@ Your new projects will come with example code, tests, and more.
 
 > If you really don't know how you can implement something after reading the documentation. Try to look in the documentation of the Zation API. If this not helps, you can send me a message to <a href="mailto:info@zation.de">info@zation.de</a>.
 
+## License
+
+While Zation source code is publicly available, the Zation server is not free.    
+All other repositories of the ZationServer organization that contain an MIT license  
+are free to use with the conditions of the MIT license.    
+To use the Zation server on a public server or with more than ten components,   
+you need to purchase a license.   
+
+- https://github.com/ZationServer/zation/wiki/Zation-End-User-License-Agreement
+
 ## Donate
 
 Please consider donating if you think Zation is helpful to you or that my work is valuable.   
