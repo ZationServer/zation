@@ -10,7 +10,7 @@ const ConsoleHelper    = require('./helper/consoleHelper');
 const ServerInit       = require('./helper/serverInit');
 const ClientInit       = require('./helper/clientInit');
 const InitController   = require('./helper/initController');
-const NpmPackageCopy   = require('./helper/npmPackageCopy');
+const GitCloner        = require('./helper/gitCloner');
 const path             = require('path');
 const program          = require('commander');
 const term             = require( 'terminal-kit' ).terminal;
@@ -31,63 +31,63 @@ program.option("-v, --version", "output the version number",() => {
 });
 
 program
-    .command('init [folderName]')
+    .command('init [path]')
     .alias('i')
     .description('initialize a new Zation project in the working directory or a new folder')
-    .action((folderName,c) => {
+    .action((inPath,c) => {
         term.cyan( 'What type of project do you want to create?\n' );
         term.singleColumnMenu(['Server','Client'], async ( error , response ) => {
             if( response.selectedIndex === 0){
-                await new ServerInit(destDir,folderName,initServerDir,!!c.parent.force).process();
+                await new ServerInit(destDir,inPath,initServerDir,!!c.parent.force).process();
             }
             else {
-                await new ClientInit(destDir,folderName,initClientDir,!!c.parent.force).process();
+                await new ClientInit(destDir,inPath,initClientDir,!!c.parent.force).process();
             }
         });
     });
 
 program
-    .command('initServer [folderName]')
+    .command('initServer [path]')
     .alias('is')
     .description('initialize a new Zation server project in the working directory or a new folder')
-    .action(async (folderName,c) => {
-        await new ServerInit(destDir,folderName,initServerDir,!!c.parent.force).process();
+    .action(async (inPath,c) => {
+        await new ServerInit(destDir,inPath,initServerDir,!!c.parent.force).process();
     });
 
 program
-    .command('initClient [folderName]')
+    .command('initClient [path]')
     .alias('ic')
     .description('initialize a new Zation client project in the working directory or a new folder')
-    .action(async (folderName,c) => {
-        await new ClientInit(destDir,folderName,initServerDir,!!c.parent.force).process();
+    .action(async (inPath,c) => {
+        await new ClientInit(destDir,inPath,initServerDir,!!c.parent.force).process();
     });
 
 program
     .command('initController [path]')
     .alias('ic')
     .description('initialize a new Zation controller in the working directory')
-    .action(async (dirPath,c) => {
-        await new InitController(destDir,dirPath,controllerTeDir,!!c.parent.force).process();
+    .action(async (inPath,c) => {
+        await new InitController(destDir,inPath,controllerTeDir,!!c.parent.force).process();
     });
 
 program
-    .command('cloneClusterState [folderName]')
+    .command('cloneClusterState [path]')
     .alias('ccs')
     .description('Clone the zation-cluster-state package in the working directory or a new folder')
-    .action(async (folderName,c) => {
+    .action(async (inPath,c) => {
         const finishedText = `   You can start the zation-cluster-state server with 'npm start'`;
-        await new NpmPackageCopy
-        (destDir,folderName,'direct:https://github.com/ZationServer/zation-cluster-state.git',finishedText,!!c.parent.force).process();
+        await new GitCloner
+        (destDir,inPath,'direct:https://github.com/ZationServer/zation-cluster-state.git',finishedText,!!c.parent.force).process();
     });
 
 program
-    .command('cloneClusterBroker [folderName]')
+    .command('cloneClusterBroker [path]')
     .alias('ccb')
     .description('Clone the zation-cluster-broker package in the working directory or a new folder')
-    .action(async (folderName,c) => {
+    .action(async (inPath,c) => {
         const finishedText = `   You can start the zation-cluster-broker server with 'STATE_SERVER_HOST="localhost" node index.js'`;
-        await new NpmPackageCopy
-        (destDir,folderName,'direct:https://github.com/ZationServer/zation-cluster-broker.git',finishedText,!!c.parent.force).process();
+        await new GitCloner
+        (destDir,inPath,'direct:https://github.com/ZationServer/zation-cluster-broker.git',finishedText,!!c.parent.force).process();
     });
 
 program

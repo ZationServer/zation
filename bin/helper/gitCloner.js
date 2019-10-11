@@ -9,13 +9,12 @@ const FileSystemHelper   = require('./fileSystemHelper');
 const NpmRunner          = require('./npmRunner');
 const download           = require('download-git-repo');
 
-class NpmPackageCopy
+class GitCloner
 {
     constructor(destDir,folderName,git,finishedText,force)
     {
-        this.destDir = folderName ?
-            path.normalize(destDir + '/' + folderName) :
-            path.normalize(destDir);
+        // noinspection DuplicatedCode
+        this.destDir = folderName ? path.normalize(destDir + '/' + folderName) : path.normalize(destDir);
         this.folderName = folderName;
         this.git = git;
         this.finishedText = finishedText;
@@ -60,4 +59,4 @@ class NpmPackageCopy
     }
 }
 
-module.exports = NpmPackageCopy;
+module.exports = GitCloner;
