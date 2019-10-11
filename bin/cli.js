@@ -11,83 +11,100 @@ const ServerInit       = require('./helper/serverInit');
 const ClientInit       = require('./helper/clientInit');
 const InitController   = require('./helper/initController');
 const NpmPackageCopy   = require('./helper/npmPackageCopy');
+const path             = require('path');
+const program          = require('commander');
+const term             = require( 'terminal-kit' ).terminal;
 
-const path = require('path');
-const argv = require('minimist')(process.argv.slice(2));
-const command = argv._[0];
-const arg1 = argv._[1];
-const force = argv['force'];
+const destDir = path.normalize(process.cwd());
 
 const initServerDir   = __dirname + '/templates/initServer';
 const initClientDir   = __dirname + '/templates/initClient';
 const controllerTeDir = __dirname + '/templates/controller';
 
-const destDir = path.normalize(process.cwd());
+program
+    .name('zation')
+    .description('CLI tool of the Zation framework.')
+    .option("-f, --force", "force all necessary directory modifications without prompt");
 
-
-//Actions
-if (argv['help'])
-{
-    ConsoleHelper.logHelp();
-    process.exit();
-}
-
-if (argv['v'] || argv['version'])
-{
+program.option("-v, --version", "output the version number",() => {
     ConsoleHelper.printVersion();
-    process.exit();
+});
+
+program
+    .command('init [folderName]')
+    .alias('i')
+    .description('initialize a new Zation project in the working directory or a new folder')
+    .action((folderName,c) => {
+        term.cyan( 'What type of project do you want to create?\n' );
+        term.singleColumnMenu(['Server','Client'], async ( error , response ) => {
+            if( response.selectedIndex === 0){
+                await new ServerInit(destDir,folderName,initServerDir,!!c.parent.force).process();
+            }
+            else {
+                await new ClientInit(destDir,folderName,initClientDir,!!c.parent.force).process();
+            }
+        });
+    });
+
+program
+    .command('initServer [folderName]')
+    .alias('is')
+    .description('initialize a new Zation server project in the working directory or a new folder')
+    .action(async (folderName,c) => {
+        await new ServerInit(destDir,folderName,initServerDir,!!c.parent.force).process();
+    });
+
+program
+    .command('initClient [folderName]')
+    .alias('ic')
+    .description('initialize a new Zation client project in the working directory or a new folder')
+    .action(async (folderName,c) => {
+        await new ClientInit(destDir,folderName,initServerDir,!!c.parent.force).process();
+    });
+
+program
+    .command('initController [path]')
+    .alias('ic')
+    .description('initialize a new Zation controller in the working directory')
+    .action(async (dirPath,c) => {
+        await new InitController(destDir,dirPath,controllerTeDir,!!c.parent.force).process();
+    });
+
+program
+    .command('cloneClusterState [folderName]')
+    .alias('ccs')
+    .description('Clone the zation-cluster-state package in the working directory or a new folder')
+    .action(async (folderName,c) => {
+        const finishedText = `   You can start the zation-cluster-state server with 'npm start'`;
+        await new NpmPackageCopy
+        (destDir,folderName,'direct:https://github.com/ZationServer/zation-cluster-state.git',finishedText,!!c.parent.force).process();
+    });
+
+program
+    .command('cloneClusterBroker [folderName]')
+    .alias('ccb')
+    .description('Clone the zation-cluster-broker package in the working directory or a new folder')
+    .action(async (folderName,c) => {
+        const finishedText = `   You can start the zation-cluster-broker server with 'STATE_SERVER_HOST="localhost" node index.js'`;
+        await new NpmPackageCopy
+        (destDir,folderName,'direct:https://github.com/ZationServer/zation-cluster-broker.git',finishedText,!!c.parent.force).process();
+    });
+
+program
+    .command('projectCommands')
+    .alias('pc')
+    .description('shows npm project commands')
+    .action(() => ConsoleHelper.logNpmProjectCommands());
+
+program
+    .command('*','',{noHelp : true})
+    .action((env) => {
+        ConsoleHelper.logErrorMessage(`'${env}' is not a valid command.`);
+        program.outputHelp();
+    });
+
+if (process.argv.length === 2) {
+    process.argv.push('-h')
 }
 
-if (command === 'initServer' || command === 'is') {
-    (async () =>
-    {
-        await new ServerInit(destDir,arg1,initServerDir,force).process();
-    })();
-}
-else if (command === 'initClient' || command === 'ic') {
-    (async () =>
-    {
-        await new ClientInit(destDir,arg1,initClientDir,force).process();
-    })();
-}
-else if (command === 'initController' || command === 'ico') {
-    (async () =>
-    {
-        await new InitController(destDir,arg1,controllerTeDir,force).process();
-    })();
-}
-else if (command === 'projectCommands' || command === 'pc') {
-    ConsoleHelper.logNpmProjectCommands();
-    process.exit();
-}
-else if (command === 'cloneClusterState' || command === 'ccs') {
-    (async () =>
-    {
-        let finishedText = `   You can start the zation-cluster-state server with 'npm start'`;
-        await new NpmPackageCopy
-        (destDir,arg1,'direct:https://github.com/ZationServer/zation-cluster-state.git',finishedText,force).process();
-        process.exit();
-    })();
-}
-else if (command === 'cloneClusterBroker' || command === 'ccb') {
-    (async () =>
-    {
-        let finishedText = `   You can start the zation-cluster-broker server with 'STATE_SERVER_HOST="localhost" node index.js'`;
-        await new NpmPackageCopy
-        (destDir,arg1,'direct:https://github.com/ZationServer/zation-cluster-broker.git',finishedText,force).process();
-        process.exit();
-    })();
-}
-else if(!command)
-{
-    ConsoleHelper.logHelp();
-    process.exit();
-}
-else
-{
-    console.log();
-    ConsoleHelper.logErrorMessage(`'${command}' is not a valid Zation command.`);
-    ConsoleHelper.logHelp();
-    process.exit();
-}
-
+program.parse(process.argv);

@@ -11,7 +11,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "install": "node bin/welcome.js"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ZationServer/zation.git"
@@ -40,8 +42,8 @@
     "tools"
   ],
   "dependencies": {
-    "commander": "2.20.0",
-    "terminal-kit": "1.28.1",
+    "commander": "^3.0.2",
+    "terminal-kit": "^1.31.4",
     "zation-server": "0.9.7",
     "zation-client": "0.7.6",
     "zation-assured": "0.1.6",
@@ -57,7 +59,9 @@
     "typescript": "3.3.3",
     "graceful-fs": "4.1.11",
     "minimatch": "3.0.4",
-    "extend": ">=3.0.2"
+    "extend": ">=3.0.2",
+    "@types/commander": "^2.12.2",
+    "@types/terminal-kit": "^1.28.0"
   },
   "bin": {
     "zation": "bin/cli.js"
