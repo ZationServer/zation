@@ -57,7 +57,7 @@ class FileSystemHelper
             `The folder: '${destDir}' is not empty. Do you want to empty it and continue?`;
 
         if(!fs.existsSync(destDir)) {
-            fs.mkdirSync(destDir);
+            fsExtra.ensureDirSync(destDir);
         }
 
         if(!emptyDir.sync(destDir))

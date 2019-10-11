@@ -47,8 +47,6 @@ class ClientInit
 
     async _getInformation()
     {
-        let defaultAppName = !!this.folderName ? this.folderName :
-            this.cliPath.substring((this.cliPath.lastIndexOf(path.sep)+path.sep.length));
 
         console.log('What kind of client project do you want to create?');
         console.log('Options:');
@@ -63,6 +61,7 @@ class ClientInit
         }
         this.isNodeOption = this.lowerOption === 'node';
         this.isWebOption = this.lowerOption === 'web';
+        const defaultAppName = path.basename(!!this.folderName ? this.folderName : this.cliPath);
 
         this.appName = await this.consoleHelper.question('App name:',defaultAppName);
         this.description = await this.consoleHelper.question('Description:','Zation application client');

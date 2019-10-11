@@ -48,8 +48,7 @@ class ServerInit
 
     async _getInformation()
     {
-        let defaultAppName = !!this.folderName ? this.folderName :
-            this.cliPath.substring((this.cliPath.lastIndexOf(path.sep)+path.sep.length));
+        const defaultAppName = path.basename(!!this.folderName ? this.folderName : this.cliPath);
 
         this.typeScript =
             (await this.consoleHelper.question
