@@ -48,38 +48,11 @@ class ConsoleHelper
     {
         console.log('\x1b[33m%s\x1b[0m', '   [Warning]',message);
     }
-
-    static logHelp()
-    {
-        console.log();
-        console.log('Usage: zation [options] [command]');
-        if(!isWindows()) {
-            console.log('At permission error, try to use the command with sudo.`');
-        }
-        console.log('Options:');
-        console.log("  -v | -version                   Get the version of the current zation installation.");
-        console.log('  --help                          Get info on how to use zation in cli.');
-        console.log('  --force                         Force all necessary directory');
-        console.log('                                  modifications without prompt.');
-        console.log('Commands:');
-        console.log(`  initServer [folderName]         Init a new zation server app in working directory`);
-        console.log(`                                  or optional in folder.`);
-        console.log(`  initClient [folderName]         Init a new zation client app in working directory`);
-        console.log(`                                  or optional in folder.`);
-        console.log(`  cloneClusterState  [folderName] Clone the zation-cluster-state package`);
-        console.log(`                                  in working directory or optional in folder.`);
-        console.log(`  cloneClusterBroker [folderName] Clone the zation-cluster-broker package`);
-        console.log(`                                  in working directory or optional in folder.`);
-        console.log(`  initController [path]           Init a new zation controller in working directory.`);
-        console.log(`                                  `);
-        console.log(`  projectCommands or pc           Shows npm project commands (if zation init was used).`);
-        console.log();
-    }
-
+    
     static logNpmProjectCommands()
     {
         console.log();
-        console.log('Npm Project Commands (if zation init was used):');
+        console.log('Npm project commands (Only works in Zation CLI created projects):');
         console.log('  For server project:');
         console.log(`     npm start                           Starts the server (and build it (only typescript)).`);
         console.log(`     npm test                            Runs all tests (and build it (only typescript)).`);
@@ -124,10 +97,10 @@ class ConsoleHelper
 
     static printVersion()
     {
-        console.log(`Zation Version: ${VersionManager.getZationVersion()}`);
-        console.log(`Zation Server  Version: ${VersionManager.getZationServerVersion()}`);
-        console.log(`Zation Assured Version: ${VersionManager.getZationAssuredVersion()}`);
-        console.log(`Zation Client  Version: ${VersionManager.getZationClientVersion()}`);
+        console.log(`Zation version: ${VersionManager.getZationVersion()}`);
+        console.log(`Zation Server  version: ${VersionManager.getZationServerVersion()}`);
+        console.log(`Zation Assured version: ${VersionManager.getZationAssuredVersion()}`);
+        console.log(`Zation Client  version: ${VersionManager.getZationClientVersion()}`);
     }
 
     static logFailedToRemoveDir(dirPath)
