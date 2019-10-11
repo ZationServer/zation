@@ -37,8 +37,7 @@ class EasyTemplateEngine
 
     static templateFile(source,templateEngine)
     {
-        let file = fs.readFileSync(source).toString();
-
+        const file = fs.readFileSync(source).toString();
         // noinspection JSUnresolvedFunction
         fsExtra.removeSync(source);
         fs.appendFileSync(source,templateEngine.templateString(file));
@@ -46,7 +45,7 @@ class EasyTemplateEngine
 
     static templateFromFile(source,dist,templateEngine)
     {
-        let file = fs.readFileSync(source).toString();
+        const file = fs.readFileSync(source).toString();
         // noinspection JSUnresolvedFunction
         fsExtra.outputFileSync(dist,templateEngine.templateString(file));
     }

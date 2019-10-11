@@ -9,8 +9,9 @@ const EasyTemplateEngine = require('./easyTemplateEngine');
 const FileSystemHelper   = require('./fileSystemHelper');
 const NpmRunner          = require('./npmRunner');
 const path               = require('path');
-const VersionManager     = require('./versionManager');
 const isWindows          = require('is-windows');
+const versions           = require('./../versions');
+const term               = require( 'terminal-kit').terminal;
 
 class ClientInit
 {
@@ -25,8 +26,6 @@ class ClientInit
         this.folderName = folderName;
         this.consoleHelper = new ConsoleHelper();
         this.templateEninge = new EasyTemplateEngine();
-
-        this.zationClientVersion = VersionManager.getZationClientVersion();
     }
 
     async process()
@@ -41,27 +40,18 @@ class ClientInit
     _startMessage()
     {
         console.log();
-        ConsoleHelper.logInfoMessage(`Welcome to init a zation client app`);
+        ConsoleHelper.logInfoMessage(`Welcome to initialize a new Zation client project`);
         console.log();
     }
 
     async _getInformation()
     {
-
-        console.log('What kind of client project do you want to create?');
-        console.log('Options:');
-        console.log('   Web:      Creates an web client typescript project with webpack.');
-        console.log('   Node:     Creates an client typescript project with gulp.');
-        console.log('   ');
-        this.option = await this.consoleHelper.question('Option:','Node');
-        this.lowerOption = this.option.toLowerCase();
-
-        if(!(this.lowerOption === 'node' || this.lowerOption === 'web')) {
-            ConsoleHelper.logFailedAndEnd(`The option: '${this.option}' is not valid`);
-        }
-        this.isNodeOption = this.lowerOption === 'node';
-        this.isWebOption = this.lowerOption === 'web';
         const defaultAppName = path.basename(!!this.folderName ? this.folderName : this.cliPath);
+
+        term.cyan( 'What type of client project do you want to create?\n' );
+        const type = (await term.singleColumnMenu(['Web (Creates an web client typescript project with webpack)',
+                'Node (Creates an client typescript project with gulp)']).promise).selectedIndex;
+        this.lowerOption = type === 0 ? 'web' : 'node';
 
         this.appName = await this.consoleHelper.question('App name:',defaultAppName);
         this.description = await this.consoleHelper.question('Description:','Zation application client');
@@ -73,14 +63,12 @@ class ClientInit
         this.serverPostKey = await this.consoleHelper.question('Server post key:','zation');
         this.license = await this.consoleHelper.question('License:','ISC');
         this.author = await this.consoleHelper.question('Author:');
-        this.useDebug =
-            (await this.consoleHelper.question
-            ('Use debug mode?','no')) === 'yes';
+        this.useDebug = await this.consoleHelper.yesOrNo('Use debug mode?',false);
         console.log('');
 
         this._printInformation();
 
-        let isOk = (await this.consoleHelper.question('Is this ok?','yes')) === 'yes';
+        const isOk = await this.consoleHelper.yesOrNo('Is this ok?',true);
         console.log();
         if(!isOk) {
             ConsoleHelper.abort();
@@ -95,10 +83,10 @@ class ClientInit
             this.templateEninge.addToMap('serverPort',this.serverPort);
             this.templateEninge.addToMap('serverPostKey',this.serverPostKey);
             this.templateEninge.addToMap('license',this.license);
-            this.templateEninge.addToMap('zationClientVersion',this.zationClientVersion);
+            this.templateEninge.addToMap('zationClientVersion',versions["zation-client"]);
             this.templateEninge.addToMap('useDebug',this.useDebug);
-            this.templateEninge.addToMap('typescriptVersion',VersionManager.getTypeScriptVersion());
-            this.templateEninge.addToMap('typescriptGulpVersion',VersionManager.getTypescriptGulpVersion());
+            this.templateEninge.addToMap('typescriptVersion',versions.typescript);
+            this.templateEninge.addToMap('typescriptGulpVersion',versions["gulp-typescript"]);
 
             this.templateEninge.addToMap('author',this.author !== null ?
                 `\n  "author" : "${this.author}", ` : '');
@@ -121,7 +109,7 @@ class ClientInit
     _printInformation()
     {
         console.log('Information: ');
-        console.log(`Zation client version: ${this.zationClientVersion}`);
+        console.log(`Zation client version: ${versions["zation-client"]}`);
         console.log(`Project path: ${this.destDir}`);
         console.log(`Project type: ${this.lowerOption}`);
         console.log(`App name: ${this.appName}`);
@@ -141,11 +129,7 @@ class ClientInit
     async _template()
     {
         ConsoleHelper.logBusyMessage('Process template files...');
-
-        if(this.isNodeOption || this.isWebOption) {
-            EasyTemplateEngine.templateFile(`${this.destDir}/src/index.ts`,this.templateEninge);
-        }
-
+        EasyTemplateEngine.templateFile(`${this.destDir}/src/index.ts`,this.templateEninge);
         EasyTemplateEngine.templateFile(`${this.destDir}/package.json`,this.templateEninge);
     }
 
@@ -160,6 +144,7 @@ class ClientInit
         //abort if failed
         FileSystemHelper.copyDirRecursive(copyDir, this.destDir);
         await this._template();
+        console.log();
         await NpmRunner.installDependencies(this.destDir);
         this._printSuccess(Date.now() - startTimeStamp);
     }

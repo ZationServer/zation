@@ -7,10 +7,10 @@ Copyright(c) Luca Scaringella
 const ConsoleHelper      = require('./consoleHelper');
 const EasyTemplateEngine = require('./easyTemplateEngine');
 const FileSystemHelper   = require('./fileSystemHelper');
-const VersionManager     = require('./versionManager');
 const NpmRunner          = require('./npmRunner');
 const path               = require('path');
 const isWindows          = require('is-windows');
+const versions           = require('./../versions');
 
 class ServerInit
 {
@@ -25,9 +25,6 @@ class ServerInit
         this.folderName = folderName;
         this.consoleHelper = new ConsoleHelper();
         this.templateEninge = new EasyTemplateEngine();
-
-        this.zationServerVersion = VersionManager.getZationServerVersion();
-        this.zationAssuredVersion = VersionManager.getZationAssuredVersion();
     }
 
     async process()
@@ -42,7 +39,7 @@ class ServerInit
     _startMessage()
     {
         console.log();
-        ConsoleHelper.logInfoMessage(`Welcome to init a zation server app`);
+        ConsoleHelper.logInfoMessage(`Welcome to initialize a new Zation server project`);
         console.log();
     }
 
@@ -50,9 +47,7 @@ class ServerInit
     {
         const defaultAppName = path.basename(!!this.folderName ? this.folderName : this.cliPath);
 
-        this.typeScript =
-            (await this.consoleHelper.question
-            ('Do you want to create a typescript project (recommended)?','yes')) === 'yes';
+        this.typeScript = await this.consoleHelper.yesOrNo('Do you want to create a typescript project (recommended)?',true);
 
         this.appName = await this.consoleHelper.question('App name:',defaultAppName);
         this.description = await this.consoleHelper.question('Description:','Zation application server');
@@ -63,13 +58,8 @@ class ServerInit
         this.license = await this.consoleHelper.question('License:','ISC');
         this.author = await this.consoleHelper.question('Author:');
 
-        this.useDebug =
-            (await this.consoleHelper.question
-            ('Use debug mode?','yes')) === 'yes';
-
-        this.useStartDebug =
-            (await this.consoleHelper.question
-            ('Use start debug mode?','no')) === 'yes';
+        this.useDebug = await this.consoleHelper.yesOrNo('Use debug mode?',true);
+        this.useStartDebug = await this.consoleHelper.yesOrNo('Use start debug mode?',false);
 
         this.panelUserName = await this.consoleHelper.question('Panel user name:','admin');
         this.panelPassword = await this.consoleHelper.question('Panel password:','admin');
@@ -78,7 +68,7 @@ class ServerInit
 
         this._printInformation();
 
-        let isOk = (await this.consoleHelper.question('Is this ok?','yes')) === 'yes';
+        const isOk = await this.consoleHelper.yesOrNo('Is this ok?',true);
         console.log();
         if(!isOk) {
             ConsoleHelper.abort();
@@ -91,14 +81,14 @@ class ServerInit
             this.templateEninge.addToMap('port',this.port);
             this.templateEninge.addToMap('timeZone',this.timeZone );
             this.templateEninge.addToMap('license',this.license);
-            this.templateEninge.addToMap('zationServerVersion',this.zationServerVersion);
-            this.templateEninge.addToMap('zationAssuredVersion',this.zationAssuredVersion);
+            this.templateEninge.addToMap('zationServerVersion',versions["zation-server"]);
+            this.templateEninge.addToMap('zationAssuredVersion',versions["zation-assured"]);
             this.templateEninge.addToMap('useDebug',this.useDebug);
             this.templateEninge.addToMap('useStartDebug',this.useStartDebug);
             this.templateEninge.addToMap('panelUserName',this.panelUserName);
             this.templateEninge.addToMap('panelPassword',this.panelPassword);
-            this.templateEninge.addToMap('typescriptVersion',VersionManager.getTypeScriptVersion());
-            this.templateEninge.addToMap('typescriptGulpVersion',VersionManager.getTypescriptGulpVersion());
+            this.templateEninge.addToMap('typescriptVersion',versions.typescript);
+            this.templateEninge.addToMap('typescriptGulpVersion',versions["gulp-typescript"]);
 
             this.templateEninge.addToMap('author',this.author !== null ?
                 `\n  "author" : "${this.author}", ` : '');
@@ -115,10 +105,10 @@ class ServerInit
     _printInformation()
     {
         console.log('Information: ');
-        console.log(`Zation server version: ${this.zationServerVersion}`);
-        console.log(`Zation assured version: ${this.zationAssuredVersion}`);
+        console.log(`Zation server version: ${versions["zation-server"]}`);
+        console.log(`Zation assured version: ${versions["zation-assured"]}`);
         console.log(`Project path: ${this.destDir}`);
-        console.log(`Project type: ${this.typeScript ? 'typescript' : 'javascript'}`);
+        console.log(`Project language: ${this.typeScript ? 'typescript' : 'javascript'}`);
         console.log(`App name: ${this.appName}`);
         console.log(`Description: ${this.description}`);
         console.log(`Version: ${this.version}`);
@@ -152,7 +142,7 @@ class ServerInit
 
     async _init()
     {
-        let startTimeStamp = Date.now();
+        const startTimeStamp = Date.now();
         ConsoleHelper.logBusyInit();
 
         let copyDir = '';
@@ -167,6 +157,7 @@ class ServerInit
         //abort if failed
         FileSystemHelper.copyDirRecursive(copyDir, this.destDir);
         await this._template();
+        console.log();
         await NpmRunner.installDependencies(this.destDir);
         this._printSuccess(Date.now() - startTimeStamp);
     }

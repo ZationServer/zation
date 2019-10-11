@@ -7,69 +7,50 @@ Copyright(c) Luca Scaringella
 const childProcess       = require('child_process');
 const spawn              = childProcess.spawn;
 const ConsoleHelper      = require('./consoleHelper');
+const term               = require( 'terminal-kit').terminal;
 
 class NpmRunner
 {
-
-    static installGlobal(packageName,destDir)
-    {
-        return new Promise((resolve) =>
-        {
-            const onlyName = packageName.split('@')[0];
-            const npmCommand = (process.platform === "win32" ? "npm.cmd" : "npm");
-
-            ConsoleHelper.logBusyMessage(`Installing ${onlyName} global using npm. This could take a while...`);
-
-            let npmProcess =
-                spawn(npmCommand, ['install','-g',packageName], {cwd: destDir, maxBuffer: Infinity});
-
-            npmProcess.stdout.on('data', function (data) {
-                process.stdout.write(data);
-            });
-
-            npmProcess.stderr.on('data', function (data) {
-                process.stderr.write(data);
-            });
-
-            npmProcess.on('close', function (code) {
-                if (code) {
-                    ConsoleHelper.logErrorMessage(`Failed to install ${onlyName} globally. Exited with code ${code}.`);
-                    process.exit(code);
-                }
-                else {
-                    ConsoleHelper.logSuccessMessage(`Package ${onlyName} was successfully globally installed.`);
-                    resolve();
-                }
-            });
-
-            npmProcess.stdin.end();
-        });
-    }
-
     static installDependencies(destDir)
     {
         return new Promise((resolve) =>
         {
             const npmCommand = (process.platform === "win32" ? "npm.cmd" : "npm");
 
-            ConsoleHelper.logBusyMessage('Installing app dependencies using npm. This could take a while...');
+            const npmProcess = spawn(npmCommand, ['install'], {cwd: destDir, maxBuffer: Infinity});
 
-            let npmProcess = spawn(npmCommand, ['install'], {cwd: destDir, maxBuffer: Infinity});
+            let progressBar , progress = 0 ;
 
-            npmProcess.stdout.on('data', function (data) {
-                process.stdout.write(data);
+            npmProcess.stdout.on('data', () => {
+                if(progress < 80){
+                    progress += Math.random() / 5;
+                    progressBar.update(progress);
+                }
+            });
+            npmProcess.stderr.on('data', () => {
+                if(progress < 80){
+                    progress += Math.random() / 10;
+                    progressBar.update(progress);
+                }
             });
 
-            npmProcess.stderr.on('data', function (data) {
-                process.stderr.write(data);
+            progressBar = term.progressBar( {
+                width: 80 ,
+                title: 'Installing app dependencies using npm. This could take a while...',
+                eta: true ,
+                percent: true
             });
 
-            npmProcess.on('close', function (code) {
+            npmProcess.on('close', (code) => {
                 if (code) {
+                    progressBar.stop();
+                    term('\n');
                     ConsoleHelper.logErrorMessage(`Failed to install npm dependencies. Exited with code ${code}.`);
                     process.exit(code);
                 }
                 else {
+                    progressBar.update(100);
+                    term('\n');
                     ConsoleHelper.logSuccessMessage(`Npm dependencies were successfully installed.`);
                     resolve();
                 }
@@ -78,8 +59,6 @@ class NpmRunner
             npmProcess.stdin.end();
         });
     }
-
-
 }
 
 module.exports = NpmRunner;

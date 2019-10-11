@@ -14,6 +14,7 @@ const GitCloner        = require('./helper/gitCloner');
 const path             = require('path');
 const program          = require('commander');
 const term             = require( 'terminal-kit' ).terminal;
+const versions         = require('./versions');
 
 const destDir = path.normalize(process.cwd());
 
@@ -77,7 +78,8 @@ program
     .action(async (inPath,c) => {
         const finishedText = `   You can start the zation-cluster-state server with 'npm start'`;
         await new GitCloner
-        (destDir,inPath,'direct:https://github.com/ZationServer/zation-cluster-state.git',finishedText,!!c.parent.force).process();
+        (destDir,inPath,'direct:https://github.com/ZationServer/zation-cluster-state.git#'+versions["zation-cluster-state"],
+            finishedText,!!c.parent.force).process();
     });
 
 program
@@ -87,7 +89,8 @@ program
     .action(async (inPath,c) => {
         const finishedText = `   You can start the zation-cluster-broker server with 'STATE_SERVER_HOST="localhost" node index.js'`;
         await new GitCloner
-        (destDir,inPath,'direct:https://github.com/ZationServer/zation-cluster-broker.git',finishedText,!!c.parent.force).process();
+        (destDir,inPath,'direct:https://github.com/ZationServer/zation-cluster-broker.git#'+versions["zation-cluster-broker"],
+            finishedText,!!c.parent.force).process();
     });
 
 program

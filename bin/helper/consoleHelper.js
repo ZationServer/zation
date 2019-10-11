@@ -4,9 +4,12 @@ GitHub: LucaCode
 Copyright(c) Luca Scaringella
  */
 
+const VersionHelper = require("./versionHelper");
+const versions      = require('./../versions');
+
 const readLine        = require('readline');
-const VersionManager  = require('./versionManager');
 const isWindows       = require('is-windows');
+const term            = require( 'terminal-kit').terminal;
 
 class ConsoleHelper
 {
@@ -48,7 +51,7 @@ class ConsoleHelper
     {
         console.log('\x1b[33m%s\x1b[0m', '   [Warning]',message);
     }
-    
+
     static logNpmProjectCommands()
     {
         console.log();
@@ -97,10 +100,12 @@ class ConsoleHelper
 
     static printVersion()
     {
-        console.log(`Zation version: ${VersionManager.getZationVersion()}`);
-        console.log(`Zation Server  version: ${VersionManager.getZationServerVersion()}`);
-        console.log(`Zation Assured version: ${VersionManager.getZationAssuredVersion()}`);
-        console.log(`Zation Client  version: ${VersionManager.getZationClientVersion()}`);
+        console.log(`Zation version: ${VersionHelper.getZationVersion()}`);
+        console.log(`Zation Server version: ${versions["zation-server"]}`);
+        console.log(`Zation Client version: ${versions["zation-client"]}`);
+        console.log(`Zation Assured version: ${versions["zation-assured"]}`);
+        console.log(`Zation Cluster State version: ${versions["zation-cluster-state"]}`);
+        console.log(`Zation Cluster Broker version: ${versions["zation-cluster-broker"]}`);
     }
 
     static logFailedToRemoveDir(dirPath)
@@ -143,6 +148,42 @@ class ConsoleHelper
                 }
             });
         });
+    }
+
+    async yesOrNo(question,defaultIs = true) {
+        let str = question + ' [';
+        if(defaultIs){
+            str+='\x1b[36my\x1b[0m\x1b[0m|n] ';
+        }
+        else {
+            str+='y|\x1b[36mn\x1b[0m\x1b[0]] ';
+        }
+
+        const ask = async (text) => {
+            return new Promise((resolve) =>
+            {
+                this._r.question(text,async (a) =>
+                {
+                    if(a === '' || a === null) {
+                        resolve(defaultIs);
+                    }
+                    else {
+                        a=a.toLowerCase();
+                        if(a === 'y' || a === 'yes'){
+                            resolve(true);
+                        }
+                        else if(a === 'n' || a === 'no'){
+                            resolve(false);
+                        }
+                        else {
+                            console.log('Please enter yes or no');
+                            resolve((await ask(text,defaultIs)));
+                        }
+                    }
+                });
+            });
+        };
+        return ask(str);
     }
 
     static logFailedAndEnd(message) {

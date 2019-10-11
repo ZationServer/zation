@@ -8,6 +8,7 @@ const ConsoleHelper      = require('./consoleHelper');
 const FileSystemHelper   = require('./fileSystemHelper');
 const NpmRunner          = require('./npmRunner');
 const download           = require('download-git-repo');
+const path               = require('path');
 
 class GitCloner
 {

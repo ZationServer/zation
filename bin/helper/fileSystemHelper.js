@@ -7,6 +7,7 @@ Copyright(c) Luca Scaringella
 const fsExtra         = require('fs-extra');
 const emptyDir        = require('empty-dir');
 const fs              = require('fs');
+const term            = require( 'terminal-kit').terminal;
 
 class FileSystemHelper
 {
@@ -48,12 +49,12 @@ class FileSystemHelper
         }
     }
 
-    static async checkDir(destDir,instanceCH,force,isFolderName)
+    static async checkDir(destDir,consoleHelper,force,isFolderName)
     {
         const ConsoleHelper = require('./consoleHelper');
 
         const message = isFolderName ?
-            `There is already a directory at '${destDir}'. Do you want to overwrite it?` :
+            `There is already a directory at '${destDir}'.\nDo you want to overwrite it?` :
             `The folder: '${destDir}' is not empty. Do you want to empty it and continue?`;
 
         if(!fs.existsSync(destDir)) {
@@ -65,7 +66,7 @@ class FileSystemHelper
             let isOk = false;
 
             if(!force) {
-                isOk = (await instanceCH.question(message,'no')) === 'yes';
+                isOk = await consoleHelper.yesOrNo(message,false);
                 console.log();
             }
 
