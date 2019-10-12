@@ -30,14 +30,13 @@ class InitController
 
     async _getInformation()
     {
-        this.typeScript = await this.consoleHelper.yesOrNo('Is your project an typescript project?',true);
         this.name = await this.consoleHelper.question('Name of the Controller:','MyController');
 
-        if(this.name < 1) {
+        if(this.name.length < 1) {
             ConsoleHelper.logFailedAndEnd(`The name must have at least one character.`);
         }
 
-        this.name = this._firstLetterUpperCase(this.name);
+        this.className = this._firstLetterUpperCase(this.name);
 
         console.log('');
         this._printInformation();
@@ -70,9 +69,8 @@ class InitController
     _printInformation()
     {
         console.log('Information: ');
-        console.log(`Project type: ${this.typeScript ? 'typescript' : 'javascript'}`);
         console.log(`Controller Name: ${this.name}`);
-        console.log(`Full Path: ${this.fullPath}${this.name}.${this.typeScript?'ts':'js'}`);
+        console.log(`Full Path: ${this.fullPath}${this.name}.ts`);
         console.log('');
     }
 
@@ -85,7 +83,7 @@ class InitController
 
     async _createController()
     {
-        const fullCPath = this.fullPath + this.name + '.' + (this.typeScript?'ts':'js');
+        const fullCPath = this.fullPath + this.name + '.ts';
 
         if(fs.existsSync(fullCPath))
         {
@@ -112,15 +110,15 @@ class InitController
 
         // noinspection JSUnresolvedFunction
         fsExtra.ensureDirSync(this.fullPath);
-        let templateEngine = new EasyTemplateEngine();
+        const templateEngine = new EasyTemplateEngine();
         templateEngine.addToMap('name',this.name);
+        templateEngine.addToMap('className',this.className);
         EasyTemplateEngine.templateFromFile
-        (this.cTemplateDir + `/controller.${this.typeScript ? 'ts' : 'js'}`,fullCPath,templateEngine);
+        (this.cTemplateDir + `/controller.ts`,fullCPath,templateEngine);
     }
 
     // noinspection JSMethodCanBeStatic
-    _firstLetterUpperCase(str)
-    {
+    _firstLetterUpperCase(str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
 

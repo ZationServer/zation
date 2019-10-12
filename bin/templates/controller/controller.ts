@@ -1,21 +1,29 @@
-import {Controller,ControllerConfig,Result,TaskError,TaskErrorBag,Bag,SmallBag} from 'zation-server';
-export class {{name}} extends Controller
+import {Register, Controller, ControllerConfig, Result, BackError, BackErrorBag, Bag, RequestBag} from 'zation-server';
+
+@Register('{{name}}')
+export default class {{className}} extends Controller
 {
-    static config : ControllerConfig = {
+    static config: ControllerConfig =
+    {
 
     };
 
-    async handle(bag : Bag,{})
+    async initialize(bag: Bag)
     {
 
     }
 
-    async initialize(smallBag : SmallBag)
+    async handle(bag: RequestBag,{})
     {
 
     }
 
-    async wrongInput(bag : Bag,input)
+    async finallyHandle(bag: RequestBag, input: any)
+    {
+
+    }
+
+    async invalidInput(bag: RequestBag, input: any, backErrorBag: BackErrorBag)
     {
 
     }
