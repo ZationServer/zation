@@ -30,12 +30,8 @@ class InitController
 
     async _getInformation()
     {
-        this.typeScript =
-            (await this.consoleHelper.question
-            ('Is your project an typescript project?','yes')) === 'yes';
-
-        this.name =
-            await this.consoleHelper.question('Name of the Controller:','MyController');
+        this.typeScript = await this.consoleHelper.yesOrNo('Is your project an typescript project?',true);
+        this.name = await this.consoleHelper.question('Name of the Controller:','MyController');
 
         if(this.name < 1) {
             ConsoleHelper.logFailedAndEnd(`The name must have at least one character.`);
@@ -46,11 +42,10 @@ class InitController
         console.log('');
         this._printInformation();
 
-        let isOk = (await this.consoleHelper.question('Initialize controller?','yes')) === 'yes';
+        const isOk = await this.consoleHelper.yesOrNo('Initialize controller?',true);
         console.log('');
 
-        if(!isOk)
-        {
+        if(!isOk) {
             ConsoleHelper.abort();
         }
     }
@@ -90,7 +85,7 @@ class InitController
 
     async _createController()
     {
-        let fullCPath = this.fullPath + this.name + '.' + (this.typeScript?'ts':'js');
+        const fullCPath = this.fullPath + this.name + '.' + (this.typeScript?'ts':'js');
 
         if(fs.existsSync(fullCPath))
         {
@@ -99,15 +94,13 @@ class InitController
             if(fs.lstatSync(fullCPath).isDirectory())
             {
                 if(!this.force) {
-                    isOk = (await
-                        this.consoleHelper.question(`Complication with directory: '${fullCPath}', remove dir?`,'no')) === 'yes';
+                    isOk = await this.consoleHelper.yesOrNo(`Complication with directory: '${fullCPath}', remove dir?`,false);
                 }
             }
             else if(fs.lstatSync(fullCPath).isFile())
             {
                 if(!this.force) {
-                    isOk = (await
-                        this.consoleHelper.question(`Complication with file: '${fullCPath}', remove file?`,'no')) === 'yes';
+                    isOk = await this.consoleHelper.yesOrNo(`Complication with file: '${fullCPath}', remove file?`,false);
                 }
             }
 
