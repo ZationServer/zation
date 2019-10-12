@@ -65,7 +65,7 @@ program
 
 program
     .command('initController [path]')
-    .alias('ic')
+    .alias('ico')
     .description('initialize a new Zation controller in the working directory')
     .action(async (inPath,c) => {
         await new InitController(destDir,inPath,controllerTeDir,!!c.parent.force).process();
@@ -74,7 +74,7 @@ program
 program
     .command('cloneClusterState [path]')
     .alias('ccs')
-    .description('Clone the zation-cluster-state package in the working directory or a new folder')
+    .description('clone the zation-cluster-state package in the working directory or a new folder')
     .action(async (inPath,c) => {
         const finishedText = `   You can start the zation-cluster-state server with 'npm start'`;
         await new GitCloner
@@ -85,7 +85,7 @@ program
 program
     .command('cloneClusterBroker [path]')
     .alias('ccb')
-    .description('Clone the zation-cluster-broker package in the working directory or a new folder')
+    .description('clone the zation-cluster-broker package in the working directory or a new folder')
     .action(async (inPath,c) => {
         const finishedText = `   You can start the zation-cluster-broker server with 'STATE_SERVER_HOST="localhost" node index.js'`;
         await new GitCloner
@@ -96,7 +96,7 @@ program
 program
     .command('projectCommands')
     .alias('pc')
-    .description('shows npm project commands')
+    .description('show all npm project commands')
     .action(() => ConsoleHelper.logNpmProjectCommands());
 
 program
