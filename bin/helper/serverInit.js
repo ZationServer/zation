@@ -47,8 +47,6 @@ class ServerInit
     {
         const defaultAppName = path.basename(!!this.folderName ? this.folderName : this.cliPath);
 
-        this.typeScript = await this.consoleHelper.yesOrNo('Do you want to create a typescript project (recommended)?',true);
-
         this.appName = await this.consoleHelper.question('App name:',defaultAppName);
         this.description = await this.consoleHelper.question('Description:','Zation application server');
         this.version = await this.consoleHelper.question('Version:','1.0.0');
@@ -105,10 +103,9 @@ class ServerInit
     _printInformation()
     {
         console.log('Information: ');
+        console.log(`Project path: ${this.destDir}`);
         console.log(`Zation server version: ${versions["zation-server"]}`);
         console.log(`Zation assured version: ${versions["zation-assured"]}`);
-        console.log(`Project path: ${this.destDir}`);
-        console.log(`Project language: ${this.typeScript ? 'typescript' : 'javascript'}`);
         console.log(`App name: ${this.appName}`);
         console.log(`Description: ${this.description}`);
         console.log(`Version: ${this.version}`);
@@ -127,16 +124,10 @@ class ServerInit
     async _template()
     {
         ConsoleHelper.logBusyMessage('Process template files...');
-        const jsMainConfig = `${this.destDir}/configs/main.config.js`;
-        const tsMainConfig = `${this.destDir}/src/configs/main.config.ts`;
-        EasyTemplateEngine.templateFile(this.typeScript ? tsMainConfig : jsMainConfig,this.templateEninge);
-
-        const jsIndex = `${this.destDir}/index.js`;
-        const tsIndex = `${this.destDir}/src/index.ts`;
-        EasyTemplateEngine.templateFile(this.typeScript ? tsIndex : jsIndex,this.templateEninge);
-
+        EasyTemplateEngine.templateFile(`${this.destDir}/src/configs/main.config.ts`,this.templateEninge);
+        EasyTemplateEngine.templateFile(`${this.destDir}/src/configs/starter.config.ts`,this.templateEninge);
+        EasyTemplateEngine.templateFile(`${this.destDir}/src/index.ts`,this.templateEninge);
         EasyTemplateEngine.templateFile(`${this.destDir}/package.json`,this.templateEninge);
-
         EasyTemplateEngine.templateFile(`${this.destDir}/Dockerfile`,this.templateEninge);
     }
 
@@ -145,17 +136,9 @@ class ServerInit
         const startTimeStamp = Date.now();
         ConsoleHelper.logBusyInit();
 
-        let copyDir = '';
-        if(this.typeScript) {
-            copyDir = `${this.initDir}/ts`
-        }
-        else {
-            copyDir = `${this.initDir}/js`
-        }
-
         ConsoleHelper.logBusyMessage('Copy template files...');
         //abort if failed
-        FileSystemHelper.copyDirRecursive(copyDir, this.destDir);
+        FileSystemHelper.copyDirRecursive(this.initDir, this.destDir);
         await this._template();
         console.log();
         await NpmRunner.installDependencies(this.destDir);

@@ -1,6 +1,6 @@
 import {start,StartMode,Config}             from 'zation-server';
 import {when,create,describe,before,after}  from 'zation-assured';
-import StarterConfig                        from './../src/configs/starter.config';
+import StarterConfig                        from '../src/configs/starter.config';
 
 const TEST_PORT = 3000;
 
@@ -41,7 +41,7 @@ describe('LogInController Test',async () => {
             .end()
         .buildHasError()
             .presets()
-            .inputPropertyIsMissing()
+            .objectPropertyIsMissing()
             .infoHas({propertyName  : 'password'})
             .end()
         .test();

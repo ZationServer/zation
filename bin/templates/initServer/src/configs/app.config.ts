@@ -1,5 +1,8 @@
-const {Config}        = require('zation-server');
-const LogInController = require('./../controllers/auth/logIn');
+import {Config}          from 'zation-server';
+
+import "../controllers/auth/LogInController";
+
+import "../databoxes/ProfileDatabox";
 
 module.exports = Config.appConfig(
     {
@@ -18,13 +21,6 @@ module.exports = Config.appConfig(
                 httpAccess : false,
                 httpPostAllowed : true,
                 httpGetAllowed : true,
-                access : 'all',
-            },
-
-        authController : 'logIn',
-
-        controllers :
-            {
-                logIn : LogInController,
+                access : 'all'
             }
     });
