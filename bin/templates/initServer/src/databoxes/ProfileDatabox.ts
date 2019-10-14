@@ -7,7 +7,7 @@ export default class UserProfileDatabox extends DataboxFamily {
         access : 'allAuth'
     };
 
-    async fetchData(id: string, counter: number): Promise<any> {
+    async fetch(id: string, counter: number): Promise<any> {
         if(counter === 0){
             //SQL Query
             return {

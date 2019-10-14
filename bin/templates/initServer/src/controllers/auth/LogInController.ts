@@ -19,7 +19,7 @@ class LogInCredentials {
 @Register('logIn').asAuthController()
 export class LogInController extends Controller
 {
-    static config : ControllerConfig = {
+    static readonly config : ControllerConfig = {
         access : 'all',
         input : LogInCredentials
     };
