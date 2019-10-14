@@ -3,7 +3,7 @@ import {Register, Controller, ControllerConfig, Result, BackError, BackErrorBag,
 @Register('{{name}}')
 export default class {{className}} extends Controller
 {
-    static config: ControllerConfig =
+    static readonly config: ControllerConfig =
     {
 
     };
