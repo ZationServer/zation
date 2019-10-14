@@ -54,10 +54,8 @@ At the moment there is only one client driver in JavaScript, so you have to writ
 ```bash
 # Install Zation
 npm i -g zation
-# Create Server Project
-zation initServer [folderName]
-# Create Client Project
-zation initClient [folderName]
+# Create Project
+zation init [path]
 ```
 Your new projects will come with example code, tests, and more.
 
