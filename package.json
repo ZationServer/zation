@@ -1,8 +1,8 @@
 {
   "name": "zation",
   "version": "0.9.12",
-  "description": "CLI tool for the Zation framework.",
   "license": "SEE LICENSE IN <README.md>",
+  "description": "CLI tool for the Zation framework.",
   "scripts": {
     "install": "node bin/welcome.js"
   },
