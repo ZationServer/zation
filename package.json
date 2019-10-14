@@ -1,8 +1,8 @@
 {
   "name": "zation",
   "version": "0.8.8",
-  "license": "MIT",
   "description": "CLI tool for the Zation framework.",
+  "license": "SEE LICENSE IN <https://github.com/ZationServer/zation/wiki/Zation-End-User-License-Agreement>",
   "scripts": {
     "install": "node bin/welcome.js"
   },
