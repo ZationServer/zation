@@ -76,26 +76,8 @@ class ConsoleHelper
         console.log(`       npm run watch                     Starts to build automatically when a file changes.`);
     }
 
-    static printLogo()
-    {
-        console.log('      ___           ___                                   ___           ___     ');
-        console.log('     /  /\\         /  /\\          ___       ___          /  /\\         /__/\\    ');
-        console.log('    /  /::|       /  /::\\        /  /\\     /  /\\        /  /::\\        \\  \\:\\   ');
-        console.log('   /  /:/:|      /  /:/\\:\\      /  /:/    /  /:/       /  /:/\\:\\        \\  \\:\\  ');
-        console.log('  /  /:/|:|__   /  /:/~/::\\    /  /:/    /__/::\\      /  /:/  \\:\\   _____\\__\\:\\ ');
-        console.log(' /__/:/ |:| /\\ /__/:/ /:/\\:\\  /  /::\\    \\__\\/\\:\\__  /__/:/ \\__\\:\\ /__/::::::::\\');
-        console.log(' \\__\\/  |:|/:/ \\  \\:\\/:/__\\/ /__/:/\\:\\      \\  \\:\\/\\ \\  \\:\\ /  /:/ \\  \\:\\~~\\~~\\/');
-        console.log('     |  |:/:/   \\  \\::/      \\__\\/  \\:\\      \\__\\::/  \\  \\:\\  /:/   \\  \\:\\  ~~~ ');
-        console.log('     |  |::/     \\  \\:\\           \\  \\:\\     /__/:/    \\  \\:\\/:/     \\  \\:\\     ');
-        console.log('     |  |:/       \\  \\:\\           \\__\\/     \\__\\/      \\  \\::/       \\  \\:\\    ');
-        console.log('     |__|/         \\__\\/                                 \\__\\/         \\__\\/    ');
-    }
-
-    static printWelcome()
-    {
-        ConsoleHelper.printLogo();
-        console.log('                                THANKS FOR USING');
-        console.log('');
+    static printWelcome() {
+        term.cyan('Thank you for using the Zation Framework 🚀 (https://github.com/ZationServer)!');
     }
 
     static printVersion()
