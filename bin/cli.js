@@ -6,16 +6,16 @@ GitHub: LucaCode
 Copyright(c) Luca Scaringella
  */
 
-const ConsoleHelper    = require('./helper/consoleHelper');
-const ServerInit       = require('./helper/serverInit');
-const ClientInit       = require('./helper/clientInit');
-const InitController   = require('./helper/initController');
-const InitDatabox      = require('./helper/initDatabox');
-const GitCloner        = require('./helper/gitCloner');
-const path             = require('path');
-const program          = require('commander');
-const term             = require( 'terminal-kit' ).terminal;
-const versions         = require('./versions');
+const ConsoleHelper       = require('./helper/consoleHelper');
+const ServerInit          = require('./helper/serverInit');
+const ClientInit          = require('./helper/clientInit');
+const ControllerCreator   = require('./helper/controllerCreator');
+const DataboxCreator      = require('./helper/databoxCreator');
+const GitCloner           = require('./helper/gitCloner');
+const path                = require('path');
+const program             = require('commander');
+const term                = require('terminal-kit').terminal;
+const versions            = require('./versions');
 
 const destDir = path.normalize(process.cwd());
 
@@ -61,19 +61,19 @@ program
     });
 
 program
-    .command('initController [path]')
-    .alias('ico')
-    .description('initialize a new Zation controller in the working directory')
+    .command('createController [path]')
+    .alias('cc')
+    .description('create a new Zation controller in the working directory')
     .action(async (inPath,c) => {
-        await new InitController(destDir,inPath,!!c.parent.force).process();
+        await new ControllerCreator(destDir,inPath,!!c.parent.force).process();
     });
 
 program
-    .command('initDatabox [path]')
-    .alias('ida')
-    .description('initialize a new Zation databox in the working directory')
+    .command('createDatabox [path]')
+    .alias('cd')
+    .description('create a new Zation databox in the working directory')
     .action(async (inPath,c) => {
-        await new InitDatabox(destDir,inPath,!!c.parent.force).process();
+        await new DataboxCreator(destDir,inPath,!!c.parent.force).process();
     });
 
 program

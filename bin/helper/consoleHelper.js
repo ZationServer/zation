@@ -8,7 +8,7 @@ const VersionHelper = require("./versionHelper");
 const versions      = require('./../versions');
 
 const readLine        = require('readline');
-const term            = require( 'terminal-kit').terminal;
+const term            = require('terminal-kit').terminal;
 
 class ConsoleHelper
 {

@@ -8,7 +8,6 @@ const fsExtra         = require('fs-extra');
 const emptyDir        = require('empty-dir');
 const fs              = require('fs');
 const path            = require('path');
-const term            = require( 'terminal-kit').terminal;
 
 class FileSystemHelper
 {
@@ -88,7 +87,10 @@ class FileSystemHelper
         }
     }
 
-    static async checkFile(destDir,destFile,consoleHelper,force) {
+    static async checkFile(destDir,destFile,consoleHelper,force)
+    {
+        const ConsoleHelper = require('./consoleHelper');
+
         if(fs.existsSync(destFile)) {
             let isOk = false;
             if(fs.lstatSync(destFile).isDirectory()) {
@@ -113,10 +115,11 @@ class FileSystemHelper
         else {
             fsExtra.ensureDirSync(destDir);
         }
+        console.log();
     }
 
     static createDistDir(cliDir,inPath) {
-        return inPath ? path.normalize(cliDir + '/' + inPath) : path.normalize(cliDir)
+        return inPath !== undefined ? path.normalize(cliDir + '/' + inPath) : path.normalize(cliDir)
     }
 
 }

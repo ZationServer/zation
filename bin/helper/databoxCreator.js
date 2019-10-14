@@ -8,11 +8,12 @@ const ConsoleHelper      = require('./consoleHelper');
 const EasyTemplateEngine = require('./easyTemplateEngine');
 const FileSystemHelper   = require('./fileSystemHelper');
 const path               = require('path');
+const term               = require('terminal-kit').terminal;
 
-const databoxInitFile = __dirname + '/templates/databox/databox.ts';
-const databoxFamilyInitFile = __dirname + '/templates/databox/databoxFamily.ts';
+const databoxInitFile = __dirname + '/../templates/databox/databox.ts';
+const databoxFamilyInitFile = __dirname + '/../templates/databox/databoxFamily.ts';
 
-class InitDatabox
+class DataboxCreator
 {
     constructor(cliDir,inPath,cTemplateDir,force)
     {
@@ -24,7 +25,7 @@ class InitDatabox
     async process()
     {
         await this._getInformation();
-        await this._init();
+        await this._create();
     }
 
     async _getInformation()
@@ -33,6 +34,7 @@ class InitDatabox
         const type = (await term.singleColumnMenu(['Databox', 'DataboxFamily']).promise).selectedIndex;
         this.dbFamily = type === 1;
 
+        console.log();
         this.name = await this.consoleHelper.question('Name of the Databox:','MyDatabox');
 
         if(this.name.length < 1) {
@@ -41,12 +43,12 @@ class InitDatabox
 
         this.className = this._firstLetterUpperCase(this.name);
 
-        this.destFile = path.normalize(this.destDir + path.separator + this.name + '.ts');
+        this.destFile = path.normalize(this.destDir + path.sep + this.name + '.ts');
 
         console.log('');
         this._printInformation();
 
-        const isOk = await this.consoleHelper.yesOrNo('Initialize databox?',true);
+        const isOk = await this.consoleHelper.yesOrNo('Create databox?',true);
         console.log('');
 
         if(!isOk) {
@@ -62,8 +64,9 @@ class InitDatabox
         console.log('');
     }
 
-    async _init()
+    async _create()
     {
+        await FileSystemHelper.checkFile(this.destDir,this.destFile,this.consoleHelper,this.force);
         ConsoleHelper.logBusyMessage('Create databox...');
         await this._createDatabox();
         this._createSuccess();
@@ -71,7 +74,6 @@ class InitDatabox
 
     async _createDatabox()
     {
-        await FileSystemHelper.checkFile(this.destDir,this.destFile,this.consoleHelper,this.force);
         const templateEngine = new EasyTemplateEngine();
         templateEngine.addToMap('name',this.name);
         templateEngine.addToMap('className',this.className);
@@ -88,9 +90,9 @@ class InitDatabox
     _createSuccess()
     {
         console.log('');
-        ConsoleHelper.logSuccessMessage(`Databox: '${this.name}' is initialized! 🎉`);
+        ConsoleHelper.logSuccessMessage(`Databox: '${this.name}' is created! 🎉`);
         process.exit();
     }
 }
 
-module.exports = InitDatabox;
+module.exports = DataboxCreator;

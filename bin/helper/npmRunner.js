@@ -7,7 +7,7 @@ Copyright(c) Luca Scaringella
 const childProcess       = require('child_process');
 const spawn              = childProcess.spawn;
 const ConsoleHelper      = require('./consoleHelper');
-const term               = require( 'terminal-kit').terminal;
+const term               = require('terminal-kit').terminal;
 
 class NpmRunner
 {

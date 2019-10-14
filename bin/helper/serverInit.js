@@ -12,7 +12,7 @@ const path               = require('path');
 const isWindows          = require('is-windows');
 const versions           = require('./../versions');
 
-const initServerDir   = __dirname + '/templates/initServer';
+const initServerDir   = __dirname + '/../templates/initServer';
 
 class ServerInit
 {

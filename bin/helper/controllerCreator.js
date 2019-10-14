@@ -9,9 +9,9 @@ const EasyTemplateEngine = require('./easyTemplateEngine');
 const FileSystemHelper   = require('./fileSystemHelper');
 const path               = require('path');
 
-const controllerInitFile = __dirname + '/templates/controller/controller.ts';
+const controllerInitFile = __dirname + '/../templates/controller/controller.ts';
 
-class InitController
+class ControllerCreator
 {
     constructor(cliDir,inPath,force)
     {
@@ -23,7 +23,7 @@ class InitController
     async process()
     {
         await this._getInformation();
-        await this._init();
+        await this._create();
     }
 
     async _getInformation()
@@ -36,12 +36,12 @@ class InitController
 
         this.className = this._firstLetterUpperCase(this.name);
 
-        this.destFile = path.normalize(this.destDir + path.separator + this.name + '.ts');
+        this.destFile = path.normalize(this.destDir + path.sep + this.name + '.ts');
 
         console.log('');
         this._printInformation();
 
-        const isOk = await this.consoleHelper.yesOrNo('Initialize controller?',true);
+        const isOk = await this.consoleHelper.yesOrNo('Create controller?',true);
         console.log('');
 
         if(!isOk) {
@@ -57,8 +57,9 @@ class InitController
         console.log('');
     }
 
-    async _init()
+    async _create()
     {
+        await FileSystemHelper.checkFile(this.destDir,this.destFile,this.consoleHelper,this.force);
         ConsoleHelper.logBusyMessage('Create controller...');
         await this._createController();
         this._createSuccess();
@@ -66,7 +67,6 @@ class InitController
 
     async _createController()
     {
-        await FileSystemHelper.checkFile(this.destDir,this.destFile,this.consoleHelper,this.force);
         const templateEngine = new EasyTemplateEngine();
         templateEngine.addToMap('name',this.name);
         templateEngine.addToMap('className',this.className);
@@ -83,9 +83,9 @@ class InitController
     _createSuccess()
     {
         console.log('');
-        ConsoleHelper.logSuccessMessage(`Controller: '${this.name}' is initialized! 🎉`);
+        ConsoleHelper.logSuccessMessage(`Controller: '${this.name}' is created! 🎉`);
         process.exit();
     }
 }
 
-module.exports = InitController;
+module.exports = ControllerCreator;

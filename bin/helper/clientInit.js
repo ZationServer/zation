@@ -11,9 +11,9 @@ const NpmRunner          = require('./npmRunner');
 const path               = require('path');
 const isWindows          = require('is-windows');
 const versions           = require('./../versions');
-const term               = require( 'terminal-kit').terminal;
+const term               = require('terminal-kit').terminal;
 
-const initClientDir   = __dirname + '/templates/initClient';
+const initClientDir   = __dirname + '/../templates/initClient';
 
 class ClientInit
 {
