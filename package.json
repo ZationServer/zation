@@ -1,6 +1,6 @@
 {
   "name": "zation",
-  "version": "0.8.8",
+  "version": "0.9.12",
   "description": "CLI tool for the Zation framework.",
   "license": "SEE LICENSE IN <README.md>",
   "scripts": {
