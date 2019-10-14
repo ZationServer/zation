@@ -76,7 +76,7 @@ class ConsoleHelper
     }
 
     static printWelcome() {
-        term.cyan('\nThank you for using the Zation Framework 🚀 (https://github.com/ZationServer)! \n');
+        term.cyan('\nThank you for using the Zation Framework 🚀 (https://github.com/ZationServer)!\n');
     }
 
     static printVersion()
