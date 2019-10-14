@@ -12,17 +12,16 @@ const path               = require('path');
 const isWindows          = require('is-windows');
 const versions           = require('./../versions');
 
+const initServerDir   = __dirname + '/templates/initServer';
+
 class ServerInit
 {
-    constructor(cliDir,folderName,initDir,force)
+    constructor(cliDir,inPath,force)
     {
         this.cliPath = cliDir;
-        this.destDir = folderName ?
-            path.normalize(cliDir + '/' + folderName) :
-            path.normalize(cliDir);
-        this.initDir = initDir;
+        this.destDir = FileSystemHelper.createDistDir(cliDir,inPath);
         this.force = force;
-        this.folderName = folderName;
+        this.inPath = inPath;
         this.consoleHelper = new ConsoleHelper();
         this.templateEninge = new EasyTemplateEngine();
     }
@@ -31,7 +30,7 @@ class ServerInit
     {
         this._startMessage();
         await this._getInformation();
-        await FileSystemHelper.checkDir(this.destDir,this.consoleHelper,this.force,!!this.folderName);
+        await FileSystemHelper.checkDir(this.destDir,this.consoleHelper,this.force,!!this.inPath);
         await this._init();
     }
 
@@ -45,7 +44,7 @@ class ServerInit
 
     async _getInformation()
     {
-        const defaultAppName = path.basename(!!this.folderName ? this.folderName : this.cliPath);
+        const defaultAppName = path.basename(!!this.inPath ? this.inPath : this.cliPath);
 
         this.appName = await this.consoleHelper.question('App name:',defaultAppName);
         this.description = await this.consoleHelper.question('Description:','Zation application server');
@@ -138,7 +137,7 @@ class ServerInit
 
         ConsoleHelper.logBusyMessage('Copy template files...');
         //abort if failed
-        FileSystemHelper.copyDirRecursive(this.initDir, this.destDir);
+        FileSystemHelper.copyDirRecursive(initServerDir, this.destDir);
         await this._template();
         console.log();
         await NpmRunner.installDependencies(this.destDir);
@@ -151,8 +150,8 @@ class ServerInit
         console.log('');
         ConsoleHelper.logSuccessMessage(`Zation server app '${this.appName}' is created in ${(processTime / 1000).toFixed(1)}s. 🎉`);
         ConsoleHelper.logInfoMessage(`   You can start the server with the command: 'npm start'.`);
-        if(!!this.folderName) {
-            ConsoleHelper.logInfoMessage(`   But do not forget to change the directory with 'cd ${this.folderName}'.`);
+        if(!!this.inPath) {
+            ConsoleHelper.logInfoMessage(`   But do not forget to change the directory with 'cd ${this.inPath}'.`);
         }
         if(!isWindows()) {
             ConsoleHelper.logInfoMessage(`   At permission error, try to start the server with sudo.`);

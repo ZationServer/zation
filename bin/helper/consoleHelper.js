@@ -8,7 +8,6 @@ const VersionHelper = require("./versionHelper");
 const versions      = require('./../versions');
 
 const readLine        = require('readline');
-const isWindows       = require('is-windows');
 const term            = require( 'terminal-kit').terminal;
 
 class ConsoleHelper
@@ -77,7 +76,7 @@ class ConsoleHelper
     }
 
     static printWelcome() {
-        term.cyan('Thank you for using the Zation Framework 🚀 (https://github.com/ZationServer)!');
+        term.cyan('\nThank you for using the Zation Framework 🚀 (https://github.com/ZationServer)! \n');
     }
 
     static printVersion()

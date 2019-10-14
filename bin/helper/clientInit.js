@@ -13,17 +13,16 @@ const isWindows          = require('is-windows');
 const versions           = require('./../versions');
 const term               = require( 'terminal-kit').terminal;
 
+const initClientDir   = __dirname + '/templates/initClient';
+
 class ClientInit
 {
-    constructor(cliDir,folderName,initDir,force)
+    constructor(cliDir,inPath,force)
     {
         this.cliPath = cliDir;
-        this.destDir = folderName ?
-            path.normalize(cliDir + '/' + folderName) :
-            path.normalize(cliDir);
-        this.initDir = initDir;
+        this.destDir = FileSystemHelper.createDistDir(cliDir,inPath);
         this.force = force;
-        this.folderName = folderName;
+        this.inPath = inPath;
         this.consoleHelper = new ConsoleHelper();
         this.templateEninge = new EasyTemplateEngine();
     }
@@ -32,7 +31,7 @@ class ClientInit
     {
         this._startMessage();
         await this._getInformation();
-        await FileSystemHelper.checkDir(this.destDir,this.consoleHelper,this.force,!!this.folderName);
+        await FileSystemHelper.checkDir(this.destDir,this.consoleHelper,this.force,!!this.inPath);
         await this._init();
     }
 
@@ -46,7 +45,7 @@ class ClientInit
 
     async _getInformation()
     {
-        const defaultAppName = path.basename(!!this.folderName ? this.folderName : this.cliPath);
+        const defaultAppName = path.basename(!!this.inPath ? this.inPath : this.cliPath);
 
         term.cyan( 'What type of client project do you want to create?\n' );
         const type = (await term.singleColumnMenu(['Web (Creates an web client typescript project with webpack)',
@@ -138,7 +137,7 @@ class ClientInit
         let startTimeStamp = Date.now();
         ConsoleHelper.logBusyInit();
 
-        const copyDir = `${this.initDir}/${this.lowerOption}`;
+        const copyDir = `${initClientDir}/${this.lowerOption}`;
 
         ConsoleHelper.logBusyMessage('Copy template files...');
         //abort if failed
@@ -155,8 +154,8 @@ class ClientInit
         console.log('');
         ConsoleHelper.logSuccessMessage(`Zation client app '${this.appName}' is created in ${(processTime / 1000).toFixed(1)}s. 🎉`);
         ConsoleHelper.logInfoMessage(`   You can start the client with the command: 'npm start'.`);
-        if(!!this.folderName) {
-            ConsoleHelper.logInfoMessage(`   But do not forget to change the directory with 'cd ${this.folderName}'.`);
+        if(!!this.inPath) {
+            ConsoleHelper.logInfoMessage(`   But do not forget to change the directory with 'cd ${this.inPath}'.`);
         }
         if(!isWindows()){
             ConsoleHelper.logInfoMessage(`   At permission error, try to start the client with sudo.`);

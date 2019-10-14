@@ -8,14 +8,16 @@ const ConsoleHelper      = require('./consoleHelper');
 const EasyTemplateEngine = require('./easyTemplateEngine');
 const FileSystemHelper   = require('./fileSystemHelper');
 
-const controllerInitFile = __dirname + '/templates/controller/controller.ts';
+const databoxInitFile = __dirname + '/templates/databox/databox.ts';
+const databoxFamilyInitFile = __dirname + '/templates/databox/databoxFamily.ts';
 
-class InitController
+class InitDatabox
 {
-    constructor(cliDir,inPath,force)
+    constructor(cliDir,inPath,cTemplateDir,force)
     {
         this.force = force;
         this.destDir = FileSystemHelper.createDistDir(cliDir,inPath);
+        this.cTemplateDir = cTemplateDir;
         this.consoleHelper = new ConsoleHelper();
     }
 
@@ -27,7 +29,11 @@ class InitController
 
     async _getInformation()
     {
-        this.name = await this.consoleHelper.question('Name of the Controller:','MyController');
+        term.cyan( 'What type of databox do you want to create?\n' );
+        const type = (await term.singleColumnMenu(['Databox', 'DataboxFamily']).promise).selectedIndex;
+        this.dbFamily = type === 1;
+
+        this.name = await this.consoleHelper.question('Name of the Databox:','MyDatabox');
 
         if(this.name.length < 1) {
             ConsoleHelper.logFailedAndEnd(`The name must have at least one character.`);
@@ -40,7 +46,7 @@ class InitController
         console.log('');
         this._printInformation();
 
-        const isOk = await this.consoleHelper.yesOrNo('Initialize controller?',true);
+        const isOk = await this.consoleHelper.yesOrNo('Initialize databox?',true);
         console.log('');
 
         if(!isOk) {
@@ -51,26 +57,26 @@ class InitController
     _printInformation()
     {
         console.log('Information: ');
-        console.log(`Controller Name: ${this.name}`);
+        console.log(`Databox Name: ${this.name}`);
         console.log(`Destination File: ${this.destFile}`);
         console.log('');
     }
 
     async _init()
     {
-        ConsoleHelper.logBusyMessage('Create controller...');
-        await this._createController();
+        ConsoleHelper.logBusyMessage('Create databox...');
+        await this._createDatabox();
         this._createSuccess();
     }
 
-    async _createController()
+    async _createDatabox()
     {
         await FileSystemHelper.checkFile(this.destDir,this.destFile,this.consoleHelper,this.force);
         const templateEngine = new EasyTemplateEngine();
         templateEngine.addToMap('name',this.name);
         templateEngine.addToMap('className',this.className);
         EasyTemplateEngine.templateFromFile
-        (controllerInitFile,this.destFile,templateEngine);
+        (this.dbFamily ? databoxFamilyInitFile : databoxInitFile,this.destFile,templateEngine);
     }
 
     // noinspection JSMethodCanBeStatic
@@ -82,9 +88,9 @@ class InitController
     _createSuccess()
     {
         console.log('');
-        ConsoleHelper.logSuccessMessage(`Controller: '${this.name}' is initialized! 🎉`);
+        ConsoleHelper.logSuccessMessage(`Databox: '${this.name}' is initialized! 🎉`);
         process.exit();
     }
 }
 
-module.exports = InitController;
+module.exports = InitDatabox;

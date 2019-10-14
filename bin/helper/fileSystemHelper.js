@@ -86,6 +86,38 @@ class FileSystemHelper
             }
         }
     }
+
+    static async checkFile(destDir,destFile,consoleHelper,force) {
+        if(fs.existsSync(destFile)) {
+            let isOk = false;
+            if(fs.lstatSync(destFile).isDirectory()) {
+                if(!force) {
+                    isOk = await consoleHelper.yesOrNo(`Complication with directory: '${destFile}', remove dir?`,false);
+                }
+            }
+            else if(fs.lstatSync(destFile).isFile()) {
+                if(!force) {
+                    isOk = await consoleHelper.yesOrNo(`Complication with file: '${destFile}', remove file?`,false);
+                }
+            }
+
+            if(force || isOk) {
+                // noinspection JSUnresolvedFunction
+                fsExtra.removeSync(destFile);
+            }
+            else {
+                ConsoleHelper.abort();
+            }
+        }
+        else {
+            fsExtra.ensureDirSync(destDir);
+        }
+    }
+
+    static createDistDir(cliDir,inPath) {
+        return inPath ? path.normalize(cliDir + '/' + inPath) : path.normalize(cliDir)
+    }
+
 }
 
 module.exports = FileSystemHelper;
