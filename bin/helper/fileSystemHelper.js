@@ -7,6 +7,7 @@ Copyright(c) Luca Scaringella
 const fsExtra         = require('fs-extra');
 const emptyDir        = require('empty-dir');
 const fs              = require('fs');
+const path            = require('path');
 const term            = require( 'terminal-kit').terminal;
 
 class FileSystemHelper

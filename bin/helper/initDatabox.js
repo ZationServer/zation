@@ -7,6 +7,7 @@ Copyright(c) Luca Scaringella
 const ConsoleHelper      = require('./consoleHelper');
 const EasyTemplateEngine = require('./easyTemplateEngine');
 const FileSystemHelper   = require('./fileSystemHelper');
+const path               = require('path');
 
 const databoxInitFile = __dirname + '/templates/databox/databox.ts';
 const databoxFamilyInitFile = __dirname + '/templates/databox/databoxFamily.ts';
@@ -17,7 +18,6 @@ class InitDatabox
     {
         this.force = force;
         this.destDir = FileSystemHelper.createDistDir(cliDir,inPath);
-        this.cTemplateDir = cTemplateDir;
         this.consoleHelper = new ConsoleHelper();
     }
 

@@ -7,6 +7,7 @@ Copyright(c) Luca Scaringella
 const ConsoleHelper      = require('./consoleHelper');
 const EasyTemplateEngine = require('./easyTemplateEngine');
 const FileSystemHelper   = require('./fileSystemHelper');
+const path               = require('path');
 
 const controllerInitFile = __dirname + '/templates/controller/controller.ts';
 
