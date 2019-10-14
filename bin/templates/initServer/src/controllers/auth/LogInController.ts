@@ -17,15 +17,14 @@ class LogInCredentials {
 }
 
 @Register('logIn').asAuthController()
-export class LogInController extends Controller
-{
+export class LogInController extends Controller {
+
     static readonly config : ControllerConfig = {
         access : 'all',
         input : LogInCredentials
     };
 
-    async initialize(bag: Bag)
-    {
+    async initialize(bag: Bag) {
 
     }
 
@@ -33,13 +32,12 @@ export class LogInController extends Controller
         await bag.authenticate('user');
     }
 
-    async finallyHandle(bag: RequestBag, input: any)
-    {
+    async finallyHandle(bag: RequestBag, input: any) {
 
     }
 
-    async invalidInput(bag: RequestBag, input: any, backErrorBag: BackErrorBag)
-    {
+    async invalidInput(bag: RequestBag, input: any, backErrorBag: BackErrorBag) {
 
     }
+
 }
