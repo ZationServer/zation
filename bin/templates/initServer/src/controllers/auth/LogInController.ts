@@ -16,7 +16,7 @@ class LogInCredentials {
 
 }
 
-@Register('logIn').asAuthController()
+@Register().asAuthController()
 export class LogInController extends Controller {
 
     static readonly config : ControllerConfig = {

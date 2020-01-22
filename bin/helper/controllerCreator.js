@@ -34,8 +34,6 @@ class ControllerCreator
             ConsoleHelper.logFailedAndEnd(`The name must have at least one character.`);
         }
 
-        this.className = this._firstLetterUpperCase(this.name);
-
         this.destFile = path.normalize(this.destDir + path.sep + this.name + '.ts');
 
         console.log('');
@@ -69,14 +67,8 @@ class ControllerCreator
     {
         const templateEngine = new EasyTemplateEngine();
         templateEngine.addToMap('name',this.name);
-        templateEngine.addToMap('className',this.className);
         EasyTemplateEngine.templateFromFile
         (controllerInitFile,this.destFile,templateEngine);
-    }
-
-    // noinspection JSMethodCanBeStatic
-    _firstLetterUpperCase(str) {
-        return str.charAt(0).toUpperCase() + str.slice(1);
     }
 
     // noinspection JSMethodCanBeStatic

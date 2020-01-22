@@ -1,7 +1,7 @@
 import {Register, Controller, ControllerConfig, Result, BackError, BackErrorBag, Bag, RequestBag} from 'zation-server';
 
-@Register('{{name}}')
-export default class {{className}} extends Controller {
+@Register()
+export default class {{name}} extends Controller {
 
     static readonly config: ControllerConfig = {
 

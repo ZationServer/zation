@@ -1,7 +1,7 @@
 import {Bag, DataboxConfig, DataboxFamily, Register} from "zation-server";
 
-@Register('{{name}}')
-export default class {{className}} extends DataboxFamily {
+@Register()
+export default class {{name}} extends DataboxFamily {
 
     static readonly config: DataboxConfig = {
 

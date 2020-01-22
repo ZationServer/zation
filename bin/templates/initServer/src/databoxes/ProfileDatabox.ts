@@ -1,6 +1,6 @@
 import {Bag, DataboxConfig, DataboxFamily, Register} from "zation-server";
 
-@Register('UserProfile')
+@Register()
 export default class UserProfileDatabox extends DataboxFamily {
 
     public static readonly config: DataboxConfig = {
