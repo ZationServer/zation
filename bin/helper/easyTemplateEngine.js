@@ -9,11 +9,7 @@ const fs = require('fs');
 
 class EasyTemplateEngine
 {
-    constructor(prefix = '{{', postfix = '}}')
-    {
-        this._prefix = prefix;
-        this._postfix = postfix;
-
+    constructor() {
         this._map = {};
     }
 
@@ -22,17 +18,10 @@ class EasyTemplateEngine
         this._map[key] = value;
     }
 
-    templateString(str)
-    {
-        for(let k in this._map)
-        {
-            if(this._map.hasOwnProperty(k))
-            {
-                str = str.replace(new RegExp(`${this._prefix}${k}${this._postfix}`, 'g'), this._map[k]);
-            }
-        }
-
-        return str;
+    templateString(str) {
+        return str.replace(/{{(\w+)}}/g, (_,key) => {
+            return this._map[key];
+        });
     }
 
     static templateFile(source,templateEngine)
