@@ -55,13 +55,13 @@ class ClientInit
         this.appName = await this.consoleHelper.question('App name:',defaultAppName);
         this.description = await this.consoleHelper.question('Description:','Zation application client');
         this.version = await this.consoleHelper.question('Version:','1.0.0');
-        this.git = await this.consoleHelper.question('Git repository:');
+        this.git = await this.consoleHelper.question('Git repository: (Optional)');
         this.serverHost = await this.consoleHelper.question('Server host:','localhost');
         this.serverPath = await this.consoleHelper.question('Server path:','/zation');
         this.serverPort = Number.parseInt(await this.consoleHelper.question('Server port:',3000));
         this.serverPostKey = await this.consoleHelper.question('Server post key:','zation');
         this.license = await this.consoleHelper.question('License:','ISC');
-        this.author = await this.consoleHelper.question('Author:');
+        this.author = await this.consoleHelper.question('Author: (Optional)');
         this.useDebug = await this.consoleHelper.yesOrNo('Use debug mode?',false);
         console.log('');
 

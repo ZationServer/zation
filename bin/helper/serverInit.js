@@ -49,11 +49,11 @@ class ServerInit
         this.appName = await this.consoleHelper.question('App name:',defaultAppName);
         this.description = await this.consoleHelper.question('Description:','Zation application server');
         this.version = await this.consoleHelper.question('Version:','1.0.0');
-        this.git = await this.consoleHelper.question('Git repository:');
+        this.git = await this.consoleHelper.question('Git repository: (Optional)');
         this.port = Number.parseInt(await this.consoleHelper.question('Port:',3000));
-        this.timeZone = await this.consoleHelper.question('Time zone:');
+        this.timeZone = await this.consoleHelper.question('Time zone: (Optional)');
         this.license = await this.consoleHelper.question('License:','ISC');
-        this.author = await this.consoleHelper.question('Author:');
+        this.author = await this.consoleHelper.question('Author: (Optional)');
 
         this.useDebug = await this.consoleHelper.yesOrNo('Use debug mode?',true);
         this.useStartDebug = await this.consoleHelper.yesOrNo('Use start debug mode?',false);
