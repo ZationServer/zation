@@ -44,10 +44,10 @@ Another nice feature of the Zation framework is configuration error detection.
 This feature will check your configurations for errors. 
 If fatal errors are detected, the server won't start to protect you from an unsafe or faulty backend.
 
-The Zation backend framework is written in Typescript and uses the µWebSockets library, which is written in C++.  
-So you have to use Typescript or JavaScript to write your backend code.  
-For communication with the client, Zation is using the HTTP and WebSocket protocol.  
-Zation will offer more than one client driver in different programming languages.  
+The Zation backend framework is written in Typescript and uses the µWebSockets library, which is written in C++. 
+So you have to use Typescript or JavaScript to write your backend code.
+For communication with the client, Zation is using the HTTP and WebSocket protocol.
+Zation will offer more than one client driver in different programming languages.
 At the moment, there is only one client driver in TypeScript.
 
 **Notice that Zation is in development, and the final documentation is not finished yet.**
