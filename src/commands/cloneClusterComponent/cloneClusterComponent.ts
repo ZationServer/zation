@@ -41,9 +41,9 @@ function getClusterComponentVersion(component : ClusterComponent): string {
 function getClusterComponentHelperText(component : ClusterComponent): string {
     switch(component) {
         case ClusterComponent.State:
-            return "You can start the zation-cluster-state server with 'npm start'";
+            return "You can start the zation-cluster-state server with 'npm start'.";
         case ClusterComponent.Broker:
-            return "You can start the zation-cluster-broker server with 'STATE_SERVER_HOST=\"localhost\" node index.js'";
+            return "You can start the zation-cluster-broker server with 'STATE_SERVER_HOST=\"localhost\" node index.js'.";
     }
 }
 
