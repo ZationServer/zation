@@ -26,7 +26,8 @@ function getClientTemplateDir(type : ClientProjectType) : string {
 
 export async function createClientProject(processDir: string, name: string, force: boolean) {
 
-    const destDir = processDestination(processDir,name);
+    const pascalCaseName = toPascalCase(name);
+    const destDir = processDestination(processDir,pascalCaseName);
 
     term.cyan('Which type of client project do you want to create?\n');
     const res = await term.singleColumnMenu(['Web (Creates an web client typescript project with webpack)',
@@ -37,7 +38,7 @@ export async function createClientProject(processDir: string, name: string, forc
     }
     const projectType = res.selectedIndex === 0 ? ClientProjectType.Web : ClientProjectType.Node;
 
-    const description = await askInput("Enter a description",`The package ${toPascalCase(name)}...`);
+    const description = await askInput("Enter a description",`The package ${pascalCaseName}...`);
     const author = await askInput("Enter author");
     const git = await askInput("Enter git repository");
 

@@ -10,9 +10,10 @@ import {toPascalCase} from "../../shared/stringUtils";
 
 export async function createServerProject(processDir: string, name: string, force: boolean) {
 
-    const destDir = processDestination(processDir,name);
+    const pascalCaseName = toPascalCase(name);
+    const destDir = processDestination(processDir,pascalCaseName);
 
-    const description = await askInput("Enter a description",`The package ${toPascalCase(name)}...`);
+    const description = await askInput("Enter a description",`The package ${pascalCaseName}...`);
     const author = await askInput("Enter author");
     const port = Number.parseInt(await askInput("Enter a port","3000"))?.toString();
     const git = await askInput("Enter git repository");
