@@ -35,7 +35,7 @@ export const print = {
         console.log(`Zation Cluster Broker Version: ${zationClusterBrokerVersion}`);
     },
     welcome: () => {
-        term.cyan(`Thank you for using the Zation (Bundle:${zationBundleVersion}) Framework 🚀 (https://github.com/ZationServer)!\n`);
+        term.cyan(`Thank you for using the Zation Framework 🚀 (Bundle:${zationBundleVersion}) (https://github.com/ZationServer)!\n`);
     },
     projectNpmCommands: () => {
         console.log();
