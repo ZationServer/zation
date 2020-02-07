@@ -1,0 +1,24 @@
+{
+  "name": "{{name}/kc}",
+  "version": "0.0.1",
+  "description": "{{description}}",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",{{author}}{{git}}
+  "scripts": {
+    "start": "node dist/index.js",
+    "prestart": "npm run build",
+    "build": "gulp compile",
+    "watch": "gulp watch"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "dependencies": {
+    "zation-client": "{{zationClientVersion}}"
+  },
+  "devDependencies": {
+    "gulp": "4.0.0",
+    "gulp-typescript": "{{typescriptGulpVersion}}",
+    "typescript": "{{typescriptVersion}}"
+  }
+}

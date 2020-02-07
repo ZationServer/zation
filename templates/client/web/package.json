@@ -1,0 +1,29 @@
+{
+  "name": "{{name}/kc}",
+  "version": "0.0.1",
+  "description": "{{description}}",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",{{author}}{{git}}
+  "scripts": {
+    "start": "npm run open",
+    "open": "concurrently \"http-server -a localhost -p 1080\" \"{{openCommand}} http://localhost:1080\"",
+    "prestart": "npm run build",
+    "build": "webpack"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "dependencies": {
+    "zation-client": "{{zationClientVersion}}",
+    "@types/jquery": "3.3.22",
+    "jquery": "3.3.1"
+  },
+  "devDependencies": {
+    "concurrently": "4.0.1",
+    "http-server": "0.11.1",
+    "ts-loader": "5.2.2",
+    "typescript": "{{typescriptVersion}}",
+    "webpack": "4.23.1",
+    "webpack-cli": "3.1.2"
+  }
+}

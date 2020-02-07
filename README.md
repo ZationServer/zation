@@ -57,7 +57,7 @@ At the moment, there is only one client driver in TypeScript.
 # Install Zation
 npm i -g zation
 # Create a project
-zation init [path]
+zation createProject [path]
 ```
 Your new projects will come with example code, tests, and more.
 

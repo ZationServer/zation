@@ -4,7 +4,11 @@
   "license": "SEE LICENSE IN <README.md>",
   "description": "CLI tool for the Zation framework.",
   "scripts": {
-    "install": "node bin/welcome.js"
+    "prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "install": "node out/welcome.js"
   },
   "repository": {
     "type": "git",
@@ -16,7 +20,9 @@
     "url": "https://luca.scaringella.de"
   },
   "files": [
-    "bin/**/*"
+    "out/**/*",
+    "templates/**/*",
+    "assets/**/*"
   ],
   "keywords": [
     "esay",
@@ -33,8 +39,8 @@
     "tools"
   ],
   "dependencies": {
-    "commander": "^3.0.2",
-    "terminal-kit": "^1.31.4",
+    "commander": "4.1.1",
+    "terminal-kit": "1.32.3",
     "download-git-repo": "1.1.0",
     "empty-dir": "1.0.0",
     "fs-extra": "6.0.1",
@@ -42,10 +48,13 @@
     "is-windows": "1.0.2"
   },
   "devDependencies": {
+    "@types/fs-extra": "^8.0.1",
+    "@types/empty-dir": "^2.0.0",
     "@types/commander": "^2.12.2",
-    "@types/terminal-kit": "^1.28.0"
+    "@types/terminal-kit": "^1.28.0",
+    "typescript": "^3.7.5"
   },
   "bin": {
-    "zation": "bin/cli.js"
+    "zation": "out/cli.js"
   }
 }
