@@ -1,6 +1,6 @@
 import {Config, eventInit} from 'zation-server';
 
-module.exports = Config.eventConfig(
+export default Config.eventConfig(
     {
         express: (bag, express) => {
             express.get('/',(req,res) => {

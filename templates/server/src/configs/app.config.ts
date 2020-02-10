@@ -6,7 +6,7 @@ import "../controllers/auth/LoginController";
 //Databoxes
 import "../databoxes/ProfileDatabox";
 
-module.exports = Config.appConfig(
+export default Config.appConfig(
     {
         userGroups:
             {

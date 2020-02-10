@@ -1,6 +1,6 @@
 import {Config} from 'zation-server';
 
-module.exports = Config.mainConfig(
+export default Config.mainConfig(
     {
         port: {{port}},
         appName: '{{name}/pc}',
