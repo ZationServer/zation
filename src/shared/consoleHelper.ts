@@ -45,7 +45,7 @@ export const print = {
         console.log(`     npm test                            Runs all tests (and build it (only typescript)).`);
         console.log(`     npm run check                       Checks all Zation configurations.`);
         console.log(`     npm run build                       Builds the project.`);
-        console.log(`     npm run watch                       Starts to build automatically when a file changes.`);
+        console.log(`     npm run watch                       Starts to build automatically when the source code changes.`);
         console.log(`     npm run dockerBuild                 Builds an docker image.`);
         console.log(`     npm run dockerExport                Exports the docker image in the project folder.`);
         console.log(`     npm run dockerRun                   Runs docker container.`);
