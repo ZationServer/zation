@@ -41,8 +41,8 @@ export const print = {
         console.log();
         console.log('Npm project commands (Only works in Zation CLI created projects):');
         console.log('  For server project:');
-        console.log(`     npm start                           Starts the server (and build it (only typescript)).`);
-        console.log(`     npm test                            Runs all tests (and build it (only typescript)).`);
+        console.log(`     npm start                           Starts the server.`);
+        console.log(`     npm test                            Runs all tests.`);
         console.log(`     npm run check                       Checks all Zation configurations.`);
         console.log(`     npm run build                       Builds the project.`);
         console.log(`     npm run watch                       Starts to build automatically when the source code changes.`);
