@@ -1,5 +1,5 @@
-export const zationBundleVersion = '0.0.2';
-export const zationServerVersion = '1.5.2';
+export const zationBundleVersion = '0.0.3';
+export const zationServerVersion = '1.5.3';
 export const zationClientVersion = '1.1.2';
 export const zationAssuredVersion = '0.3.8';
 export const gulpTypescriptVersion = '^5.0.1';
