@@ -4,8 +4,9 @@
   "license": "SEE LICENSE IN <README.md>",
   "description": "CLI tool for the Zation framework.",
   "scripts": {
-    "prepare": "npm run compile",
-    "compile": "tsc -p ./",
+    "prepare": "npm run build",
+    "build": "npm run compile",
+    "compile": "rm -rf out/ && tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile",
     "install": "node out/welcome.js"
