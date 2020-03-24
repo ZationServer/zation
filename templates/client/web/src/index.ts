@@ -13,7 +13,7 @@ import * as $ from "jquery";
         await client.connect();
 
         for(let i = 1; i < 6; i++) {
-            $('body').append($('<p/>').text(`Ping ${i}: ${await client.ping()}ms`));
+            $('body').append($('<p/>').text(`Ping ${i}: ${(await client.ping()).toFixed(3)}ms`));
         }
     }
     catch (e) {

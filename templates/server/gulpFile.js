@@ -1,5 +1,6 @@
 const {src,dest,series,parallel,watch: gulpWatch} = require('gulp');
 const typescript = require('gulp-typescript');
+const sourcemaps = require('gulp-sourcemaps');
 const del = require('del');
 
 const tscConfig = require('./tsconfig.json');
@@ -11,7 +12,9 @@ function clean() {
 
 function compile() {
     return src('src/**/*.ts')
+        .pipe(sourcemaps.init())
         .pipe(typescript(tscConfig.compilerOptions))
+        .pipe(sourcemaps.write({includeContent: false, sourceRoot: '/src'}))
         .pipe(dest(outputFolder));
 }
 

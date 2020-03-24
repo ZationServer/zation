@@ -6,7 +6,8 @@
   "types": "dist/index.d.ts",{{author}}{{git}}
   "scripts": {
     "start": "node dist/index.js",
-    "prestart": "npm run build",
+    "buildStart": "npm run build && node dist/index.js",
+    "prepare": "npm run build",
     "build": "gulp compile",
     "watch": "gulp watch"
   },
@@ -17,8 +18,11 @@
     "zation-client": "{{zationClientVersion}}"
   },
   "devDependencies": {
-    "gulp": "4.0.0",
-    "gulp-typescript": "{{typescriptGulpVersion}}",
-    "typescript": "{{typescriptVersion}}"
+    "gulp": "{{gulpVersion}}",
+    "gulp-typescript": "{{gulpTypescriptVersion}}",
+    "gulp-sourcemaps": "{{gulpSourcemapsVersion}}",
+    "typescript": "{{typescriptVersion}}",
+    "del": "{{delVersion}}",
+    "@types/node": "{{typesNodeVersion}}"
   }
 }

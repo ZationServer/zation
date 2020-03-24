@@ -1,10 +1,10 @@
-import {start,StartMode,Config}             from 'zation-server';
-import {when,create,describe,before,after}  from 'zation-assured';
-import StarterConfig                        from '../src/configs/starter.config';
+import {start,StartMode,Config}                   from 'zation-server';
+import {when,createClient,describe,before,after}  from 'zation-assured';
+import StarterConfig                              from '../src/configs/starter.config';
 
 const TEST_PORT = 3000;
 
-const testClient = create({port: TEST_PORT});
+const testClient = createClient({port: TEST_PORT});
 
 before(async () => {
     await start(Config.merge(Config.starterConfig({
@@ -14,7 +14,7 @@ before(async () => {
         workers: 1,
         brokers: 1,
         debug: false
-    }),StarterConfig),StartMode.TEST);
+    }),StarterConfig),StartMode.Test);
 
     await testClient.connect();
 });
@@ -37,7 +37,7 @@ describe('LoginController Test',async () => {
         .isNotSuccessful()
         .buildHasError()
             .presets()
-            .inputIsNotTypeEmail()
+            .valueIsNotTypeEmail()
             .end()
         .buildHasError()
             .presets()

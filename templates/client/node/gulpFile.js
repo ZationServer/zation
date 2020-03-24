@@ -1,26 +1,41 @@
-const gulp       = require('gulp');
+const {src,dest,series,parallel,watch: gulpWatch} = require('gulp');
 const typescript = require('gulp-typescript');
-const tscConfig  = require('./tsconfig.json');
+const sourcemaps = require('gulp-sourcemaps');
+const del = require('del');
 
-gulp.task('ts', function () {
-    return gulp
-        .src('src/**/*.ts')
+const tscConfig = require('./tsconfig.json');
+const outputFolder = 'dist';
+
+function clean() {
+    return del(outputFolder);
+}
+
+function compile() {
+    return src('src/**/*.ts')
+        .pipe(sourcemaps.init())
         .pipe(typescript(tscConfig.compilerOptions))
-        .pipe(gulp.dest('dist'));
-});
+        .pipe(sourcemaps.write({includeContent: false, sourceRoot: '/src'}))
+        .pipe(dest(outputFolder));
+}
 
-gulp.task('cof', function() {
-    return gulp
-        .src(['src/**/*','!src/**/*.ts',])
-        .pipe(gulp.dest('dist'));
-});
+function copyAssets() {
+    return src(['src/**/*','!src/**/*.ts',])
+        .pipe(dest(outputFolder));
+}
 
-gulp.task('compile', gulp.parallel('cof','ts'));
+const build = series(clean,parallel(compile,copyAssets));
 
-gulp.task('watch', () =>
-{
-    gulp.watch('src/**/*.ts', gulp.parallel('ts'));
-    gulp.watch(['src/**/*', '!src/**/*.ts'], gulp.parallel('cof'));
-});
+function watch() {
+    gulpWatch('src/**/*', {events: 'unlink'}, build);
+    gulpWatch('src/**/*.ts', {events: ['change','add']}, compile);
+    gulpWatch(['src/**/*', '!src/**/*.ts'], {events: ['change','add']}, copyAssets);
+}
 
-gulp.task('default', gulp.series('compile', 'watch'));
+module.exports = {
+    clean,
+    compile,
+    copyAssets,
+    build,
+    watch,
+    default: series(build,watch)
+};

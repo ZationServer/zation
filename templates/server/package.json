@@ -6,6 +6,7 @@
   "types": "dist/index.d.ts",{{author}}{{git}}
   "scripts": {
     "start": "node dist/index.js",
+    "buildStart": "npm run build && node dist/index.js",
     "test": "npm run build && mocha --exit -r ts-node/register test/**/*.ts",
     "check": "START_MODE=2 node dist/index.js",
     "start:docker": "pm2 start dist/index.js && pm2 logs index",
@@ -24,12 +25,14 @@
     "zation-server": "{{zationServerVersion}}"
   },
   "devDependencies": {
-    "gulp": "4.0.2",
-    "gulp-typescript": "{{gulpTypescriptVersion}}",
-    "typescript": "{{typescriptVersion}}",
-    "del": "5.1.0",
     "zation-assured": "{{zationAssuredVersion}}",
-    "mocha": "^6.1.4",
-    "ts-node": "^8.2.0"
+    "gulp": "{{gulpVersion}}",
+    "gulp-typescript": "{{gulpTypescriptVersion}}",
+    "gulp-sourcemaps": "{{gulpSourcemapsVersion}}",
+    "typescript": "{{typescriptVersion}}",
+    "del": "{{delVersion}}",
+    "mocha": "{{mochaVersion}}",
+    "ts-node": "{{tsNodeVersion}}",
+    "@types/node": "{{typesNodeVersion}}"
   }
 }

@@ -36,7 +36,7 @@ export class LoginController extends Controller {
 
     }
 
-    async invalidInput(bag: RequestBag, input: any, backErrorBag: BackErrorBag) {
+    async invalidInput(bag: RequestBag, rawInput: any, backErrorBag: BackErrorBag) {
 
     }
 

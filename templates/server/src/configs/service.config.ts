@@ -1,9 +1,5 @@
 import {Config} from 'zation-server';
 
-export default Config.serviceConfig(
-    {
-        services:{
+export default Config.serviceConfig({
 
-            },
-        serviceModules: []
-    });
+});
