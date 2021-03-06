@@ -10,11 +10,12 @@ export function copyDirRecursive(source : string,destination : string) {
     fsExtra.copySync(source,destination);
 }
 
-export function processDestination(processDir: string, name: string): string {
-	return path.normalize(processDir + '/' + name);
+export function processDestination(processDir: string, name?: string): string {
+    if(name == null) return path.normalize(processDir);
+	else return path.normalize(processDir + '/' + name);
 }
 
-export async function checkDir(dir: string,force: boolean) {
+export async function checkDir(dir: string,newFolder: boolean,force: boolean) {
     if(!fs.existsSync(dir)) {
         fsExtra.ensureDirSync(dir);
     }
@@ -23,7 +24,8 @@ export async function checkDir(dir: string,force: boolean) {
         let isOk = false;
         if(!force) {
             isOk = await yesOrNo
-            (`There is already a directory at '${dir}'.\nDo you want to overwrite it?`,false);
+            (newFolder ? `There is already a directory at '${dir}'.\nDo you want to overwrite it?` :
+                `The directory '${dir}' is not empty.\nDo you want to empty it?`,false);
             console.log();
         }
         if(force || isOk) {
@@ -31,8 +33,9 @@ export async function checkDir(dir: string,force: boolean) {
                 fsExtra.emptyDirSync(dir);
             }
             catch (e) {
-                print.error(`Failed to remove existing directory at ${dir}.
-        This directory may be used by another program or you may not have the permission to remove it.`);
+                const action = newFolder ? 'remove' : 'clear';
+                print.error(`Failed to ${action} existing directory at ${dir
+                }.\nThis directory may be used by another program or you may not have the permission to ${action} it.`);
                 throw new AbortedCommandError(true)
             }
         }

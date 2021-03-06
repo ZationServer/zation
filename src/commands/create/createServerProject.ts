@@ -3,7 +3,7 @@ import {checkDir, copyDirRecursive, processDestination} from '../../shared/fsUti
 import {isWin, serverTemplateDir} from '../../shared/constants';
 import {versions} from "../../versions";
 import NpmRunner from "./../../shared/npmRunner";
-import { askInput } from '../../shared/inputHelper';
+import {askInput, yesOrNo} from '../../shared/inputHelper';
 import {print} from "../../shared/consoleHelper";
 import {terminal as term} from 'terminal-kit';
 import {toPascalCase} from "../../shared/stringUtils";
@@ -11,7 +11,9 @@ import {toPascalCase} from "../../shared/stringUtils";
 export async function createServerProject(processDir: string, name: string, force: boolean) {
 
     const pascalCaseName = toPascalCase(name);
-    const destDir = processDestination(processDir,pascalCaseName);
+
+    const newFolder = await yesOrNo("Do you want to create a new project folder?",true);
+    const destDir = processDestination(processDir, newFolder ? pascalCaseName : undefined);
 
     const description = await askInput("Enter a description",`The package ${pascalCaseName}...`);
     const author = await askInput("Enter author");
@@ -28,7 +30,7 @@ export async function createServerProject(processDir: string, name: string, forc
         ...versions
     });
 
-    await checkDir(destDir,force);
+    await checkDir(destDir,newFolder,force);
 
     const startTimeStamp = Date.now();
 

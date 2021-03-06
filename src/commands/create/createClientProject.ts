@@ -3,12 +3,11 @@ import { versions } from '../../versions';
 import {checkDir, copyDirRecursive, processDestination} from '../../shared/fsUtils';
 import { clientTemplateDir, isWin } from '../../shared/constants';
 import NpmRunner from '../../shared/npmRunner';
-import {askInput} from "../../shared/inputHelper";
+import {askInput, yesOrNo} from "../../shared/inputHelper";
 import {print} from "../../shared/consoleHelper";
 import {terminal as term} from 'terminal-kit';
 import {toPascalCase} from "../../shared/stringUtils";
-import {AbortedCommandError} from "../../shared/abortedCommandError";
-import {Component, createComponent} from "./createComponent";
+import {AbortedCommandError} from "../../shared/abortedCommandError"
 
 enum ClientProjectType {
     Web,
@@ -27,7 +26,9 @@ function getClientTemplateDir(type : ClientProjectType) : string {
 export async function createClientProject(processDir: string, name: string, force: boolean) {
 
     const pascalCaseName = toPascalCase(name);
-    const destDir = processDestination(processDir,pascalCaseName);
+
+    const newFolder = await yesOrNo("Do you want to create a new project folder?",true);
+    const destDir = processDestination(processDir,newFolder ? pascalCaseName : undefined);
 
     term.cyan('Which type of client project do you want to create?\n');
     const res = await term.singleColumnMenu(['Web (Creates an web client typescript project with webpack)',
@@ -56,7 +57,7 @@ export async function createClientProject(processDir: string, name: string, forc
         ...versions
     });
 
-    await checkDir(destDir,force);
+    await checkDir(destDir,newFolder,force);
 
     const startTimeStamp = Date.now();
 

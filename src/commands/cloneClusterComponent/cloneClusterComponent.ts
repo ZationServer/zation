@@ -5,6 +5,7 @@ import NpmRunner from '../../shared/npmRunner';
 import {print} from "../../shared/consoleHelper";
 import {checkDir, processDestination} from "../../shared/fsUtils";
 import {terminal as term} from 'terminal-kit';
+import {yesOrNo} from "../../shared/inputHelper";
 
 export enum ClusterComponent {
     State,Broker
@@ -77,9 +78,10 @@ export async function cloneClusterComponentStart(processDir: string,force: boole
         componentType = res.selectedIndex === 0 ? ClusterComponent.State : ClusterComponent.Broker;
     }
 
+    const newFolder = await yesOrNo("Do you want to create a new folder?",true);
     const destDir = processDestination(processDir,getClusterComponentPackageName(componentType));
 
-    await checkDir(destDir,force);
+    await checkDir(destDir,newFolder,force);
 
     const startTimeStamp = Date.now();
 
