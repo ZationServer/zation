@@ -33,7 +33,7 @@ export async function checkDir(dir: string,newFolder: boolean,force: boolean) {
                 fsExtra.emptyDirSync(dir);
             }
             catch (e) {
-                const action = newFolder ? 'remove' : 'clear';
+                const action = newFolder ? 'remove' : 'empty';
                 print.error(`Failed to ${action} existing directory at ${dir
                 }.\nThis directory may be used by another program or you may not have the permission to ${action} it.`);
                 throw new AbortedCommandError(true)
