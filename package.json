@@ -40,19 +40,19 @@
     "tools"
   ],
   "dependencies": {
-    "commander": "4.1.1",
-    "terminal-kit": "1.32.3",
+    "commander": "^7.1.0",
     "download-git-repo": "1.1.0",
     "empty-dir": "1.0.0",
     "fs-extra": "6.0.1",
-    "minimist": "1.2.2",
-    "is-windows": "1.0.2"
+    "is-windows": "1.0.2",
+    "minimist": "^1.2.5",
+    "terminal-kit": "1.32.3"
   },
   "devDependencies": {
     "@types/fs-extra": "^8.0.1",
     "@types/empty-dir": "^2.0.0",
     "@types/commander": "^2.12.2",
-    "@types/terminal-kit": "^1.28.0",
+    "@types/terminal-kit": "^1.28.2",
     "typescript": "^3.7.5"
   },
   "bin": {
