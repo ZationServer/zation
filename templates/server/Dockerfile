@@ -1,4 +1,4 @@
-FROM node:14.16.0
+FROM node:12.21.0
 
 LABEL appName="{{name}/kc}"
 LABEL version="0.0.1"
