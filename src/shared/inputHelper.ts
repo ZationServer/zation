@@ -1,6 +1,5 @@
 import { AbortedCommandError } from './abortedCommandError';
 import {terminal as term} from 'terminal-kit';
-import * as readLine from "readline";
 
 export async function askInput(prompt : string, defaultValue : string) : Promise<string>;
 export async function askInput(prompt : string, defaultValue ?: undefined) : Promise<string | undefined>;
@@ -24,34 +23,16 @@ export async function askInput(prompt : string, defaultValue : string | undefine
 }
 
 export async function yesOrNo(question: string,defaultValue: boolean = true): Promise<boolean> {
-    const text = question + ' [' + (defaultValue ? '\x1b[36my\x1b[0m\x1b[0m|n] ' : 'y|\x1b[36mn\x1b[0m\x1b[0]] ');
-    const read = readLine.createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
-
-    const ask = async () => {
-        return new Promise<boolean>((resolve) =>
-        {
-            read.question(text,async (a) => {
-                if(a === '' || a === null) {
-                    resolve(defaultValue);
-                }
-                else {
-                    a = a.toLowerCase();
-                    if(a === 'y' || a === 'yes'){
-                        resolve(true);
-                    }
-                    else if(a === 'n' || a === 'no'){
-                        resolve(false);
-                    }
-                    else {
-                        console.log('Please enter yes or no');
-                        resolve((await ask()));
-                    }
-                }
-            });
-        });
-    };
-    return ask();
+    term(question + ' [' + (defaultValue ? '\x1b[36my\x1b[0m\x1b[0m|n] ' : 'y|\x1b[36mn\x1b[0m\x1b[0]]'));
+    const res = await term.yesOrNo( { yes: [ 'y',...(defaultValue ? ['ENTER'] : []) ] ,
+        no: [ 'n',...(defaultValue ? [] : ['ENTER']) ] }).promise;
+    if(res == null) {
+        term("\n");
+        throw new AbortedCommandError();
+    }
+    else {
+        term(res ? ' Yes' : ' No');
+        term("\n");
+        return res;
+    }
 }
