@@ -53,19 +53,11 @@ program
     });
 
 program
-    .command('createController <name>')
+    .command('createComponent <name>')
     .alias('cco')
-    .description('creates a new Zation controller in the working directory')
-    .action(async (name,c) => {
-        await callCommandSafe(createComponent,Component.Controller,processDir,name,c.parent.force);
-    });
-
-program
-    .command('createDatabox <name>')
-    .alias('cd')
-    .description('creates a new Zation databox in the working directory')
-    .action(async (name,c) => {
-        await callCommandSafe(createDatabox,processDir,name,c.parent.force);
+    .description('creates a new Zation component in the working directory')
+    .action(async (name) => {
+        await callCommandSafe(createComponent,processDir,name,program.opts()?.force);
     });
 
 program

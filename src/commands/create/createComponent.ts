@@ -4,49 +4,55 @@ import {terminal as term} from 'terminal-kit';
 import TemplateEngine from "../../shared/templateEngine";
 import * as fsExtra from "fs-extra";
 import * as fs from "fs";
-import {controllerTemplateFile, databoxFamilyTemplateFile, databoxTemplateFile} from "../../shared/constants";
+import * as path from "path";
+import {componentsTemplateDir} from "../../shared/constants";
 import {toPascalCase} from "../../shared/stringUtils";
+import {AbortedCommandError} from "../../shared/abortedCommandError";
 
-export enum Component {
-    Controller,Databox,DataboxFamily
+export enum ComponentType {
+    Controller,
+    Receiver,
+    Databox,
+    DataboxFamily,
+    Channel,
+    ChannelFamily
 }
 
-function getComponentTemplateFilePath(component : Component): string {
-    switch(component) {
-        case Component.Databox:
-            return databoxTemplateFile;
-        case Component.DataboxFamily:
-            return databoxFamilyTemplateFile;
-        case Component.Controller:
-            return controllerTemplateFile;
-    }
-}
+const COMPONENT_NAMES = Object.keys(ComponentType).reduce((a: string[],v) => {
+    if(isNaN(parseInt(v))) a.push(v);
+    return a;
+},[]);
 
-function getComponentName(component : Component): string {
-    switch(component) {
-        case Component.Databox:
-            return "Databox";
-        case Component.DataboxFamily:
-            return "Databox";
-        case Component.Controller:
-            return "Controller";
-    }
-}
+const COMPONENT_TEMPLATE_MAP: Record<ComponentType,string> = {
+    [ComponentType.Controller]: 'controller',
+    [ComponentType.Receiver]: 'receiver',
+    [ComponentType.Databox]: 'databox',
+    [ComponentType.DataboxFamily]: 'databoxFamily',
+    [ComponentType.Channel]: 'channel',
+    [ComponentType.ChannelFamily]: 'channelFamily'
+};
 
-function getComponentNamePostfix(component : Component): string {
-    switch(component) {
-        case Component.Databox:
-            return "Databox";
-        case Component.DataboxFamily:
-            return "DataboxFamily";
-        case Component.Controller:
-            return "Controller";
-    }
-}
+const COMPONENT_POSTFIX_MAP: Record<ComponentType,string> = {
+    [ComponentType.Controller]: 'Controller',
+    [ComponentType.Receiver]: 'Receiver',
+    [ComponentType.Databox]: 'Databox',
+    [ComponentType.DataboxFamily]: 'Databox',
+    [ComponentType.Channel]: 'Channel',
+    [ComponentType.ChannelFamily]: 'Channel'
+};
 
-export async function createComponent(componentType: Component,processDir: string,name: string,force: boolean) {
+export async function createComponent(processDir: string,name: string,force: boolean) {
+
+    term.cyan('Which type of component do you want to create?\n');
+    const res = await term.singleColumnMenu(COMPONENT_NAMES,{cancelable: true}).promise;
+    term("\n");
+    if(res.canceled) throw new AbortedCommandError();
+
+    const selectedType = res.selectedText;
+    const type: ComponentType = ComponentType[selectedType];
+
     const rawName = name;
-    name = toPascalCase(name + getComponentNamePostfix(componentType));
+    name = toPascalCase(name + COMPONENT_POSTFIX_MAP[type]);
 
     const destFile = processDestination(processDir,name + '.ts');
 
@@ -58,7 +64,7 @@ export async function createComponent(componentType: Component,processDir: strin
 
     const startTimeStamp = Date.now();
 
-    const preTitle = `Create ${getComponentName(componentType)}: `;
+    const preTitle = `Create ${selectedType}: `;
     const progressBar = term.progressBar({
         width: 80,
         title: preTitle,
@@ -69,7 +75,8 @@ export async function createComponent(componentType: Component,processDir: strin
 
     progressBar.update({title: preTitle + "Copy and template file...", progress: 0});
     try {
-        const templateString = fs.readFileSync(getComponentTemplateFilePath(componentType)).toString();
+        const templateString = fs.readFileSync(path.join(componentsTemplateDir,
+            COMPONENT_TEMPLATE_MAP[type] + '.ts')).toString();
         fsExtra.outputFileSync(destFile,templateEngine.templateString(templateString));
     }
     catch (e) {
@@ -83,5 +90,5 @@ export async function createComponent(componentType: Component,processDir: strin
     print.newLine();
 
     const timeSeconds = ((Date.now() - startTimeStamp) / 1000).toFixed(1);
-    print.success(`${getComponentName(componentType)}: '${rawName}' created in ${timeSeconds}s. 🎉`);
+    print.success(`${selectedType}: '${rawName}' created in ${timeSeconds}s. 🎉`);
 }
