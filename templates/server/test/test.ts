@@ -37,11 +37,11 @@ describe('LoginController Test',async () => {
         .isNotSuccessful()
         .buildHasError()
             .presets()
-            .valueIsNotTypeEmail()
+            .valueNotMatchesWithType()
             .end()
         .buildHasError()
             .presets()
-            .objectPropertyIsMissing()
+            .missingObjectProperty()
             .infoHas({propertyName: 'password'})
             .end()
         .test();

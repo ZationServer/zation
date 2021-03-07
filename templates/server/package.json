@@ -5,10 +5,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",{{author}}{{git}}
   "scripts": {
-    "start": "node dist/index.js",
-    "buildStart": "npm run build && node dist/index.js",
+    "start": "npm run build && node dist/index.js",
     "test": "npm run build && mocha --exit -r ts-node/register test/**/*.ts",
-    "check": "START_MODE=2 node dist/index.js",
+    "check": "npm run build && MODE=c node dist/index.js",
     "start:docker": "pm2 start dist/index.js && pm2 logs index",
     "prepare": "npm run build",
     "build": "gulp build",
