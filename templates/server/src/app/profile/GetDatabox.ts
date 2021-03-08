@@ -3,7 +3,7 @@ import {Databox, DataboxFamily, FetchRequest, DbFamilyInConnection} from "zation
 @Databox.Config({
     access: 'allAuth'
 })
-export default class ProfileDatabox extends DataboxFamily {
+export default class GetDatabox extends DataboxFamily {
 
     async singleFetch(request: FetchRequest, connection: DbFamilyInConnection) {
         //Database query...
