@@ -1,7 +1,7 @@
-export const zationBundleVersion = '0.2.0';
-export const zationServerVersion = '1.9.8';
-export const zationClientVersion = '1.3.0';
-export const zationAssuredVersion = '0.4.8';
+export const zationBundleVersion = '0.3.0';
+export const zationServerVersion = '2.0.0';
+export const zationClientVersion = '1.5.0';
+export const zationAssuredVersion = '0.5.1';
 export const zationClusterStateVersion = '6.0.6';
 export const zationClusterBrokerVersion = '6.0.7';
 
