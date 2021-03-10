@@ -1,6 +1,6 @@
-import {start,StartMode,Config}                   from 'zation-server';
-import {when,createClient,describe,before,after}  from 'zation-assured';
-import StarterConfig                              from '../src/configs/starter.config';
+import {start,StartMode,Config}                          from 'zation-server';
+import {when,assert,createClient,describe,before,after}  from 'zation-assured';
+import StarterConfig                                     from '../src/configs/starter.config';
 
 const TEST_PORT = 3000;
 
@@ -19,30 +19,42 @@ before(async () => {
     await testClient.connect();
 });
 
-describe('LoginController Test',async () => {
+describe('Login Tests',async () => {
 
-    when(testClient,'Test Authenticated')
+    when(testClient,'Should be able to authenticate')
         .authRequest({email: 'mytest@gmail.de',password: 'secret'})
         .assertThat()
         .isSuccessful()
-        .client(testClient)
+        .client()
             .isAuthenticated()
             .hasAuthUserGroup('user')
             .end()
         .test();
 
-    when(testClient,'Test Not Valid Input')
+    when(testClient,'Should not be able to login with an invalid email and missing password')
         .authRequest({email: 'notvalid.de'})
         .assertThat()
         .isNotSuccessful()
-        .buildHasError()
+        .hasError()
             .presets()
             .valueNotMatchesWithType()
+            .infoHas({path: 'email'})
             .end()
-        .buildHasError()
+        .hasError()
             .presets()
             .missingObjectProperty()
             .infoHas({propertyName: 'password'})
+            .end()
+        .test();
+});
+
+describe('Profile Tests', () => {
+
+    assert.client(testClient,'Should get a user profile')
+        .databox('profile/get','1')
+            .data()
+                .deepEqual({id: 1,name: 'Luca'})
+                .end()
             .end()
         .test();
 });
