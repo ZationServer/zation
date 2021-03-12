@@ -36,14 +36,14 @@ describe('Login Tests',async () => {
         .assertThat()
         .isNotSuccessful()
         .hasError()
-            .presets()
+            .preset()
             .valueNotMatchesWithType()
-            .infoHas({path: 'email'})
+            .atPath('email')
             .end()
         .hasError()
-            .presets()
+            .preset()
             .missingObjectProperty()
-            .infoHas({propertyName: 'password'})
+            .withInfo({propertyName: 'password'})
             .end()
         .test();
 });
