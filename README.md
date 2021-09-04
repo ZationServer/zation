@@ -69,7 +69,7 @@ Your new projects will come with example code, tests, and more.
 
 ## License
 
-While Zation source code is publicly available, Zation **is not free**.  
+While portions of the Zation source code is publicly available, Zation **is not free**.  
 Except for the repositories of the ZationServer organization that contain an MIT license.   
 These repositories are free to use with the conditions of the MIT license.   
 
