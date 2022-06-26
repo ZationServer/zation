@@ -7,7 +7,7 @@ Copyright(c) Ing. Luca Gian Scaringella
  */
 
 import * as path from "path";
-import * as program from 'commander';
+import {program} from 'commander';
 import {createServerProject} from "./commands/createServerProject";
 import {createProject} from "./commands/createProject";
 import {createClientProject} from "./commands/createClientProject";
@@ -58,11 +58,5 @@ program
     .action(async (name) => {
         await callCommandSafe(createComponent,processDir,name,program.opts()?.force);
     });
-
-program
-    .command('projectCommands')
-    .alias('pc')
-    .description('shows all project npm commands')
-    .action(() => print.projectNpmCommands());
 
 program.parse(process.argv);
