@@ -1,6 +1,6 @@
 import { Router } from "zation-server";
-import LoginController from "./LoginController";
+import Login from "./Login";
 
 export const authRouter = new Router('auth');
 
-authRouter.use(LoginController);
+authRouter.use(Login);

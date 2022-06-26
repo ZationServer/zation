@@ -7,11 +7,11 @@
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "removeComments": false,
+    "removeComments": true,
     "noImplicitAny": false,
     "declaration": true,
-    "outDir": "assets",
-    "strict": true
+    "strict": true,
+    "outDir": "dist",
   },
   "include": [
     "src/**/*"

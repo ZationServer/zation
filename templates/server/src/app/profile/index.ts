@@ -1,6 +1,6 @@
 import { Router } from "zation-server";
-import GetDatabox from "./GetDatabox";
+import GetProfile from "./GetProfile";
 
 export const profileRouter = new Router('profile');
 
-profileRouter.use(GetDatabox);
+profileRouter.use(GetProfile);

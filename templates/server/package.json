@@ -8,14 +8,8 @@
     "start": "npm run build && node dist/index.js",
     "test": "npm run build && mocha --exit -r ts-node/register test/**/*.ts",
     "check": "npm run build && MODE=c node dist/index.js",
-    "start:docker": "pm2 start dist/index.js && pm2 logs index",
     "prepare": "npm run build",
-    "build": "gulp build",
-    "watch": "gulp watch",
-    "dockerBuild": "docker build -t zation/{{name}/kc} . ",
-    "dockerExport" : "docker save --output {{name}/kc}.tar zation/{{name}/kc}",
-    "dockerRun": "docker run --name zation-{{name}/kc} -p{{port}}:{{port}} zation/{{name}/kc}",
-    "dockerStop": "docker stop zation-{{name}/kc} && docker rm -f zation-{{name}/kc}"
+    "build": "del-cli dist && tsc"
   },
   "files": [
     "dist/**/*"
@@ -24,14 +18,12 @@
     "zation-server": "{{zationServerVersion}}"
   },
   "devDependencies": {
-    "zation-assured": "{{zationAssuredVersion}}",
-    "gulp": "{{gulpVersion}}",
-    "gulp-typescript": "{{gulpTypescriptVersion}}",
-    "gulp-sourcemaps": "{{gulpSourcemapsVersion}}",
     "typescript": "{{typescriptVersion}}",
-    "del": "{{delVersion}}",
-    "mocha": "{{mochaVersion}}",
     "ts-node": "{{tsNodeVersion}}",
-    "@types/node": "{{typesNodeVersion}}"
+    "@types/node": "{{typesNodeVersion}}",
+    "del-cli": "{{delCliVersion}}",
+    "zation-assured": "{{zationAssuredVersion}}",
+    "mocha": "{{mochaVersion}}",
+    "@types/mocha": "{{typesMochaVersion}}"
   }
 }

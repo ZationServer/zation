@@ -1,18 +1,16 @@
-import {Controller, AuthController, Socket, BackError, BackErrorBag, ObjectModel, Model} from 'zation-server';
+import {Controller, AuthController, Socket, BackError, BackErrorBag, ObjectModel, Model, ModelProp} from 'zation-server';
 
 @ObjectModel()
 class Credentials {
 
-    @Model({
+    email = ModelProp({
         type: 'email',
-    })
-    email: string;
+    });
 
-    @Model({
+    password = ModelProp({
         type: 'string',
         minLength: 3
-    })
-    password: string;
+    });
 
 }
 
@@ -20,7 +18,7 @@ class Credentials {
     access: 'all',
     input: Credentials
 })
-export default class LoginController extends AuthController {
+export default class Login extends AuthController {
 
     async initialize() {
 

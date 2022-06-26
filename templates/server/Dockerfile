@@ -1,21 +1,26 @@
-FROM node:12.21.0
+FROM node:16.13.0-stretch as build
+WORKDIR /usr/app/
+COPY . .
+RUN npm install
+RUN npm run build
+
+
+FROM node:16.13.0-slim
 
 LABEL appName="{{name}/kc}"
 LABEL version="0.0.1"
 LABEL description="{{description}}"
 
-RUN mkdir -p /usr/src/
-WORKDIR /usr/src/
-COPY . /usr/src/
+WORKDIR /usr/app
 
-RUN npm install
+COPY package*.json ./
+RUN npm ci --only=production
 
-RUN npm install pm2 -g
+COPY --from=build /usr/app/dist ./dist
 
-RUN npm run build
-
-RUN rm -rf /usr/src/src
+HEALTHCHECK --interval=15s --timeout=15s --start-period=10s \
+   CMD node node_modules/ziron-server/dist/healthcheck.js d-{{port}}
 
 EXPOSE {{port}}
 
-CMD ["npm", "run", "start:docker"]
+CMD node dist/index.js

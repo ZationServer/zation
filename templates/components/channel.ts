@@ -1,11 +1,11 @@
-import {Channel, Socket} from 'zation-server';
+import {Channel, Socket} from "zation-server";
 
 @Channel.Config({
-    access: 'all',
+    access: 'all'
 })
 export default class {{name}/pc} extends Channel {
 
-    async onSubscription(socket: Socket) {
+    protected async onSubscription(member, socket: Socket) {
 
     }
 

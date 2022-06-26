@@ -2,31 +2,27 @@ import {Config, $init} from 'zation-server';
 
 import "../app";
 
-export default Config.appConfig({
+Config.appConfig({
+    appName: '{{name}/pc}',
+
     userGroups: {
         auth: {
             admin: {},
             user: {},
         },
-        default: 'guest'
+        default: 'guest',
     },
 
     controllerDefaults: {
-        access: 'all'
+        access: 'all',
     },
 
     events: {
-        express: (express) => {
-            express.get('/',(_,res) => {
-                res.send('Application Server');
-            });
-        },
-
-        socketConnection: $init((bag) => {
-            const workerId = bag.getWorkerId();
-            return (socket) => {
-                bag.log.info(`New socket (${socket.id}) connected on worker: ${workerId}`);
+        socketConnection: $init(bag => {
+            const serverInfo = `${bag.serverId} (${bag.serverUrl})`;
+            return socket => {
+                bag.log.info(`New socket (${socket.id}) connected on server: ${serverInfo}.`);
             }
-        })
-    }
-});
+        }),
+    },
+}).register();

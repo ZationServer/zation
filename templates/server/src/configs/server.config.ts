@@ -1,10 +1,11 @@
 import {Config} from 'zation-server';
 
-export default Config.mainConfig({
+Config.serverConfig({
     port: {{port}},
-    appName: '{{name}/pc}',
+    debug: false,
+    launchDebug: false,
     panel: {
         active: true,
         user: {username: 'admin', password: 'admin'}
     },
-});
+}).register();

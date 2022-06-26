@@ -7,8 +7,7 @@
   "scripts": {
     "start": "npm run build && node dist/index.js",
     "prepare": "npm run build",
-    "build": "gulp compile",
-    "watch": "gulp watch"
+    "build": "del-cli dist && tsc"
   },
   "files": [
     "dist/**/*"
@@ -17,11 +16,8 @@
     "zation-client": "{{zationClientVersion}}"
   },
   "devDependencies": {
-    "gulp": "{{gulpVersion}}",
-    "gulp-typescript": "{{gulpTypescriptVersion}}",
-    "gulp-sourcemaps": "{{gulpSourcemapsVersion}}",
     "typescript": "{{typescriptVersion}}",
-    "del": "{{delVersion}}",
-    "@types/node": "{{typesNodeVersion}}"
+    "@types/node": "{{typesNodeVersion}}",
+    "del-cli": "{{delCliVersion}}"
   }
 }

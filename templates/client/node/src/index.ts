@@ -1,8 +1,8 @@
-import {create} from 'zation-client';
+import {Client} from 'zation-client';
 
 (async () => {
 
-    const client = create({
+    const client = Client.create({
         hostname: '{{serverHost}}',
         port: {{serverPort}},
         debug: false
