@@ -1,4 +1,4 @@
-import {Controller, Socket, BackError, BackErrorBag} from 'zation-server';
+import {Controller, Socket, BackError, BackErrorBag} from "zation-server";
 
 @Controller.Config({
     access: 'all',

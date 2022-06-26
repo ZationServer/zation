@@ -1,4 +1,4 @@
-import {Receiver, Socket, BackError, BackErrorBag} from 'zation-server';
+import {Receiver, Socket, BackError, BackErrorBag} from "zation-server";
 
 @Receiver.Config({
     access: 'all',
