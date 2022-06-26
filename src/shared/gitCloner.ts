@@ -1,3 +1,9 @@
+/*
+Author: Ing. Luca Gian Scaringella
+GitHub: LucaCode
+Copyright(c) Ing. Luca Gian Scaringella
+ */
+
 import * as downloadGitRepo from 'download-git-repo';
 
 export function gitClone(address: string,destDir: string) : Promise<void> {

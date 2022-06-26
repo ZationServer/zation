@@ -1,3 +1,9 @@
+/*
+Author: Ing. Luca Gian Scaringella
+GitHub: LucaCode
+Copyright(c) Ing. Luca Gian Scaringella
+ */
+
 import TemplateEngine from '../../shared/templateEngine';
 import {checkDir, copyDirRecursive, processDestination} from '../../shared/fsUtils';
 import {isWin, serverTemplateDir} from '../../shared/constants';

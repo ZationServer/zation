@@ -1,6 +1,12 @@
+/*
+Author: Ing. Luca Gian Scaringella
+GitHub: LucaCode
+Copyright(c) Ing. Luca Gian Scaringella
+ */
+
 export class AbortedCommandError extends Error {
 
-    private _silent : boolean;
+    private readonly _silent : boolean;
 
     constructor(silent : boolean = false) {
         super("Command aborted.");

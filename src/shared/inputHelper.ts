@@ -1,3 +1,9 @@
+/*
+Author: Ing. Luca Gian Scaringella
+GitHub: LucaCode
+Copyright(c) Ing. Luca Gian Scaringella
+ */
+
 import { AbortedCommandError } from './abortedCommandError';
 import {terminal as term} from 'terminal-kit';
 

@@ -1,3 +1,9 @@
+/*
+Author: Ing. Luca Gian Scaringella
+GitHub: LucaCode
+Copyright(c) Ing. Luca Gian Scaringella
+ */
+
 import { AbortedCommandError } from '../../shared/abortedCommandError';
 import { gitClone } from '../../shared/gitCloner';
 import { zationClusterStateVersion, zationClusterBrokerVersion } from '../../versions';

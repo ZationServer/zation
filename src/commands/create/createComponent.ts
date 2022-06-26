@@ -1,3 +1,9 @@
+/*
+Author: Ing. Luca Gian Scaringella
+GitHub: LucaCode
+Copyright(c) Ing. Luca Gian Scaringella
+ */
+
 import {print} from "../../shared/consoleHelper";
 import {checkFile, processDestination} from "../../shared/fsUtils";
 import {terminal as term} from 'terminal-kit';

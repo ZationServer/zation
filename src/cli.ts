@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 /*
-Author: Luca Scaringella
+Author: Ing. Luca Gian Scaringella
 GitHub: LucaCode
-Copyright(c) Luca Scaringella
+Copyright(c) Ing. Luca Gian Scaringella
  */
 
 import * as path from "path";
