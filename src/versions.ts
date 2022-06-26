@@ -1,9 +1,9 @@
-export const zationBundleVersion = '0.4.0';
-export const zationServerVersion = '2.2.2';
-export const zationClientVersion = '1.6.3';
-export const zationAssuredVersion = '0.6.3';
-export const zationClusterStateVersion = '6.0.6';
-export const zationClusterBrokerVersion = '6.0.7';
+export const zationBundleVersion = '3.0.0-pre-alpha.1';
+export const zationServerVersion = '3.0.0-pre-alpha.4';
+export const zationClientVersion = '3.0.0-pre-alpha.3';
+export const zationAssuredVersion = '3.0.0-pre-alpha.3';
+export const zationClusterStateVersion = '8.0.0-pre-alpha.4';
+export const zationClusterBrokerVersion = '8.0.0-pre-alpha.4';
 
 export const zationBundle = {
     zationBundleVersion,
@@ -14,23 +14,19 @@ export const zationBundle = {
     zationClusterBrokerVersion,
 };
 
-export const gulpVersion = '4.0.2';
-export const gulpTypescriptVersion = '^5.0.1';
-export const gulpSourcemapsVersion = '^3.0.0';
-export const typescriptVersion = '^4.2.3';
-export const delVersion = '6.0.0';
-export const mochaVersion = '^8.3.1';
-export const tsNodeVersion = '^9.1.1';
-export const typesNodeVersion = '^14.14.31';
+export const typescriptVersion = '^4.7.4';
+export const tsNodeVersion = '^10.8.1';
+export const typesNodeVersion = '^16.11.7';
+export const delCliVersion = '^4.0.1';
+export const mochaVersion = '^10.0.0';
+export const typesMochaVersion = '^9.1.1';
 
 export const versions = {
     ...zationBundle,
-    gulpVersion,
-    gulpTypescriptVersion,
-    gulpSourcemapsVersion,
     typescriptVersion,
-    delVersion,
-    mochaVersion,
     tsNodeVersion,
-    typesNodeVersion
+    typesNodeVersion,
+    delCliVersion,
+    mochaVersion,
+    typesMochaVersion
 };
