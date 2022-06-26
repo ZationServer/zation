@@ -42,7 +42,8 @@ export const print = {
         console.log(`Zation Broker Version: ${zationBrokerVersion}`);
     },
     welcome: () => {
-        term.cyan(`Thank you for using the Zation Framework 🚀 (Bundle:${zationBundleVersion}) (https://github.com/ZationServer)!\n`);
+        term.cyan(`Thank you for using the Zation Framework 🚀!\n(Bundle: ${zationBundleVersion}) (https://github.com/ZationServer)\n`);
+        term.cyan(`Please be aware that Zation is not free.\nYou can find more information in the Zation End User License Agreement\n(https://github.com/ZationServer/zation/wiki/Zation-End-User-License-Agreement).\n`)
     },
 };
 
