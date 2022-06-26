@@ -5,19 +5,19 @@ Copyright(c) Ing. Luca Gian Scaringella
  */
 
 export const zationBundleVersion = '3.0.0-pre-alpha.1';
-export const zationServerVersion = '3.0.0-pre-alpha.4';
+export const zationServerVersion = '3.0.0-pre-alpha.5';
 export const zationClientVersion = '3.0.0-pre-alpha.3';
 export const zationAssuredVersion = '3.0.0-pre-alpha.3';
-export const zationClusterStateVersion = '8.0.0-pre-alpha.4';
-export const zationClusterBrokerVersion = '8.0.0-pre-alpha.4';
+export const zationStateVersion = '8.0.0-pre-alpha.4';
+export const zationBrokerVersion = '8.0.0-pre-alpha.4';
 
 export const zationBundle = {
     zationBundleVersion,
     zationServerVersion,
     zationClientVersion,
     zationAssuredVersion,
-    zationClusterStateVersion,
-    zationClusterBrokerVersion,
+    zationStateVersion,
+    zationBrokerVersion,
 };
 
 export const typescriptVersion = '^4.7.4';
