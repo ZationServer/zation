@@ -4,16 +4,16 @@ GitHub: LucaCode
 Copyright(c) Ing. Luca Gian Scaringella
  */
 
-import TemplateEngine from '../../shared/templateEngine';
-import { versions } from '../../versions';
-import {checkDir, copyDirRecursive, processDestination} from '../../shared/fsUtils';
-import { clientTemplateDir, isWin } from '../../shared/constants';
-import NpmRunner from '../../shared/npmRunner';
-import {askInput, yesOrNo} from "../../shared/inputHelper";
-import {print} from "../../shared/consoleHelper";
+import TemplateEngine from '../shared/templateEngine';
+import { versions } from '../versions';
+import {checkDir, copyDirRecursive, processDestination} from '../shared/fsUtils';
+import { clientTemplateDir, isWin } from '../shared/constants';
+import NpmRunner from '../shared/npmRunner';
+import {askInput, yesOrNo} from "../shared/inputHelper";
+import {print} from "../shared/consoleHelper";
 import {terminal as term} from 'terminal-kit';
-import {toPascalCase} from "../../shared/stringUtils";
-import {AbortedCommandError} from "../../shared/abortedCommandError"
+import {toPascalCase} from "../shared/stringUtils";
+import {AbortedCommandError} from "../shared/abortedCommandError"
 
 enum ClientProjectType {
     Web,
@@ -37,8 +37,8 @@ export async function createClientProject(processDir: string, name: string, forc
     const destDir = processDestination(processDir,newFolder ? pascalCaseName : undefined);
 
     term.cyan('Which type of client project do you want to create?\n');
-    const res = await term.singleColumnMenu(['Web (Creates an web client typescript project with webpack)',
-        'Node (Creates an client typescript project with gulp)'],{cancelable: true}).promise;
+    const res = await term.singleColumnMenu(['Web (Creates a web client typescript project with webpack)',
+        'Node (Creates a node.js client typescript project)'],{cancelable: true}).promise;
     term("\n");
     if(res.canceled) {
         throw new AbortedCommandError();
@@ -81,7 +81,7 @@ export async function createClientProject(processDir: string, name: string, forc
     try {
         copyDirRecursive(getClientTemplateDir(projectType),destDir);
     }
-    catch (e) {
+    catch (e: any) {
         progressBar.stop();
         print.error(`Failed to copy template files: ${e.toString()}`);
         return;
@@ -110,7 +110,7 @@ export async function createClientProject(processDir: string, name: string, forc
             }
         });
     }
-    catch(e) {
+    catch(e: any) {
         progressBar.stop();
         print.error(`Failed to install dependencies: ${e.toString()}`);
         return;
@@ -127,5 +127,4 @@ export async function createClientProject(processDir: string, name: string, forc
     if(!isWin){
         print.info(`   At permission error, try to start the client with sudo.`);
     }
-    print.info(`   The command 'zation projectCommands' or 'zation pc' will show you more possible npm commands.`);
 }

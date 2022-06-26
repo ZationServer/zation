@@ -11,7 +11,7 @@ export default class NpmRunner
 {
     static installDependencies(destDir : string,progressCallback : () => void)
     {
-        return new Promise((resolve,reject) =>
+        return new Promise<void>((resolve,reject) =>
         {
             const npmCommand = (process.platform === "win32" ? "npm.cmd" : "npm");
             const npmProcess = spawn(npmCommand, ['install'], {cwd: destDir, maxBuffer: Infinity});

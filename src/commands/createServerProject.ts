@@ -4,15 +4,15 @@ GitHub: LucaCode
 Copyright(c) Ing. Luca Gian Scaringella
  */
 
-import TemplateEngine from '../../shared/templateEngine';
-import {checkDir, copyDirRecursive, processDestination} from '../../shared/fsUtils';
-import {isWin, serverTemplateDir} from '../../shared/constants';
-import {versions} from "../../versions";
-import NpmRunner from "./../../shared/npmRunner";
-import {askInput, yesOrNo} from '../../shared/inputHelper';
-import {print} from "../../shared/consoleHelper";
+import TemplateEngine from '../shared/templateEngine';
+import {checkDir, copyDirRecursive, processDestination} from '../shared/fsUtils';
+import {isWin, serverTemplateDir} from '../shared/constants';
+import {versions} from "../versions";
+import NpmRunner from "../shared/npmRunner";
+import {askInput, yesOrNo} from '../shared/inputHelper';
+import {print} from "../shared/consoleHelper";
 import {terminal as term} from 'terminal-kit';
-import {toPascalCase} from "../../shared/stringUtils";
+import {toPascalCase} from "../shared/stringUtils";
 
 export async function createServerProject(processDir: string, name: string, force: boolean) {
 
@@ -54,7 +54,7 @@ export async function createServerProject(processDir: string, name: string, forc
     try {
         copyDirRecursive(serverTemplateDir,destDir);
     }
-    catch (e) {
+    catch (e: any) {
         progressBar.stop();
         print.error(`Failed to copy template files: ${e.toString()}`);
         return;
@@ -64,9 +64,8 @@ export async function createServerProject(processDir: string, name: string, forc
     progressBar.update({title: preTitle + "Template files...", progress});
 
     await templateEngine.templateFiles([
-        `${destDir}/src/configs/main.config.ts`,
-        `${destDir}/src/configs/starter.config.ts`,
-        `${destDir}/src/index.ts`,
+        `${destDir}/src/configs/server.config.ts`,
+        `${destDir}/src/configs/app.config.ts`,
         `${destDir}/package.json`,
         `${destDir}/Dockerfile`
     ],async (i,length) => {
@@ -86,7 +85,7 @@ export async function createServerProject(processDir: string, name: string, forc
             }
         });
     }
-    catch(e) {
+    catch(e: any) {
         progressBar.stop();
         print.error(`Failed to install dependencies: ${e.toString()}`);
         return;
@@ -103,5 +102,4 @@ export async function createServerProject(processDir: string, name: string, forc
     if(!isWin) {
         print.info(`   At permission error, try to start the server with sudo.`);
     }
-    print.info(`   The command 'zation projectCommands' or 'zation pc' will show you more possible npm commands.`);
 }

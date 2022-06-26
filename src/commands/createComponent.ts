@@ -4,24 +4,24 @@ GitHub: LucaCode
 Copyright(c) Ing. Luca Gian Scaringella
  */
 
-import {print} from "../../shared/consoleHelper";
-import {checkFile, processDestination} from "../../shared/fsUtils";
+import {print} from "../shared/consoleHelper";
+import {checkFile, processDestination} from "../shared/fsUtils";
 import {terminal as term} from 'terminal-kit';
-import TemplateEngine from "../../shared/templateEngine";
+import TemplateEngine from "../shared/templateEngine";
 import * as fsExtra from "fs-extra";
 import * as fs from "fs";
 import * as path from "path";
-import {componentsTemplateDir} from "../../shared/constants";
-import {toPascalCase} from "../../shared/stringUtils";
-import {AbortedCommandError} from "../../shared/abortedCommandError";
+import {componentsTemplateDir} from "../shared/constants";
+import {toPascalCase} from "../shared/stringUtils";
+import {AbortedCommandError} from "../shared/abortedCommandError";
 
 export enum ComponentType {
     Controller,
     Receiver,
     Databox,
-    DataboxFamily,
+    StaticDatabox,
     Channel,
-    ChannelFamily
+    StaticChannel
 }
 
 const COMPONENT_NAMES = Object.keys(ComponentType).reduce((a: string[],v) => {
@@ -33,18 +33,9 @@ const COMPONENT_TEMPLATE_MAP: Record<ComponentType,string> = {
     [ComponentType.Controller]: 'controller',
     [ComponentType.Receiver]: 'receiver',
     [ComponentType.Databox]: 'databox',
-    [ComponentType.DataboxFamily]: 'databoxFamily',
+    [ComponentType.StaticDatabox]: 'staticDatabox',
     [ComponentType.Channel]: 'channel',
-    [ComponentType.ChannelFamily]: 'channelFamily'
-};
-
-const COMPONENT_POSTFIX_MAP: Record<ComponentType,string> = {
-    [ComponentType.Controller]: 'Controller',
-    [ComponentType.Receiver]: 'Receiver',
-    [ComponentType.Databox]: 'Databox',
-    [ComponentType.DataboxFamily]: 'Databox',
-    [ComponentType.Channel]: 'Channel',
-    [ComponentType.ChannelFamily]: 'Channel'
+    [ComponentType.StaticChannel]: 'staticChannel'
 };
 
 export async function createComponent(processDir: string,name: string,force: boolean) {
@@ -58,13 +49,11 @@ export async function createComponent(processDir: string,name: string,force: boo
     const type: ComponentType = ComponentType[selectedType];
 
     const rawName = name;
-    name = toPascalCase(name + COMPONENT_POSTFIX_MAP[type]);
+    name = toPascalCase(name);
 
     const destFile = processDestination(processDir,name + '.ts');
 
-    const templateEngine = new TemplateEngine({
-        name
-    });
+    const templateEngine = new TemplateEngine({name});
 
     await checkFile(destFile,force);
 
@@ -85,7 +74,7 @@ export async function createComponent(processDir: string,name: string,force: boo
             COMPONENT_TEMPLATE_MAP[type] + '.ts')).toString();
         fsExtra.outputFileSync(destFile,templateEngine.templateString(templateString));
     }
-    catch (e) {
+    catch (e: any) {
         progressBar.stop();
         print.error(`Failed to copy and template file: ${e.toString()}`);
         return;
