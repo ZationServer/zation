@@ -19,8 +19,6 @@ export async function callCommandSafe<T extends (...args: any[]) => Promise<void
                 print.warning("Command aborted.");
             process.exit();
         }
-        else {
-            throw e;
-        }
+        else throw e;
     }
 }

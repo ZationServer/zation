@@ -20,12 +20,9 @@ export default class NpmRunner
             npmProcess.stderr.on('data', () => progressCallback());
 
             npmProcess.on('close', (code : any) => {
-                if (code) {
+                if (code)
                     reject(new Error(`Failed to install. Code: ${code}`));
-                }
-                else {
-                    resolve();
-                }
+                else resolve();
             });
             npmProcess.stdin.end();
         });

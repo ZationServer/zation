@@ -7,8 +7,9 @@ Copyright(c) Ing. Luca Gian Scaringella
 import {
     zationAssuredVersion,
     zationBundleVersion,
-    zationClientVersion, zationClusterBrokerVersion,
-    zationClusterStateVersion,
+    zationClientVersion,
+    zationBrokerVersion,
+    zationStateVersion,
     zationServerVersion
 } from "../versions";
 import {terminal as term} from 'terminal-kit';
@@ -37,8 +38,8 @@ export const print = {
         console.log(`Zation Server Version: ${zationServerVersion}`);
         console.log(`Zation Client Version: ${zationClientVersion}`);
         console.log(`Zation Assured Version: ${zationAssuredVersion}`);
-        console.log(`Zation Cluster State Version: ${zationClusterStateVersion}`);
-        console.log(`Zation Cluster Broker Version: ${zationClusterBrokerVersion}`);
+        console.log(`Zation State Version: ${zationStateVersion}`);
+        console.log(`Zation Broker Version: ${zationBrokerVersion}`);
     },
     welcome: () => {
         term.cyan(`Thank you for using the Zation Framework 🚀 (Bundle:${zationBundleVersion}) (https://github.com/ZationServer)!\n`);

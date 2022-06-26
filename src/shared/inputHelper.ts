@@ -18,12 +18,9 @@ export async function askInput(prompt : string, defaultValue : string | undefine
         },(error,input)=> {
             if(error) {reject(error);}
             term("\n");
-            if(input === undefined){
+            if(input === undefined)
                 reject(new AbortedCommandError());
-            }
-            else {
-                resolve(input);
-            }
+            else resolve(input);
         });
     });
 }

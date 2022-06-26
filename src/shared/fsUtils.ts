@@ -22,9 +22,8 @@ export function processDestination(processDir: string, name?: string): string {
 }
 
 export async function checkDir(dir: string,newFolder: boolean,force: boolean) {
-    if(!fs.existsSync(dir)) {
+    if(!fs.existsSync(dir))
         fsExtra.ensureDirSync(dir);
-    }
     if(!emptyDir.sync(dir))
     {
         let isOk = false;
@@ -45,9 +44,7 @@ export async function checkDir(dir: string,newFolder: boolean,force: boolean) {
                 throw new AbortedCommandError(true)
             }
         }
-        else {
-            throw new AbortedCommandError();
-        }
+        else throw new AbortedCommandError();
     }
 }
 
@@ -65,14 +62,9 @@ export async function checkFile(destFile: string,force: boolean) {
             }
         }
 
-        if(force || isOk) {
+        if(force || isOk)
             fsExtra.removeSync(destFile);
-        }
-        else {
-            throw new AbortedCommandError();
-        }
+        else throw new AbortedCommandError();
     }
-    else {
-        fsExtra.ensureDirSync(path.dirname(destFile));
-    }
+    else fsExtra.ensureDirSync(path.dirname(destFile));
 }

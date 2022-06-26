@@ -14,5 +14,4 @@ export const templateDir = path.resolve(__dirname + '/../../templates');
 
 export const serverTemplateDir = templateDir + "/server";
 export const clientTemplateDir = templateDir + "/client";
-
 export const componentsTemplateDir = templateDir + "/components";

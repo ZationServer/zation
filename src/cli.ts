@@ -8,12 +8,11 @@ Copyright(c) Ing. Luca Gian Scaringella
 
 import * as path from "path";
 import * as program from 'commander';
-import {createServerProject} from "./commands/create/createServerProject";
-import {createProject} from "./commands/create/createProject";
-import {createClientProject} from "./commands/create/createClientProject";
+import {createServerProject} from "./commands/createServerProject";
+import {createProject} from "./commands/createProject";
+import {createClientProject} from "./commands/createClientProject";
 import {print} from "./shared/consoleHelper";
-import {cloneClusterComponent, ClusterComponent} from "./commands/cloneClusterComponent/cloneClusterComponent";
-import {createComponent} from "./commands/create/createComponent";
+import {createComponent} from "./commands/createComponent";
 import {callCommandSafe} from "./shared/commandCaller";
 
 const processDir = path.normalize(process.cwd());
@@ -58,22 +57,6 @@ program
     .description('creates a new Zation component in the working directory')
     .action(async (name) => {
         await callCommandSafe(createComponent,processDir,name,program.opts()?.force);
-    });
-
-program
-    .command('cloneClusterState')
-    .alias('ccs')
-    .description('clones the zation-cluster-state package in the working directory')
-    .action(async () => {
-        await callCommandSafe(cloneClusterComponent,processDir,program.opts()?.force,ClusterComponent.State);
-    });
-
-program
-    .command('cloneClusterBroker')
-    .alias('ccb')
-    .description('clones the zation-cluster-broker package in the working directory')
-    .action(async () => {
-        await callCommandSafe(cloneClusterComponent,processDir,program.opts()?.force,ClusterComponent.Broker);
     });
 
 program

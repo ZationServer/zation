@@ -10,7 +10,7 @@ import {toCamelCase, toKebabCase, toPascalCase} from "./stringUtils";
 
 export default class TemplateEngine {
 
-    private map : Record<string,string | undefined> = {};
+    private readonly map : Record<string,string | undefined> = {};
 
     constructor(map : Record<string,string | undefined>) {
         this.map = map;
