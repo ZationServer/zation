@@ -8,7 +8,6 @@
     "start": "npm run build && node dist/index.js",
     "test": "npm run build && mocha --exit -r ts-node/register test/**/*.ts",
     "check": "npm run build && MODE=c node dist/index.js",
-    "prepare": "npm run build",
     "build": "del-cli dist && tsc"
   },
   "files": [
