@@ -22,7 +22,7 @@ program
     .description('CLI tool of the Zation framework.')
     .option('-f --force', "force all necessary directory modifications without prompt")
 
-program.option("-v, --version", "output the version number",() => {
+program.option("-v, --version", "outputs the version numbers",() => {
     print.versions();
     process.exit(0);
 });
