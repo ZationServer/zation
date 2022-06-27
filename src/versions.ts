@@ -5,9 +5,9 @@ Copyright(c) Ing. Luca Gian Scaringella
  */
 
 export const zationBundleVersion = '3.0.0-pre-alpha.1';
-export const zationServerVersion = '3.0.0-pre-alpha.5';
+export const zationServerVersion = '3.0.0-pre-alpha.6';
 export const zationClientVersion = '3.0.0-pre-alpha.3';
-export const zationAssuredVersion = '3.0.0-pre-alpha.3';
+export const zationAssuredVersion = '3.0.0-pre-alpha.4';
 export const zationStateVersion = '8.0.0-pre-alpha.4';
 export const zationBrokerVersion = '8.0.0-pre-alpha.4';
 
