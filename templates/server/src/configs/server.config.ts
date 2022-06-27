@@ -1,4 +1,4 @@
-import {Config} from 'zation-server';
+import {Config} from "zation-server";
 
 Config.serverConfig({
     port: {{port}},

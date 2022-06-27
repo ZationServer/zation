@@ -1,5 +1,5 @@
-import launch, {LaunchMode,Config} from 'zation-server';
-import {when,assert,Client,AUTH_CONTROLLER} from 'zation-assured';
+import launch, {LaunchMode,Config} from "zation-server";
+import {when,assert,Client,AUTH_CONTROLLER} from "zation-assured";
 
 import "./../src/configs";
 

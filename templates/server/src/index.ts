@@ -1,4 +1,4 @@
-import launch from 'zation-server';
+import launch from "zation-server";
 
 import "./configs";
 

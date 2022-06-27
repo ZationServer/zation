@@ -1,4 +1,4 @@
-import {Config, $init} from 'zation-server';
+import {Config, $init} from "zation-server";
 
 import "../app";
 

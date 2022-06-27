@@ -1,4 +1,4 @@
-import {Controller, AuthController, Socket, BackError, BackErrorBag, ObjectModel, Model, ModelProp} from 'zation-server';
+import {Controller, AuthController, Socket, BackError, BackErrorBag, ObjectModel, Model, ModelProp} from "zation-server";
 
 @ObjectModel()
 class Credentials {
