@@ -1,4 +1,4 @@
-import {Client} from 'zation-client';
+import {Client} from "zation-client";
 
 (async () => {
 
