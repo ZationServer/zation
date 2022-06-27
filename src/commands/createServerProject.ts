@@ -99,7 +99,4 @@ export async function createServerProject(processDir: string, name: string, forc
     print.success(`Zation server app: '${name}' created in ${timeSeconds}s. 🎉`);
     print.info(`   You can start the server with the command: 'npm start'.`);
     print.info(`   But do not forget to change the directory with 'cd ${name}'.`);
-    if(!isWin) {
-        print.info(`   At permission error, try to start the server with sudo.`);
-    }
 }
