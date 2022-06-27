@@ -5,8 +5,8 @@
 <h1 align="center">
   <!-- Logo -->
   <br/>
-  <a href="https://zation.de">
-      <img src="https://zation.de/img/zationWideLogo.svg" alt="Logo Zation" height="200"/>
+  <a href="https://zation.dev">
+      <img src="https://zation.dev/img/zationWideLogoDark.svg" alt="Logo Zation" height="200"/>
   </a>
   <br/>
   <br/>
