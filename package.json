@@ -22,7 +22,8 @@
   "files": [
     "out/**/*",
     "templates/**/*",
-    "assets/**/*"
+    "assets/**/*",
+    "!.DS_Store"
   ],
   "keywords": [
     "esay",
