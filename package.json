@@ -9,7 +9,7 @@
     "compile": "rm -rf out/ && tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile",
-    "install": "node out/welcome.js"
+    "install": "node -e \"try{require('./out/welcome.js')}catch(_){}\""
   },
   "repository": {
     "type": "git",
