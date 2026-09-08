@@ -11,7 +11,7 @@
   <br/>
   <br/>
   <!-- Documentation -->
-  <a href="https://github.com/ZationServer/zation-documentation">
+  <a href="https://zationserver.github.io/zation-documentation/">
       <img src="https://img.shields.io/badge/Documentation-%20In%20progress-brightgreen.svg" alt="Vulnerabilities"/>
   </a>
   <!-- Stability -->
@@ -46,7 +46,7 @@ Your new projects will come with example code, tests, and more.
 
 ## Learn More 📚
 
-- [Read the documentation](https://github.com/ZationServer/zation-documentation)
+- [Read the documentation](https://zationserver.github.io/zation-documentation/)
 
 > If you really don't know how you can implement something after reading the documentation. Try to look in the documentation of the Zation API. If this not helps, feel free to contact me.
 
