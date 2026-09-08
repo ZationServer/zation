@@ -5,13 +5,13 @@
 <h1 align="center">
   <!-- Logo -->
   <br/>
-  <a href="https://zation.dev">
-      <img src="https://zation.dev/img/zationWideLogoDark.svg" alt="Logo Zation" height="200"/>
+  <a href="https://github.com/ZationServer">
+      <img src="https://raw.githubusercontent.com/ZationServer/zation/master/assets/logo/zationWideLogoDark.svg" alt="Logo Zation" height="200"/>
   </a>
   <br/>
   <br/>
   <!-- Documentation -->
-  <a href="https://zation.de/documentation/#/">
+  <a href="https://github.com/ZationServer/zation-documentation">
       <img src="https://img.shields.io/badge/Documentation-%20In%20progress-brightgreen.svg" alt="Vulnerabilities"/>
   </a>
   <!-- Stability -->
@@ -46,7 +46,7 @@ Your new projects will come with example code, tests, and more.
 
 ## Learn More 📚
 
-- [Read the documentation @docs.zationjs.org](https://docs.zationjs.org)
+- [Read the documentation](https://github.com/ZationServer/zation-documentation)
 
 > If you really don't know how you can implement something after reading the documentation. Try to look in the documentation of the Zation API. If this not helps, feel free to contact me.
 
