@@ -1,11 +1,11 @@
-FROM node:20 AS build
+FROM node:22 AS build
 WORKDIR /usr/app/
 COPY . .
 RUN npm ci
 RUN npm run build
 
 
-FROM node:20-slim
+FROM node:22-slim
 
 LABEL appName="{{name}/kc}"
 LABEL version="0.0.1"
