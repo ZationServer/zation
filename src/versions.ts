@@ -4,10 +4,10 @@ GitHub: LucaCode
 Copyright(c) Ing. Luca Gian Scaringella
  */
 
-export const zationBundleVersion = '3.0.0-beta.3';
-export const zationServerVersion = '3.0.0-beta.3';
-export const zationClientVersion = '3.0.0-beta.3';
-export const zationAssuredVersion = '3.0.0-beta.3';
+export const zationBundleVersion = '3.0.0-beta.4';
+export const zationServerVersion = '3.0.0-beta.4';
+export const zationClientVersion = '3.0.0-beta.4';
+export const zationAssuredVersion = '3.0.0-beta.4';
 export const zationStateVersion = '8.0.0-beta.2';
 export const zationBrokerVersion = '8.0.0-beta.2';
 
