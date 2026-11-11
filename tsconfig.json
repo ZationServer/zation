@@ -9,7 +9,7 @@
 			"es6",
 			"dom"
 		],
-		"sourceMap": true,
+		"sourceMap": false,
 		"rootDir": "src",
 		"strict": true
 	},
